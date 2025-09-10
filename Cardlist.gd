@@ -10,6 +10,7 @@ extends Node
 # executionmult = how many times all other stats are applied (an execution stat of 2 makes damage, shield, draw, heal and selfdamage apply that many times)
 # rarity = what rarity the card is
 var card_database = {
+	000: {"name": "Null","cost":0, "damage": 0, "shield": 0, "draw":0, "heal":0, "selfdamage":0,"executionmult":0,"rarity":0},
 	001: {"name": "Swing","cost":1, "damage": 3, "shield": 0, "draw":0, "heal":0, "selfdamage":0,"executionmult":1,"rarity":1},
 	002: {"name": "Slash","cost":2, "damage": 7, "shield": 0, "draw":0, "heal":0, "selfdamage":0,"executionmult":1,"rarity":1},
 	003: {"name": "Smash","cost":3, "damage": 12, "shield": 0, "draw":0, "heal":0, "selfdamage":0,"executionmult":1,"rarity":1},
@@ -34,7 +35,7 @@ var card_database = {
 
 func _ready():
 	# Example usage
-	var card_id = 010
+	var card_id = 014
 	var card = get_card(card_id)
 	print("Card:", card["name"], " | Damage:", card["damage"], " | Shield:", card["shield"], " | Draw:", card["draw"], " | Heal:", card["heal"], " | Self Damage:", card["selfdamage"], " | Execution multiplier:", card["executionmult"], " | Rarity:", card["rarity"])
 
@@ -43,4 +44,4 @@ func get_card(id: int) -> Dictionary:
 		return card_database[id]
 	else:
 		push_warning("Card ID %s not found!" % str(id))
-		return {}
+		return card_database[000]
