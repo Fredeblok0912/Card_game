@@ -19,22 +19,23 @@ var card_database = {
 	006: {"name": "Backstab","cost":2, "damage": 9, "shield": 0, "draw":0, "heal":0, "selfdamage":0,"executionmult":1,"rarity":2},
 	007: {"name": "Armor Up!","cost":3, "damage": 0, "shield": 9, "draw":0, "heal":0, "selfdamage":0,"executionmult":1,"rarity":2},
 	008: {"name": "Quick Jab","cost":1, "damage": 3, "shield": 0, "draw":1, "heal":0, "selfdamage":0,"executionmult":1,"rarity":2},
-	010: {"name": "Big Ah Punch","cost":5, "damage": 35, "shield": 0, "draw":0, "heal":0, "selfdamage":0,"executionmult":1,"rarity":3},
+	009: {"name": "Flurry","cost":"all remaining energy", "damage": 5, "shield": 0, "draw":0, "heal":0, "selfdamage":0,"executionmult":"amount of energy spent","rarity":2},
+	010: {"name": "Deathblow","cost":5, "damage": 35, "shield": 0, "draw":0, "heal":0, "selfdamage":0,"executionmult":1,"rarity":3},
 	011: {"name": "Singe","cost":1, "damage": 7, "shield": 0, "draw":0, "heal":0, "selfdamage":3,"executionmult":1,"rarity":1},
 	012: {"name": "Flamekick","cost":2, "damage": 15, "shield": 0, "draw":0, "heal":0, "selfdamage":5,"executionmult":1,"rarity":1},
 	013: {"name": "Combust","cost":3, "damage": 28, "shield": 0, "draw":0, "heal":0, "selfdamage":9,"executionmult":1,"rarity":2},
 	015: {"name": "Fireball","cost":2, "damage": "7 + selfdamage", "shield": 0, "draw":0, "heal":0, "selfdamage":0,"executionmult":1,"rarity":3},
 	016: {"name": "Splash","cost":1, "damage": 1, "shield": 2, "draw":1, "heal":0, "selfdamage":0,"executionmult":1,"rarity":1},
-	017: {"name": "Water Cutter","cost":2, "damage": 7, "shield": 0, "draw":1, "heal":0, "selfdamage":0,"executionmult":1,"rarity":1},
+	017: {"name": "Water Cut","cost":2, "damage": 7, "shield": 0, "draw":1, "heal":0, "selfdamage":0,"executionmult":1,"rarity":1},
 	018: {"name": "Ice Blash","cost":3, "damage": 12, "shield": 0, "draw":2, "heal":0, "selfdamage":0,"executionmult":1,"rarity":2},
 	019: {"name": "Soda","cost":2, "damage": 0, "shield": 3, "draw":2, "heal":3, "selfdamage":0,"executionmult":1,"rarity":2},
 	020: {"name": "Waterfall","cost":2, "damage": 4, "shield": 0, "draw":0, "heal":0, "selfdamage":0,"executionmult":"amount of cards you've drawn this turn [doesnt work yet, this is just a string]","rarity":3},
-	021: {"name": "Twin Slice","cost":2, "damage": 4, "shield": 0, "draw":0, "heal":0, "selfdamage":0,"executionmult":2,"rarity":2},
+	021: {"name": "Dual Slash","cost":2, "damage": 4, "shield": 0, "draw":0, "heal":0, "selfdamage":0,"executionmult":2,"rarity":2},
 	
 }
 
 # Main collections
-var decklist = [1, 2, 3, 6, 1, 2, 6, 3, 2, 1]        # permanent deck definition (card IDs)
+var decklist = [1,2,2,3,4,4]        # permanent deck definition (card IDs)
 var current_decklist = [] # mutable draw pile
 var hand = []             # cards in your hand
 
@@ -48,10 +49,10 @@ func _input(event):
 
 	elif event.is_action_pressed("ui_up"): 
 		# Draw 3 cards into hand
-		draw_cards(3)
+		draw_cards(2)
 		print("Hand now:", hand)
 
-# Draw N cards into hand
+#Function draws N cards to hand
 func draw_cards(n: int):
 	for i in range(n):
 		if current_decklist.size() > 0:
@@ -61,11 +62,7 @@ func draw_cards(n: int):
 		else:
 			print("Deck is empty!")
 
-# Show the card visually (stub, you replace with your display logic)
 func display_card(card_id: int):
 	var card = card_database[card_id]
 	var card_name = card["name"]
 	print("Drew card:", card_name)
-	# Example: if you have a Sprite2D for each card in scene by name:
-	# var card_sprite = $CardContainer.get_node(card_name)
-	# card_sprite.show()

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3kup4epd1spt"
-path="res://.godot/imported/Swing.png-5decd73a173e649a7cdf5cbcbac015b0.ctex"
+uid="uid://cp2tldkliggat"
+path="res://.godot/imported/015 Fireball.png-ec2fff5af254b6addb23e8b53ead4799.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Cards/Swing.png"
-dest_files=["res://.godot/imported/Swing.png-5decd73a173e649a7cdf5cbcbac015b0.ctex"]
+source_file="res://Assets/Cards/015 Fireball.png"
+dest_files=["res://.godot/imported/015 Fireball.png-ec2fff5af254b6addb23e8b53ead4799.ctex"]
 
 [params]
 
