@@ -23,7 +23,7 @@ var card_database = {
 	011: {"name": "Singe","cost":1, "damage": 7, "shield": 0, "draw":0, "heal":0, "selfdamage":3,"executionmult":1,"rarity":1},
 	012: {"name": "Flamekick","cost":2, "damage": 15, "shield": 0, "draw":0, "heal":0, "selfdamage":5,"executionmult":1,"rarity":1},
 	013: {"name": "Combust","cost":3, "damage": 28, "shield": 0, "draw":0, "heal":0, "selfdamage":9,"executionmult":1,"rarity":2},
-	015: {"name": "Fireball","cost":2, "damage": 7, "shield": 0, "draw":0, "heal":0, "selfdamage":0,"executionmult":"amount of times you've taken damage this turn [doesnt work yet, this is just a string]","rarity":3},
+	015: {"name": "Fireball","cost":2, "damage": "7 + selfdamage", "shield": 0, "draw":0, "heal":0, "selfdamage":0,"executionmult":1,"rarity":3},
 	016: {"name": "Splash","cost":1, "damage": 1, "shield": 2, "draw":1, "heal":0, "selfdamage":0,"executionmult":1,"rarity":1},
 	017: {"name": "Water Cutter","cost":2, "damage": 7, "shield": 0, "draw":1, "heal":0, "selfdamage":0,"executionmult":1,"rarity":1},
 	018: {"name": "Ice Blash","cost":3, "damage": 12, "shield": 0, "draw":2, "heal":0, "selfdamage":0,"executionmult":1,"rarity":2},
