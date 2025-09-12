@@ -12,7 +12,7 @@ extends Node
 var card_database = {
 	000: {"name": "Null","cost":0, "damage": 0, "shield": 0, "draw":0, "heal":0, "selfdamage":0,"executionmult":0,"rarity":0},
 	001: {"name": "Swing","cost":1, "damage": 3, "shield": 0, "draw":0, "heal":0, "selfdamage":0,"executionmult":1,"rarity":1},
-	002: {"name": "Slash","cost":2, "damage": 7, "shield": 0, "draw":0, "heal":0, "selfdamage":0,"executionmult":1,"rarity":1},
+	002: {"name": "Slice","cost":2, "damage": 7, "shield": 0, "draw":0, "heal":0, "selfdamage":0,"executionmult":1,"rarity":1},
 	003: {"name": "Smash","cost":3, "damage": 12, "shield": 0, "draw":0, "heal":0, "selfdamage":0,"executionmult":1,"rarity":1},
 	004: {"name": "Block","cost":2, "damage": 0, "shield": 6, "draw":0, "heal":0, "selfdamage":0,"executionmult":1,"rarity":1},
 	005: {"name": "Relax","cost":2, "damage": 0, "shield": 0, "draw":2, "heal":0, "selfdamage":0,"executionmult":1,"rarity":1},
@@ -33,15 +33,39 @@ var card_database = {
 	
 }
 
-func _ready():
-	# Example usage
-	var card_id = 014
-	var card = get_card(card_id)
-	print("Card:", card["name"], " | Damage:", card["damage"], " | Shield:", card["shield"], " | Draw:", card["draw"], " | Heal:", card["heal"], " | Self Damage:", card["selfdamage"], " | Execution multiplier:", card["executionmult"], " | Rarity:", card["rarity"])
+# Main collections
+var decklist = [1, 2, 3, 6, 1, 2, 6, 3, 2, 1]        # permanent deck definition (card IDs)
+var current_decklist = [] # mutable draw pile
+var hand = []             # cards in your hand
 
-func get_card(id: int) -> Dictionary:
-	if card_database.has(id):
-		return card_database[id]
-	else:
-		push_warning("Card ID %s not found!" % str(id))
-		return card_database[000]
+func _input(event):
+	if event.is_action_pressed("ui_down"): 
+		# Start game -> shuffle deck into current_decklist
+		current_decklist = decklist.duplicate()
+		current_decklist.shuffle()
+		hand.clear()
+		print("Game started, current deck:", current_decklist)
+
+	elif event.is_action_pressed("ui_up"): 
+		# Draw 3 cards into hand
+		draw_cards(3)
+		print("Hand now:", hand)
+
+# Draw N cards into hand
+func draw_cards(n: int):
+	for i in range(n):
+		if current_decklist.size() > 0:
+			var card_id = current_decklist.pop_front()
+			hand.append(card_id)
+			display_card(card_id)
+		else:
+			print("Deck is empty!")
+
+# Show the card visually (stub, you replace with your display logic)
+func display_card(card_id: int):
+	var card = card_database[card_id]
+	var card_name = card["name"]
+	print("Drew card:", card_name)
+	# Example: if you have a Sprite2D for each card in scene by name:
+	# var card_sprite = $CardContainer.get_node(card_name)
+	# card_sprite.show()

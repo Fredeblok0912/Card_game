@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bhaawwqvekpec"]
+[gd_scene load_steps=5 format=3 uid="uid://bhaawwqvekpec"]
 
 [ext_resource type="Script" uid="uid://dbc6tk6vbqd6e" path="res://main_scene.gd" id="1_8mm7a"]
 [ext_resource type="PackedScene" uid="uid://dk7bxyfwb45n0" path="res://menu.tscn" id="1_gyfs4"]
 [ext_resource type="PackedScene" uid="uid://d3ga24fd88bfi" path="res://game.tscn" id="2_d5x1h"]
 [ext_resource type="PackedScene" uid="uid://de0cqchbpeflh" path="res://game_over.tscn" id="3_8mm7a"]
-[ext_resource type="Script" uid="uid://bd08kuho0r3mb" path="res://Cardlist.gd" id="5_hq1ik"]
 
 [node name="Main_scene" type="Node2D"]
 script = ExtResource("1_8mm7a")
@@ -14,6 +13,4 @@ script = ExtResource("1_8mm7a")
 [node name="Game" parent="." instance=ExtResource("2_d5x1h")]
 
 [node name="gameOver" parent="." instance=ExtResource("3_8mm7a")]
-
-[node name="Cardlist" type="Node" parent="."]
-script = ExtResource("5_hq1ik")
+position = Vector2(0, 192)

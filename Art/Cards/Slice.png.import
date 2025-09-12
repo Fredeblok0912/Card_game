@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3kup4epd1spt"
-path="res://.godot/imported/001 Swing.png-54a41c949de7790bf7ff82a8dc74de18.ctex"
+uid="uid://bmfccl0wuaxlp"
+path="res://.godot/imported/Slice.png-8244eaf6fa3e7c25a7aa8fe8aed5c5d6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://CardSprites/001 Swing.png"
-dest_files=["res://.godot/imported/001 Swing.png-54a41c949de7790bf7ff82a8dc74de18.ctex"]
+source_file="res://Art/Cards/Slice.png"
+dest_files=["res://.godot/imported/Slice.png-8244eaf6fa3e7c25a7aa8fe8aed5c5d6.ctex"]
 
 [params]
 
