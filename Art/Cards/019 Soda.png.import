@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cn6toei0djny1"
-path="res://.godot/imported/Backstab.png-e6951e7406bceff8f559524cd286e071.ctex"
+uid="uid://b3ftqr1s3ssyq"
+path="res://.godot/imported/019 Soda.png-7c4ebe3a2f44af9bdd227f8dc865d12e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Cards/Backstab.png"
-dest_files=["res://.godot/imported/Backstab.png-e6951e7406bceff8f559524cd286e071.ctex"]
+source_file="res://Art/Cards/019 Soda.png"
+dest_files=["res://.godot/imported/019 Soda.png-7c4ebe3a2f44af9bdd227f8dc865d12e.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3kup4epd1spt"
-path="res://.godot/imported/Swing.png-5decd73a173e649a7cdf5cbcbac015b0.ctex"
+uid="uid://duq3no0bj4eyq"
+path="res://.godot/imported/012 Flamekick.png-1f2980ce142f55e9e601bcbb5b2dc915.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Cards/Swing.png"
-dest_files=["res://.godot/imported/Swing.png-5decd73a173e649a7cdf5cbcbac015b0.ctex"]
+source_file="res://Art/Cards/012 Flamekick.png"
+dest_files=["res://.godot/imported/012 Flamekick.png-1f2980ce142f55e9e601bcbb5b2dc915.ctex"]
 
 [params]
 

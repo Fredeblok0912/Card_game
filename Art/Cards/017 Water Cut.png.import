@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmfccl0wuaxlp"
-path="res://.godot/imported/Slice.png-8244eaf6fa3e7c25a7aa8fe8aed5c5d6.ctex"
+uid="uid://3vblbqv7a10"
+path="res://.godot/imported/017 Water Cut.png-5ba924791b87e7e111bbc359cd65e3b2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Cards/Slice.png"
-dest_files=["res://.godot/imported/Slice.png-8244eaf6fa3e7c25a7aa8fe8aed5c5d6.ctex"]
+source_file="res://Art/Cards/017 Water Cut.png"
+dest_files=["res://.godot/imported/017 Water Cut.png-5ba924791b87e7e111bbc359cd65e3b2.ctex"]
 
 [params]
 
