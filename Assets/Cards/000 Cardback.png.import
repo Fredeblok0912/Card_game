@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpvr00w4gj0iq"
-path="res://.godot/imported/Smash.png-53952b12a2730251276653e91c56b1e6.ctex"
+uid="uid://c31abq05yhnww"
+path="res://.godot/imported/000 Cardback.png-cb62cef5772c94bfd0dea21d353e0bbf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Cards/Smash.png"
-dest_files=["res://.godot/imported/Smash.png-53952b12a2730251276653e91c56b1e6.ctex"]
+source_file="res://Assets/Cards/000 Cardback.png"
+dest_files=["res://.godot/imported/000 Cardback.png-cb62cef5772c94bfd0dea21d353e0bbf.ctex"]
 
 [params]
 

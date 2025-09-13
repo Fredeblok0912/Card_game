@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cn6toei0djny1"
-path="res://.godot/imported/Backstab.png-e6951e7406bceff8f559524cd286e071.ctex"
+uid="uid://dvgeiuex5y727"
+path="res://.godot/imported/003 Smash.png-783f0dccac67dbcc759894467ea5c535.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Cards/Backstab.png"
-dest_files=["res://.godot/imported/Backstab.png-e6951e7406bceff8f559524cd286e071.ctex"]
+source_file="res://Assets/Cards/003 Smash.png"
+dest_files=["res://.godot/imported/003 Smash.png-783f0dccac67dbcc759894467ea5c535.ctex"]
 
 [params]
 
