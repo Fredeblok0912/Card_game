@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jr7fkkqptx6y"
-path="res://.godot/imported/004 Block.png-7ac6c437e2096dc2416e0fc5da75f013.ctex"
+uid="uid://bmfccl0wuaxlp"
+path="res://.godot/imported/Slice.png-8244eaf6fa3e7c25a7aa8fe8aed5c5d6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Cards/004 Block.png"
-dest_files=["res://.godot/imported/004 Block.png-7ac6c437e2096dc2416e0fc5da75f013.ctex"]
+source_file="res://Art/Cards/Slice.png"
+dest_files=["res://.godot/imported/Slice.png-8244eaf6fa3e7c25a7aa8fe8aed5c5d6.ctex"]
 
 [params]
 
