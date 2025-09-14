@@ -62,7 +62,7 @@ var card_sprites_database = {
 var decklist = [1,2,2,3,4,4]       		# Det permanente deck som bliver kopieret til hvert combat, er den som man skal add kort til når man køber
 var current_decklist = [1,2,2,3,4,4]	# Kort som er i spillerens deck under combat, burde være tom og kopiere inholdet af decklist, men for testing rn er den fyldt
 var hand_cards = []						# Kort som er i spillerens hånd
-
+var discard_pile
 
 #Just for testing, remove later
 func _ready():  
@@ -102,6 +102,7 @@ var hand_sprites: Array[Sprite2D] = []
 func add_card(card_id: int) -> void:
 	var card_sprite := Sprite2D.new()
 	card_sprite.texture = card_sprites_database[card_id]
+
 	card_sprite.scale = Vector2(card_scale, card_scale)
 	add_child(card_sprite)
 	var viewport_width = get_viewport().get_visible_rect().size.x
@@ -121,3 +122,6 @@ func _update_hand_positions() -> void:
 
 		var tween = create_tween()
 		tween.tween_property(hand_sprites[i], "position", target_pos, tween_duration).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+
+func card_played(ID):
+	print("played"+hand_cards[ID])
