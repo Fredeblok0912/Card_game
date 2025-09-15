@@ -12,7 +12,6 @@ func draw_cards(n: int):
 			var card_id = Cardlist.current_decklist.pop_front()
 			Cardlist.hand_cards.append(card_id)
 			await get_tree().create_timer(0.3).timeout
-			print("drew a card")
 			add_card(card_id)
 		elif Cardlist.current_decklist.size() <= 0 && Cardlist.discard_pile.size() <= 0:
 			print("Deck and Discard Pile empty")
@@ -81,7 +80,6 @@ func card_clicked(_viewport, event, _shape_idx, card_id, card_node):
 		Cardlist.discard_pile.append(card_id)
 		#clear the played card from Cardlist.hand_cards and hand_sprites
 		remove_card(card_id, card_node)
-		print("Discard pile now:", Cardlist.discard_pile)
 
 func remove_card(card_id: int, card_node: Area2D) -> void:
 	# Remove from hand_sprites (by reference)
@@ -95,44 +93,52 @@ func remove_card(card_id: int, card_node: Area2D) -> void:
 	_update_hand_positions()
 
 func card_played(card_id):
-	print("Card played ", card_id)
-	player_damage(card_id,Cardlist.card_database[card_id].get("Name"))
-	player_shield(card_id,Cardlist.card_database[card_id].get("Name"))
-	player_heal(card_id,Cardlist.card_database[card_id].get("Name"))
-	player_draw(card_id,Cardlist.card_database[card_id].get("Name"))	
-	player_self_damage(card_id,Cardlist.card_database[card_id].get("Name"))
+	var card_name = Cardlist.card_database[card_id].get("Name")
+	var card_mult = Cardlist.card_database[card_id].get("executionmult")
+	player_damage(card_id,card_name,card_mult)
+	player_shield(card_id,card_name,card_mult)
+	player_heal(card_id,card_name,card_mult)
+	player_draw(card_id,card_name,card_mult)	
+	player_self_damage(card_id,card_name,card_mult)
 	
 	
 	
-func player_damage(card_id,card_name):
+func player_damage(card_id,card_name,card_mult):
 	var played_card_damage = Cardlist.card_database[card_id].get("damage")
 	if played_card_damage != 0:
-		print(card_name," deals ", played_card_damage, " damage to the enemy")
+		for i in range(card_mult):
+			print(card_name," deals ", played_card_damage, " damage to the enemy")
 	
 
-func player_shield():
+func player_shield(card_id,card_name,card_mult):
 	var played_card_shield = Cardlist.card_database[card_id].get("shield")
 	if played_card_shield != 0:
-		print(card_name," gains the player ", played_card_shield, " shield")	
+		for i in range(card_mult):
+			print(card_name," gains the player ", played_card_shield, " shield")	
 	
-func player_heal():
+func player_heal(card_id,card_name,card_mult):
 	var played_card_heal = Cardlist.card_database[card_id].get("heal")
 	if played_card_heal != 0:
-		print(card_name," heals the player for ", played_card_shield, " health")	
+		for i in range(card_mult):
+			print(card_name," heals the player for ", played_card_heal, " health")	
 	
-func player_draw():
+func player_draw(card_id,card_name,card_mult):
 	var played_card_draw = Cardlist.card_database[card_id].get("draw")
 	if played_card_draw != 0:
-		print(card_name," drew the player ", played_card_draw, " cards")	
+		for i in range(card_mult):
+			print(card_name," drew the player ", played_card_draw, " cards")
+			draw_cards(played_card_draw)	
 	
-func player_self_damage():
+func player_self_damage(card_id,card_name,card_mult):
 	var played_card_self_damage = Cardlist.card_database[card_id].get("selfdamage")
 	if played_card_self_damage != 0:
-		print(card_name," deals ", played_card_self_damage, " damage to the player")	
+		for i in range(card_mult):
+			print(card_name," deals ", played_card_self_damage, " damage to the player")	
 	
-func get_hand_center(): -> Vector2
+func get_hand_center() -> Vector2:
 	if hand_sprites.is_empty():
 		return Vector2.ZERO
+
 	var first = hand_sprites[0].global_position
 	var last = hand_sprites[hand_sprites.size() - 1].global_position
 	return (first + last) / 2
