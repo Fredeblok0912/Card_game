@@ -6,29 +6,31 @@ func Card_played(ID) -> void:
 	
 	
 	
-func _ready():  
+	
+	
+func gamestart(): 
 	Cardlist.current_decklist.shuffle()
-	print(Cardlist.current_decklist)
+	draw_cards(3)
+	
 
-
-#Midlertid kode for at trække kort på input
-func _input(event):
-	if event.is_action_pressed("ui_up"): 
-		draw_cards(1)
-
-#Trækker N antal kort til hånden
+#Trækker N kort til hånden og 
 func draw_cards(n: int):
 	for i in range(n):
 		if Cardlist.current_decklist.size() > 0:
 			var card_id = Cardlist.current_decklist.pop_front()
 			Cardlist.hand_cards.append(card_id)
-			#display_card(card_id)
 			await get_tree().create_timer(0.3).timeout
 			add_card(card_id)
+		elif Cardlist.current_decklist.size() <= 0 && Cardlist.discard_pile.size() <= 0:
+			print("Deck and Discard Pile empty")
 		else:
-			#make set the drawpile to contain all cards in the discard pile and wipe the discard pile, then draw the missing cards
-			print("Deck is empty!")
-
+			Cardlist.current_decklist = Cardlist.discard_pile
+			Cardlist.discard_pile = []
+			var card_id = Cardlist.current_decklist.pop_front()
+			Cardlist.hand_cards.append(card_id)
+			await get_tree().create_timer(0.3).timeout
+			add_card(card_id)
+		
 #----------------------------------------------------------------------------
 #Cards in hand loading sprites
 
@@ -66,3 +68,19 @@ func _update_hand_positions() -> void:
 
 func card_played(ID):
 	print("played"+Cardlist.hand_cards[ID])
+
+
+
+
+
+
+
+
+
+
+
+
+#Midlertid kode for at trække kort på input
+func _input(event):
+	if event.is_action_pressed("ui_up"): 
+		draw_cards(1)
