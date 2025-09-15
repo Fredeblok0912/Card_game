@@ -14,6 +14,11 @@ config/name="Card_game"
 run/main_scene="uid://dk7bxyfwb45n0"
 config/features=PackedStringArray("4.4", "Forward Plus")
 
+[autoload]
+
+Cardlist="*res://Cardlist.gd"
+Game="*res://game.gd"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=3
