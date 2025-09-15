@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://d3ga24fd88bfi"]
+[gd_scene load_steps=9 format=3 uid="uid://cfcn333r5iqjg"]
 
 [ext_resource type="Script" uid="uid://lhlamou0ygmt" path="res://game.gd" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://bd08kuho0r3mb" path="res://Cardlist.gd" id="1_feb5d"]
+[ext_resource type="Script" uid="uid://i0rkma20x0j5" path="res://Gamecode.gd" id="3_feb5d"]
+[ext_resource type="PackedScene" uid="uid://ihjdbf3lqhh0" path="res://character.tscn" id="4_fc0e3"]
+[ext_resource type="Script" uid="uid://di04a0e3mofuf" path="res://player.gd" id="5_ryrav"]
+[ext_resource type="Script" uid="uid://cmn766he82vbq" path="res://Enemy1.gd" id="6_eow3j"]
+[ext_resource type="Script" uid="uid://c5s5jmgmth824" path="res://Enemy2.gd" id="7_eow3j"]
+[ext_resource type="Script" uid="uid://bkwp530evyem" path="res://Enemy3.gd" id="8_j5wjh"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_e2o6t")
@@ -11,3 +17,55 @@ script = ExtResource("1_feb5d")
 
 [node name="GameCamera" type="Camera2D" parent="."]
 position = Vector2(576, 0)
+
+[node name="Gamecode" type="Node2D" parent="."]
+script = ExtResource("3_feb5d")
+
+[node name="Character" parent="." instance=ExtResource("4_fc0e3")]
+
+[node name="Player" type="Node2D" parent="Character" node_paths=PackedStringArray("sprite", "health_bar")]
+script = ExtResource("5_ryrav")
+sprite = NodePath("Sprite2D")
+health_bar = NodePath("ProgressBar")
+metadata/_custom_type_script = "uid://di04a0e3mofuf"
+
+[node name="Sprite2D" type="Sprite2D" parent="Character/Player"]
+
+[node name="ProgressBar" type="ProgressBar" parent="Character/Player"]
+offset_right = 4.0
+offset_bottom = 27.0
+
+[node name="Enemy1" type="Node2D" parent="Character" node_paths=PackedStringArray("sprite", "health_bar")]
+script = ExtResource("6_eow3j")
+sprite = NodePath("Sprite2D")
+health_bar = NodePath("ProgressBar")
+metadata/_custom_type_script = "uid://cmn766he82vbq"
+
+[node name="Sprite2D" type="Sprite2D" parent="Character/Enemy1"]
+
+[node name="ProgressBar" type="ProgressBar" parent="Character/Enemy1"]
+offset_right = 4.0
+offset_bottom = 27.0
+
+[node name="Enemy2" type="Node2D" parent="Character" node_paths=PackedStringArray("sprite")]
+script = ExtResource("7_eow3j")
+sprite = NodePath("Sprite2D")
+metadata/_custom_type_script = "uid://c5s5jmgmth824"
+
+[node name="Sprite2D" type="Sprite2D" parent="Character/Enemy2"]
+
+[node name="ProgressBar" type="ProgressBar" parent="Character/Enemy2"]
+offset_right = 4.0
+offset_bottom = 27.0
+
+[node name="Enemy3" type="Node2D" parent="Character" node_paths=PackedStringArray("sprite")]
+script = ExtResource("8_j5wjh")
+sprite = NodePath("Sprite2D")
+metadata/_custom_type_script = "uid://bkwp530evyem"
+
+[node name="Sprite2D" type="Sprite2D" parent="Character/Enemy3"]
+
+[node name="ProgressBar" type="ProgressBar" parent="Character/Enemy3"]
+offset_top = -95.0
+offset_right = 4.0
+offset_bottom = 27.0
