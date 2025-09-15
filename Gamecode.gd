@@ -52,6 +52,7 @@ func add_card(card_id: int) -> void:
 	card.global_position = Vector2(-viewport_width, hand_y)
 	card.input_event.connect(_on_card_clicked.bind(card_id))
 	hand_sprites.append(card)
+	print("First card at:", hand_sprites[0].global_position)
 	_update_hand_positions()
 
 
@@ -73,6 +74,13 @@ func _on_card_clicked(viewport, event, shape_idx, card_id):
 		Cardlist.discard_pile.append(card_id)
 		print(Cardlist.discard_pile)
 
+	
+func get_hand_center() -> Vector2:
+	if hand_sprites.is_empty():
+		return Vector2.ZERO
+	var first = hand_sprites[0].global_position
+	var last = hand_sprites[hand_sprites.size() - 1].global_position
+	return (first + last) / 2		
 
 func _input(event):
 	if event.is_action_released("ui_down"):

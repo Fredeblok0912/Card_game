@@ -2,5 +2,5 @@ extends Character
 class_name Player
 
 
-func _ready():
-	hide_sprite()
+func _process(delta: float):
+	move_player()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cfcn333r5iqjg"]
+[gd_scene load_steps=10 format=3 uid="uid://cfcn333r5iqjg"]
 
 [ext_resource type="Script" uid="uid://lhlamou0ygmt" path="res://game.gd" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://bd08kuho0r3mb" path="res://Cardlist.gd" id="1_feb5d"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ihjdbf3lqhh0" path="res://character.tscn" id="4_fc0e3"]
 [ext_resource type="Script" uid="uid://di04a0e3mofuf" path="res://player.gd" id="5_ryrav"]
 [ext_resource type="Script" uid="uid://cmn766he82vbq" path="res://Enemy1.gd" id="6_eow3j"]
+[ext_resource type="Texture2D" uid="uid://c04dlj38bnf0d" path="res://Art/Cards/000 Cardback.png" id="6_vef74"]
 [ext_resource type="Script" uid="uid://c5s5jmgmth824" path="res://Enemy2.gd" id="7_eow3j"]
 [ext_resource type="Script" uid="uid://bkwp530evyem" path="res://Enemy3.gd" id="8_j5wjh"]
 
@@ -22,6 +23,9 @@ position = Vector2(576, 0)
 script = ExtResource("3_feb5d")
 
 [node name="Character" parent="." instance=ExtResource("4_fc0e3")]
+health = 100
+max_health = 100
+shield = 0
 
 [node name="Player" type="Node2D" parent="Character" node_paths=PackedStringArray("sprite", "health_bar")]
 script = ExtResource("5_ryrav")
@@ -30,6 +34,7 @@ health_bar = NodePath("ProgressBar")
 metadata/_custom_type_script = "uid://di04a0e3mofuf"
 
 [node name="Sprite2D" type="Sprite2D" parent="Character/Player"]
+texture = ExtResource("6_vef74")
 
 [node name="ProgressBar" type="ProgressBar" parent="Character/Player"]
 offset_right = 4.0
