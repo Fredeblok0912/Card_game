@@ -1,5 +1,6 @@
 extends Node2D
 class_name Character
+@onready var gamecode: Node = get_node("/root/Gamecode")
 
 @export var health: int = 100
 @export var max_health: int = 100
@@ -21,6 +22,11 @@ func set_health(value: int):
 
 func add_shield(value: int):
 	shield = value
+
+func move_player():
+	var center = gamecode.get_hand_center()
+	sprite.global_position = center + Vector2(-450,-450)
+	
 
 func _ready():
 	if not sprite and has_node("Sprite2D"):

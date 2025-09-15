@@ -56,6 +56,7 @@ func add_card(card_id: int) -> void:
 	card.input_event.connect(card_clicked.bind(card_id, card))
 
 	hand_sprites.append(card)
+	print("First card at:", hand_sprites[0].global_position)
 	_update_hand_positions()
 
 
@@ -83,6 +84,7 @@ func card_clicked(_viewport, event, _shape_idx, card_id, card_node):
 		remove_card(card_id, card_node)
 		print("Discard pile now:", Cardlist.discard_pile)
 
+<<<<<<< HEAD
 func remove_card(card_id: int, card_node: Area2D) -> void:
 	# Remove from hand_sprites (by reference)
 	var idx_in_sprites = hand_sprites.find(card_node)
