@@ -94,13 +94,14 @@ position = Vector2(576, 0)
 [node name="Character" parent="." instance=ExtResource("4_fc0e3")]
 
 [node name="Player" type="Node2D" parent="Character" node_paths=PackedStringArray("sprite", "health_bar")]
-visible = false
 script = ExtResource("5_ryrav")
 sprite = NodePath("Sprite2D")
 health_bar = NodePath("ProgressBar")
 
 [node name="Sprite2D" type="Sprite2D" parent="Character/Player"]
-scale = Vector2(2, 2)
+z_index = -1
+position = Vector2(227, -112)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_hve3p")
 
 [node name="ProgressBar" type="ProgressBar" parent="Character/Player"]
