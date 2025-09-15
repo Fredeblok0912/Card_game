@@ -112,7 +112,13 @@ func player_draw():
 func player_self_damage():
 	
 	
-func 
+func get_hand_center(): -> Vector2
+	if hand_sprites.is_empty():
+		return Vector2.ZERO
+	var first = hand_sprites[0].global_position
+	var last = hand_sprites[hand_sprites.size() - 1].global_position
+	return (first + last) / 2
+	
 
 func _input(event):
 	if event.is_action_released("ui_down"):
