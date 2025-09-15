@@ -14,6 +14,15 @@ func hide_sprite():
 func die():
 	queue_free()
 	
+func set_health(value: int):
+	health = clamp(value, 0, max_health)
+	if health_bar:
+		health_bar.value = health	
+
+func add_shield(value: int):
+	shield = value
+
 func _ready():
 	if not sprite and has_node("Sprite2D"):
 		sprite = $Sprite2D
+		
