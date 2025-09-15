@@ -3,5 +3,5 @@ class_name Enemy1
 
 
 
-#func _ready():
-	#hide_sprite()
+func _ready():
+	hide_sprite()

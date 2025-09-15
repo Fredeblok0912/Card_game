@@ -7,7 +7,7 @@ class_name Character
 @export var sprite: Sprite2D 
 @export var health_bar: ProgressBar
 		
-	
+# temporary 
 func hide_sprite():
 	sprite.hide()
 	
