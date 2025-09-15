@@ -8,11 +8,10 @@
 script = ExtResource("1_e2o6t")
 
 [node name="Cardlist" type="Node2D" parent="."]
-position = Vector2(-577, -1)
 script = ExtResource("1_feb5d")
 
 [node name="GameCamera" type="Camera2D" parent="."]
+position = Vector2(576, 0)
 
 [node name="Gamecode" type="Node2D" parent="."]
-position = Vector2(-578, 0)
 script = ExtResource("3_feb5d")
