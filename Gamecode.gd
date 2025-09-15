@@ -101,8 +101,6 @@ func card_played(card_id):
 	player_draw(card_id,card_name,card_mult)	
 	player_self_damage(card_id,card_name,card_mult)
 	
-	
-	
 func player_damage(card_id,card_name,card_mult):
 	var played_card_damage = Cardlist.card_database[card_id].get("damage")
 	if played_card_damage != 0:
@@ -143,7 +141,6 @@ func get_hand_center() -> Vector2:
 	var last = hand_sprites[hand_sprites.size() - 1].global_position
 	return (first + last) / 2
 	
-
 func _input(event):
 	if event.is_action_released("ui_down"):
 		draw_cards(1)
