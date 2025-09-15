@@ -56,7 +56,6 @@ func add_card(card_id: int) -> void:
 	card.input_event.connect(card_clicked.bind(card_id, card))
 
 	hand_sprites.append(card)
-	print("First card at:", hand_sprites[0].global_position)
 	_update_hand_positions()
 
 
@@ -84,7 +83,6 @@ func card_clicked(_viewport, event, _shape_idx, card_id, card_node):
 		remove_card(card_id, card_node)
 		print("Discard pile now:", Cardlist.discard_pile)
 
-<<<<<<< HEAD
 func remove_card(card_id: int, card_node: Area2D) -> void:
 	# Remove from hand_sprites (by reference)
 	var idx_in_sprites = hand_sprites.find(card_node)
@@ -98,17 +96,27 @@ func remove_card(card_id: int, card_node: Area2D) -> void:
 
 func card_played(card_id):
 	print("Card played ", card_id)
-=======
 	
-func get_hand_center() -> Vector2:
-	if hand_sprites.is_empty():
-		return Vector2.ZERO
-	var first = hand_sprites[0].global_position
-	var last = hand_sprites[hand_sprites.size() - 1].global_position
-	return (first + last) / 2		
->>>>>>> 51932aae740cafacd963ce3073b538b2bb126017
+func player_damage():
+	
+
+func player_shield():
+	
+	
+func player_heal():
+	
+	
+func player_draw():
+	
+	
+func player_self_damage():
+	
+	
+func 
 
 func _input(event):
 	if event.is_action_released("ui_down"):
 		draw_cards(1)
+	
+
 	
