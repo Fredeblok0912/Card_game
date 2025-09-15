@@ -30,39 +30,50 @@ func draw_cards(n: int):
 #----------------------------------------------------------------------------
 #Cards in hand loading sprites
 
-#array for the sprites in hand
-var hand_sprites: Array[Sprite2D] = [] 
-
-@export var card_spacing: float = 115.0		#spacing between cards in hand
-@export var hand_y: float = 230.0			#how high the cards are on screen
-@export var tween_duration: float = 0.35	#how long the card slide in takes
-@export var card_scale: float = 2.0			#how large the card sprites are
+var hand_sprites: Array = []
+var card_spacing := 115
+var hand_y := 230
+var tween_duration := 0.35
+var card_scale := 2
 
 func add_card(card_id: int) -> void:
+	var card := Area2D.new()
 	var card_sprite := Sprite2D.new()
 	card_sprite.texture = Cardlist.card_sprites_database[card_id]
-
 	card_sprite.scale = Vector2(card_scale, card_scale)
-	add_child(card_sprite)
+	card.add_child(card_sprite)
+	var collision := CollisionShape2D.new()
+	var shape := RectangleShape2D.new()
+	shape.size = card_sprite.texture.get_size() * card_sprite.scale
+	collision.shape = shape
+	card.add_child(collision)
+	add_child(card)
 	var viewport_width = get_viewport().get_visible_rect().size.x
-	card_sprite.global_position = Vector2(viewport_width, hand_y)
-	
-	hand_sprites.append(card_sprite)
+	card.global_position = Vector2(-viewport_width, hand_y)
+	card.input_event.connect(_on_card_clicked.bind(card_id))
+	hand_sprites.append(card)
 	_update_hand_positions()
+
 
 func _update_hand_positions() -> void:
 	var viewport_width = get_viewport().get_visible_rect().size.x
 	var total_width = (hand_sprites.size() - 1) * card_spacing
-	var start_x = viewport_width / 2 - total_width /2
-
+	var start_x = viewport_width / 2 - total_width / 2
 	for i in range(hand_sprites.size()):
-		var target_x = start_x + i * card_spacing
-		var target_pos = Vector2(target_x, hand_y)
-		var tween = create_tween()
-		tween.tween_property(hand_sprites[i], "global_position", target_pos, tween_duration).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+		var target_pos = Vector2(start_x + i * card_spacing, hand_y)
+		var tween := create_tween()
+		tween.tween_property(hand_sprites[i], "global_position", target_pos, tween_duration) \
+			.set_trans(Tween.TRANS_SINE) \
+			.set_ease(Tween.EASE_OUT)
 
 
-#Midlertid kode for at trække kort på input
+func _on_card_clicked(viewport, event, shape_idx, card_id):
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		print("Card clicked! ID:", card_id)
+		Cardlist.discard_pile.append(card_id)
+		print(Cardlist.discard_pile)
+
+
 func _input(event):
 	if event.is_action_released("ui_down"):
 		draw_cards(1)
