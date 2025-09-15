@@ -4,15 +4,10 @@ extends Node2D
 func Card_played(ID) -> void:
 	print(Cardlist.card_database[ID])
 	
-	
-	
-	
-	
 func gamestart(): 
 	Cardlist.current_decklist.shuffle()
 	draw_cards(3)
 	
-
 func draw_cards(n: int):
 	for i in range(n):
 		if Cardlist.current_decklist.size() > 0:
@@ -69,6 +64,8 @@ func _update_hand_positions() -> void:
 
 #Midlertid kode for at trække kort på input
 func _input(event):
-	if event.is_action_pressed("ui_down"): 
+	if event.is_action_released("ui_down"):
+		print("draw inputted")
+		print("INPUT fired from:", self.get_path())
 		draw_cards(1)
 	
