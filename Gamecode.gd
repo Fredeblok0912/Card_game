@@ -96,21 +96,39 @@ func remove_card(card_id: int, card_node: Area2D) -> void:
 
 func card_played(card_id):
 	print("Card played ", card_id)
+	player_damage(card_id,Cardlist.card_database[card_id].get("Name"))
+	player_shield(card_id,Cardlist.card_database[card_id].get("Name"))
+	player_heal(card_id,Cardlist.card_database[card_id].get("Name"))
+	player_draw(card_id,Cardlist.card_database[card_id].get("Name"))	
+	player_self_damage(card_id,Cardlist.card_database[card_id].get("Name"))
 	
-func player_damage():
+	
+	
+func player_damage(card_id,card_name):
+	var played_card_damage = Cardlist.card_database[card_id].get("damage")
+	if played_card_damage != 0:
+		print(card_name," deals ", played_card_damage, " damage to the enemy")
 	
 
 func player_shield():
-	
+	var played_card_shield = Cardlist.card_database[card_id].get("shield")
+	if played_card_shield != 0:
+		print(card_name," gains the player ", played_card_shield, " shield")	
 	
 func player_heal():
-	
+	var played_card_heal = Cardlist.card_database[card_id].get("heal")
+	if played_card_heal != 0:
+		print(card_name," heals the player for ", played_card_shield, " health")	
 	
 func player_draw():
-	
+	var played_card_draw = Cardlist.card_database[card_id].get("draw")
+	if played_card_draw != 0:
+		print(card_name," drew the player ", played_card_draw, " cards")	
 	
 func player_self_damage():
-	
+	var played_card_self_damage = Cardlist.card_database[card_id].get("selfdamage")
+	if played_card_self_damage != 0:
+		print(card_name," deals ", played_card_self_damage, " damage to the player")	
 	
 func get_hand_center(): -> Vector2
 	if hand_sprites.is_empty():
