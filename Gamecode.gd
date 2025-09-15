@@ -1,8 +1,6 @@
 extends Node2D
 
 
-func Card_played(ID) -> void:
-	print(Cardlist.card_database[ID])
 	
 func gamestart(): 
 	Cardlist.current_decklist.shuffle()
@@ -42,15 +40,21 @@ func add_card(card_id: int) -> void:
 	card_sprite.texture = Cardlist.card_sprites_database[card_id]
 	card_sprite.scale = Vector2(card_scale, card_scale)
 	card.add_child(card_sprite)
+
 	var collision := CollisionShape2D.new()
 	var shape := RectangleShape2D.new()
 	shape.size = card_sprite.texture.get_size() * card_sprite.scale
 	collision.shape = shape
 	card.add_child(collision)
+
 	add_child(card)
+
 	var viewport_width = get_viewport().get_visible_rect().size.x
 	card.global_position = Vector2(-viewport_width, hand_y)
-	card.input_event.connect(_on_card_clicked.bind(card_id))
+
+	# pass both card_id and the card node
+	card.input_event.connect(card_clicked.bind(card_id, card))
+
 	hand_sprites.append(card)
 	_update_hand_positions()
 
@@ -67,12 +71,31 @@ func _update_hand_positions() -> void:
 			.set_ease(Tween.EASE_OUT)
 
 
-func _on_card_clicked(viewport, event, shape_idx, card_id):
+func card_clicked(_viewport, event, _shape_idx, card_id, card_node):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		print("Card clicked! ID:", card_id)
+		card_played(card_id)
+		
+		# Find index in hand_sprites
+		var sprite_index = hand_sprites.find(card_node)
+		#move card_id to discard
 		Cardlist.discard_pile.append(card_id)
-		print(Cardlist.discard_pile)
+		#clear the played card from Cardlist.hand_cards and hand_sprites
+		remove_card(card_id, card_node)
+		print("Discard pile now:", Cardlist.discard_pile)
 
+func remove_card(card_id: int, card_node: Area2D) -> void:
+	# Remove from hand_sprites (by reference)
+	var idx_in_sprites = hand_sprites.find(card_node)
+	if idx_in_sprites != -1:
+		hand_sprites.remove_at(idx_in_sprites)
+		Cardlist.hand_cards.remove_at(idx_in_sprites)
+	#Free the node (removes sprite + collision too)
+	card_node.queue_free()
+	#Move remaining Cards to correct positions
+	_update_hand_positions()
+
+func card_played(card_id):
+	print("Card played ", card_id)
 
 func _input(event):
 	if event.is_action_released("ui_down"):

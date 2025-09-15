@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://lhlamou0ygmt" path="res://game.gd" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://bd08kuho0r3mb" path="res://Cardlist.gd" id="1_feb5d"]
-[ext_resource type="PackedScene" path="res://character.tscn" id="4_fc0e3"]
+[ext_resource type="PackedScene" uid="uid://c3xbw84xea4ft" path="res://character.tscn" id="4_fc0e3"]
 [ext_resource type="Script" path="res://player.gd" id="5_ryrav"]
 [ext_resource type="Script" path="res://Enemy1.gd" id="6_eow3j"]
 [ext_resource type="Script" path="res://Enemy2.gd" id="7_eow3j"]
