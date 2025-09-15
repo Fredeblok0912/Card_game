@@ -65,7 +65,5 @@ func _update_hand_positions() -> void:
 #Midlertid kode for at trække kort på input
 func _input(event):
 	if event.is_action_released("ui_down"):
-		print("draw inputted")
-		print("INPUT fired from:", self.get_path())
 		draw_cards(1)
 	
