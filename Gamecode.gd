@@ -66,19 +66,6 @@ func _update_hand_positions() -> void:
 		var tween = create_tween()
 		tween.tween_property(hand_sprites[i], "global_position", target_pos, tween_duration).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 
-func card_played(ID):
-	print("played"+Cardlist.hand_cards[ID])
-
-
-
-
-
-
-
-
-
-
-
 
 #Midlertid kode for at trække kort på input
 func _input(event):
