@@ -98,6 +98,15 @@ func remove_card(card_id: int, card_node: Area2D) -> void:
 
 func card_played(card_id):
 	print("Card played ", card_id)
+=======
+	
+func get_hand_center() -> Vector2:
+	if hand_sprites.is_empty():
+		return Vector2.ZERO
+	var first = hand_sprites[0].global_position
+	var last = hand_sprites[hand_sprites.size() - 1].global_position
+	return (first + last) / 2		
+>>>>>>> 51932aae740cafacd963ce3073b538b2bb126017
 
 func _input(event):
 	if event.is_action_released("ui_down"):
