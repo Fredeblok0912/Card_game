@@ -52,12 +52,13 @@ func display_cards():
 	var cards = weighted_randomizer_and_picker()
 	var spacing = 250
 	var start_x_value = -250
+	var cardscale = 3
 	
 	for i in range(cards.size()):
 		var card_id = cards[i]
 		var card_sprite := Sprite2D.new()
 		card_sprite.texture = Cardlist.card_sprites_database[card_id]
-		card_sprite.scale = Vector2(3,3)
+		card_sprite.scale = Vector2(cardscale,cardscale)
 
 		card_sprite.scale = Vector2(10,10)
 

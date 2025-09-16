@@ -33,7 +33,7 @@ func draw_cards(n: int):
 #Cards in hand loading sprites
 
 var hand_sprites: Array = []
-var card_spacing := 175
+var card_spacing := 235
 var hand_y := 300
 var tween_duration := 0.35
 var card_scale := 4
@@ -65,11 +65,18 @@ func add_card(card_id: int) -> void:
 
 func _update_hand_positions() -> void:
 	var viewport_width = get_viewport().get_visible_rect().size.x
-	var total_width = (hand_sprites.size() - 1) * card_spacing
-	var start_x = viewport_width / 2 - total_width / 2
-	for i in range(hand_sprites.size()):
-		var target_pos = Vector2(start_x + i * card_spacing, hand_y)
-		var tween := create_tween()
+	var n = hand_sprites.size()
+	if n == 0:
+		return
+
+	# span = distance between first and last card centers
+	var span = (n - 1) * card_spacing
+	var first_center_x = viewport_width * 0.5 - span * 0.5
+
+	for i in range(n):
+		var center_x = first_center_x + i * card_spacing
+		var target_pos = Vector2(center_x, hand_y)
+		var tween = create_tween()
 		tween.tween_property(hand_sprites[i], "global_position", target_pos, tween_duration) \
 			.set_trans(Tween.TRANS_SINE) \
 			.set_ease(Tween.EASE_OUT)
