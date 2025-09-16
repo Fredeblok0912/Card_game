@@ -15,13 +15,10 @@ func randomize_enemy():
 	return randi_range(1,1)
 
 func configure_enemy_healthbar(value):
-	var bar = $ProgressBar
+	var bar = $Enemy_health_bar
 	var max_health = 15 * difficulty_mod
 	bar.max_value = max_health
 
 func spawn_enemy_sprite(chosen_enemy):
 	enemy_sprites[chosen_enemy - 1].show()
 	sprite.visible = true
-	var health_bar = get_node("Character/Enemy/ProgressBar")
-	var health = 100
-	health_bar.max_value = health

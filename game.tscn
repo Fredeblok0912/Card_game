@@ -198,7 +198,7 @@ show_percentage = false
 
 [node name="Enemy" type="Node2D" parent="Character" node_paths=PackedStringArray("health_bar")]
 script = ExtResource("6_eow3j")
-health_bar = NodePath("ProgressBar")
+health_bar = NodePath("Enemy_health_bar")
 
 [node name="Slime_Sprites" type="AnimatedSprite2D" parent="Character/Enemy"]
 position = Vector2(1061, -107)
@@ -215,9 +215,12 @@ scale = Vector2(4, 4)
 position = Vector2(-137, 53)
 scale = Vector2(4, 4)
 
-[node name="ProgressBar" type="ProgressBar" parent="Character/Enemy"]
-offset_right = 4.0
-offset_bottom = 27.0
+[node name="Enemy_health_bar" type="ProgressBar" parent="Character/Enemy"]
+offset_left = 997.0
+offset_top = -256.0
+offset_right = 1157.0
+offset_bottom = -229.0
+show_percentage = false
 
 [node name="Animated Sprites" type="Node" parent="."]
 
@@ -235,6 +238,7 @@ scale = Vector2(4, 4)
 texture = ExtResource("13_lc2xo")
 
 [node name="Background_sprite" type="Sprite2D" parent="Animated Sprites"]
+visible = false
 z_index = -10
 position = Vector2(576, 0)
 scale = Vector2(4, 4)
