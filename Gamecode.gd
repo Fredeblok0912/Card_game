@@ -1,6 +1,6 @@
 extends Node2D
 
-
+var enemy_sprites = []
 
 var current_energy = 0 as int
 	
@@ -9,7 +9,11 @@ func gamestart():
 	Cardlist.current_decklist.shuffle()
 	draw_cards(3)
 	current_energy = 5
-	spawn_enemy(choose_enemy())
+	enemy_sprites = [
+		$Character/Enemy/Sprite2D1,
+		$Character/Enemy/Sprite2D2,
+		$Character/Enemy/Sprite2D3
+	]
 	
 	
 func draw_cards(n: int):
@@ -138,6 +142,7 @@ func player_self_damage(card_id,card_name,card_mult):
 func _input(event):
 	if event.is_action_released("ui_down"):
 		draw_cards(1)
+		spawn_enemy(choose_enemy())
 	if event.is_action_released("ui_up"):
 		current_energy = current_energy +1
 		
@@ -145,11 +150,10 @@ func choose_enemy():
 	return randi_range(1,3)
 
 func spawn_enemy(value):
-	var sprite = get_node("Character/Enemy/Sprite2D%d" % value)
-	sprite.visible = true
-	var health_bar = get_node("Character/Enemy/ProgressBar")
+	enemy_sprites[value - 1].show()
+	var bar = $Character/Enemy/ProggressBar
 	var health = 100
-	health_bar.max_value = health
+	bar.max_value = health
 	
 
 	
