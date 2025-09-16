@@ -1,8 +1,28 @@
 [gd_scene load_steps=2 format=3 uid="uid://c3xbw84xea4ft"]
 
-[ext_resource type="Script" uid="uid://xos4d1fevbex" path="res://character.gd" id="1_glpr6"]
+[sub_resource type="GDScript" id="GDScript_vu45j"]
+script/source = "extends Node2D
+#class_name Character
+#@onready var gamecode: Node = get_node(\"/root/Gamecode\")
+#
+#@export var health: int = 100
+#@export var max_health: int = 100
+#@export var shield: int = 0
+#@export var sprite: Sprite2D 
+#@export var health_bar: ProgressBar
+		#
+#
+	#
+#func set_health(value: int):
+	#health = clamp(value, 0, max_health)
+	#if health_bar:
+		#health_bar.value = health	
+#
+#func add_shield(value: int):
+	#shield = value
+"
 
 [node name="Character" type="Node2D"]
-script = ExtResource("1_glpr6")
+script = SubResource("GDScript_vu45j")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

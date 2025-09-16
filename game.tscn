@@ -1,8 +1,7 @@
-[gd_scene load_steps=39 format=3 uid="uid://dtcpvgfsi2cpv"]
+[gd_scene load_steps=42 format=3 uid="uid://dtcpvgfsi2cpv"]
 
 [ext_resource type="Script" uid="uid://lhlamou0ygmt" path="res://game.gd" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://bd08kuho0r3mb" path="res://Cardlist.gd" id="1_feb5d"]
-[ext_resource type="PackedScene" uid="uid://c3xbw84xea4ft" path="res://character.tscn" id="4_fc0e3"]
 [ext_resource type="Texture2D" uid="uid://dgy4k88yb6bgo" path="res://Art/gamer.png" id="5_hve3p"]
 [ext_resource type="Script" uid="uid://di04a0e3mofuf" path="res://player.gd" id="5_ryrav"]
 [ext_resource type="Script" uid="uid://d2x500dj2q6h5" path="res://Player_health_text.gd" id="6_boyg6"]
@@ -19,33 +18,11 @@
 [ext_resource type="Script" uid="uid://cym5fayah25hk" path="res://Energy Display.gd" id="10_lc2xo"]
 [ext_resource type="Texture2D" uid="uid://cm0lxsnak1foi" path="res://Art/sprite_slime_4.png" id="11_x5p1p"]
 [ext_resource type="Texture2D" uid="uid://ddkxwt4s50xj4" path="res://Art/sprite_slime_5.png" id="12_qhcbd"]
-[ext_resource type="Texture2D" uid="uid://c04dlj38bnf0d" path="res://Art/Cards/000 Cardback.png" id="13_lc2xo"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_f1jbl"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("7_rvswv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_boyg6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_e36ub")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_hb5m1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_x5p1p")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_qhcbd")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[ext_resource type="Texture2D" uid="uid://pi0csmqovqxk" path="res://sprite_zombie_0.png" id="19_e36ub"]
+[ext_resource type="Texture2D" uid="uid://c86bc1ote7wq4" path="res://sprite_zombie_1.png" id="20_hb5m1"]
+[ext_resource type="Script" uid="uid://vp51ded4iwdj" path="res://enemy_sprites.gd" id="21_hb5m1"]
+[ext_resource type="Script" uid="uid://cr38awxe7fkwr" path="res://Enemy_health_text.gd" id="22_qhcbd"]
+[ext_resource type="Script" uid="uid://crxyguefblvk5" path="res://enemy_shield_text.gd" id="23_f1jbl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_boyg6"]
 atlas = ExtResource("9_iotsf")
@@ -168,6 +145,43 @@ animations = [{
 "speed": 1.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_f1jbl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_rvswv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_boyg6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_e36ub")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_hb5m1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_x5p1p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_qhcbd")
+}],
+"loop": true,
+"name": &"Slime",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_e36ub")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_hb5m1")
+}],
+"loop": true,
+"name": &"Zombie",
+"speed": 5.0
+}]
+
 [node name="Game" type="Node2D"]
 script = ExtResource("1_e2o6t")
 
@@ -177,69 +191,9 @@ script = ExtResource("1_feb5d")
 [node name="GameCamera" type="Camera2D" parent="."]
 position = Vector2(576, 0)
 
-[node name="Character" parent="." instance=ExtResource("4_fc0e3")]
+[node name="Static+Animated Sprites" type="Node" parent="."]
 
-[node name="Player" type="Node2D" parent="Character"]
-script = ExtResource("5_ryrav")
-
-[node name="Sprite2D" type="Sprite2D" parent="Character/Player"]
-z_index = -1
-position = Vector2(227, -112)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("5_hve3p")
-
-[node name="ProgressBar" type="ProgressBar" parent="Character/Player"]
-offset_left = 138.0
-offset_top = -316.0
-offset_right = 308.0
-offset_bottom = -289.0
-step = 1.0
-fill_mode = 1
-show_percentage = false
-
-[node name="Health Text" type="RichTextLabel" parent="Character/Player"]
-offset_left = 100.0
-offset_top = -318.0
-offset_right = 152.0
-offset_bottom = -265.0
-script = ExtResource("6_boyg6")
-
-[node name="Shield Text" type="RichTextLabel" parent="Character/Player"]
-offset_left = 309.0
-offset_top = -318.0
-offset_right = 361.0
-offset_bottom = -265.0
-script = ExtResource("7_e36ub")
-
-[node name="Enemy" type="Node2D" parent="Character"]
-script = ExtResource("6_rvswv")
-metadata/_custom_type_script = "uid://xos4d1fevbex"
-
-[node name="Enemy_health_bar" type="ProgressBar" parent="Character/Enemy"]
-offset_left = 997.0
-offset_top = -256.0
-offset_right = 1157.0
-offset_bottom = -229.0
-show_percentage = false
-
-[node name="Slime_Sprites" type="AnimatedSprite2D" parent="Character/Enemy"]
-position = Vector2(1061, -107)
-scale = Vector2(4, 4)
-sprite_frames = SubResource("SpriteFrames_f1jbl")
-frame = 1
-frame_progress = 0.13737
-
-[node name="Sprite2D3" type="Sprite2D" parent="Character/Enemy"]
-position = Vector2(-137, 53)
-scale = Vector2(4, 4)
-
-[node name="Sprite2D2" type="Sprite2D" parent="Character/Enemy"]
-position = Vector2(-137, 53)
-scale = Vector2(4, 4)
-
-[node name="Animated Sprites" type="Node" parent="."]
-
-[node name="Energy_sprite" type="AnimatedSprite2D" parent="Animated Sprites"]
+[node name="Energy_sprite" type="AnimatedSprite2D" parent="Static+Animated Sprites"]
 z_index = -2
 position = Vector2(-197, 58)
 scale = Vector2(4, 4)
@@ -247,18 +201,13 @@ sprite_frames = SubResource("SpriteFrames_vaj68")
 animation = &"new_animation"
 script = ExtResource("10_lc2xo")
 
-[node name="Sprite2D" type="Sprite2D" parent="Animated Sprites"]
-position = Vector2(-212, 310)
-scale = Vector2(4, 4)
-texture = ExtResource("13_lc2xo")
-
-[node name="Background_sprite" type="Sprite2D" parent="Animated Sprites"]
+[node name="Background_sprite" type="Sprite2D" parent="Static+Animated Sprites"]
 z_index = -10
 position = Vector2(576, 0)
 scale = Vector2(4, 4)
 texture = ExtResource("10_iotsf")
 
-[node name="Old Background" type="AnimatedSprite2D" parent="Animated Sprites"]
+[node name="Old Background" type="AnimatedSprite2D" parent="Static+Animated Sprites"]
 visible = false
 z_index = -10
 position = Vector2(576, -6.67572e-06)
@@ -266,3 +215,65 @@ scale = Vector2(3.33333, 3.33333)
 sprite_frames = SubResource("SpriteFrames_boyg6")
 frame_progress = 0.104202
 script = ExtResource("9_vef74")
+
+[node name="Characters" type="Node" parent="."]
+
+[node name="Player" type="Node2D" parent="Characters"]
+script = ExtResource("5_ryrav")
+
+[node name="Sprite2D" type="Sprite2D" parent="Characters/Player"]
+z_index = -1
+position = Vector2(227, -112)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_hve3p")
+
+[node name="Health Text" type="RichTextLabel" parent="Characters/Player"]
+offset_left = 100.0
+offset_top = -318.0
+offset_right = 152.0
+offset_bottom = -265.0
+script = ExtResource("6_boyg6")
+metadata/_edit_use_anchors_ = true
+
+[node name="Shield Text" type="RichTextLabel" parent="Characters/Player"]
+offset_left = 309.0
+offset_top = -318.0
+offset_right = 361.0
+offset_bottom = -265.0
+script = ExtResource("7_e36ub")
+metadata/_edit_use_anchors_ = true
+
+[node name="Enemy" type="Node2D" parent="Characters"]
+script = ExtResource("6_rvswv")
+
+[node name="Enemy_sprites" type="AnimatedSprite2D" parent="Characters/Enemy"]
+position = Vector2(1061, -107)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_f1jbl")
+animation = &"Zombie"
+script = ExtResource("21_hb5m1")
+
+[node name="Enemy Health Text" type="RichTextLabel" parent="Characters/Enemy"]
+offset_left = 957.0
+offset_top = -318.0
+offset_right = 1009.0
+offset_bottom = -265.0
+script = ExtResource("22_qhcbd")
+metadata/_edit_use_anchors_ = true
+
+[node name="Enemy Shield Text" type="RichTextLabel" parent="Characters/Enemy"]
+offset_left = 1166.0
+offset_top = -318.0
+offset_right = 1218.0
+offset_bottom = -265.0
+script = ExtResource("23_f1jbl")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="."]
+offset_left = 1257.0
+offset_top = 8.0
+offset_right = 1450.0
+offset_bottom = 76.0
+text = "End Turn"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

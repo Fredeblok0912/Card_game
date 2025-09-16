@@ -21,6 +21,7 @@ Game="*res://game.gd"
 Gamecode="*res://Gamecode.gd"
 Enemycode="*res://Enemycode.gd"
 player="*res://player.gd"
+EnemySprites="*res://enemy_sprites.gd"
 
 [display]
 

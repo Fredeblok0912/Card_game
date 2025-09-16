@@ -9,6 +9,8 @@ func gamestart():
 	Cardlist.current_decklist.shuffle()
 	draw_cards(3)
 	current_energy = 5
+	Enemycode.prepare_action()
+	Enemycode.load_enemy()
 	
 	
 func draw_cards(n: int):
@@ -68,10 +70,8 @@ func _update_hand_positions() -> void:
 	var n = hand_sprites.size()
 	if n == 0:
 		return
-
-	# span = distance between first and last card centers
 	var span = (n - 1) * card_spacing
-	var first_center_x = viewport_width * 0.5 - span * 0.5
+	var first_center_x = viewport_width * 0.5 - span * 0.5 - 385
 
 	for i in range(n):
 		var center_x = first_center_x + i * card_spacing
@@ -90,10 +90,10 @@ func card_clicked(_viewport, event, _shape_idx, card_id, card_node):
 			print(current_energy)
 			card_played(card_id)
 			Cardlist.discard_pile.append(card_id)
-			remove_card(card_id, card_node)
+			remove_card_on_click(card_id, card_node)
 		else:
 			print("card too expensive")
-func remove_card(card_id: int, card_node: Area2D) -> void:
+func remove_card_on_click(card_id: int, card_node: Area2D) -> void:
 	var index = hand_sprites.find(card_node)
 	hand_sprites.remove_at(index)
 	Cardlist.hand_cards.remove_at(index)
@@ -114,7 +114,7 @@ func player_damage(card_id,card_name,card_mult):
 	if played_card_damage != 0:
 		for i in range(card_mult):
 			print(card_name," deals ", played_card_damage, " damage to the enemy")
-	
+			Enemycode.enemy_take_damage(played_card_damage)
 
 func player_shield(card_id,card_name,card_mult):
 	var played_card_shield = Cardlist.card_database[card_id].get("shield")
@@ -128,7 +128,7 @@ func player_heal(card_id,card_name,card_mult):
 	if played_card_heal != 0:
 		for i in range(card_mult):
 			print(card_name," heals the player for ", played_card_heal, " health")
-			player.take_damage(-(played_card_heal))
+			player.regain_health(played_card_heal)
 	
 func player_draw(card_id,card_name,card_mult):
 	var played_card_draw = Cardlist.card_database[card_id].get("draw")
