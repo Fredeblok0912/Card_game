@@ -127,7 +127,7 @@ func player_heal(card_id,card_name,card_mult):
 	if played_card_heal != 0:
 		for i in range(card_mult):
 			print(card_name," heals the player for ", played_card_heal, " health")
-			take_damage(-(played_card_heal))
+			player.take_damage(-(played_card_heal))
 	
 func player_draw(card_id,card_name,card_mult):
 	var played_card_draw = Cardlist.card_database[card_id].get("draw")
@@ -141,7 +141,7 @@ func player_self_damage(card_id,card_name,card_mult):
 	if played_card_self_damage != 0:
 		for i in range(card_mult):
 			print(card_name," deals ", played_card_self_damage, " damage to the player")
-			take_damage(played_card_self_damage)
+			player.take_damage(played_card_self_damage)
 	
 func _input(event):
 	if event.is_action_released("ui_down"):
