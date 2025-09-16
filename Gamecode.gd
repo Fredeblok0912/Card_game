@@ -1,7 +1,9 @@
 extends Node2D
 
 var current_energy = 0 as int
-	
+
+func _process(delta: float):
+	if 
 	
 func gamestart(): 
 	Cardlist.current_decklist.shuffle()
