@@ -1,12 +1,13 @@
-[gd_scene load_steps=38 format=3 uid="uid://dtcpvgfsi2cpv"]
+[gd_scene load_steps=39 format=3 uid="uid://dtcpvgfsi2cpv"]
 
 [ext_resource type="Script" uid="uid://lhlamou0ygmt" path="res://game.gd" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://bd08kuho0r3mb" path="res://Cardlist.gd" id="1_feb5d"]
 [ext_resource type="PackedScene" uid="uid://c3xbw84xea4ft" path="res://character.tscn" id="4_fc0e3"]
 [ext_resource type="Texture2D" uid="uid://dgy4k88yb6bgo" path="res://Art/gamer.png" id="5_hve3p"]
 [ext_resource type="Script" uid="uid://di04a0e3mofuf" path="res://player.gd" id="5_ryrav"]
-[ext_resource type="Script" uid="uid://d2x500dj2q6h5" path="res://Player health display.gd" id="6_boyg6"]
+[ext_resource type="Script" uid="uid://d2x500dj2q6h5" path="res://Player_health_text.gd" id="6_boyg6"]
 [ext_resource type="Script" uid="uid://dufw5d6hqw3tp" path="res://Enemycode.gd" id="6_rvswv"]
+[ext_resource type="Script" uid="uid://pyr46ojdf4dq" path="res://Player_shield_text.gd" id="7_e36ub"]
 [ext_resource type="Texture2D" uid="uid://crl0y32to1lqf" path="res://Art/sprite_slime_0.png" id="7_rvswv"]
 [ext_resource type="Texture2D" uid="uid://cybwbfetkel4y" path="res://Art/sprite_slime_1.png" id="8_boyg6"]
 [ext_resource type="Texture2D" uid="uid://klblt1tf7rb0" path="res://Art/Background.png" id="8_vef74"]
@@ -196,12 +197,19 @@ step = 1.0
 fill_mode = 1
 show_percentage = false
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Character/Player"]
+[node name="Health Text" type="RichTextLabel" parent="Character/Player"]
 offset_left = 100.0
 offset_top = -318.0
 offset_right = 152.0
 offset_bottom = -265.0
 script = ExtResource("6_boyg6")
+
+[node name="Shield Text" type="RichTextLabel" parent="Character/Player"]
+offset_left = 100.0
+offset_top = -318.0
+offset_right = 152.0
+offset_bottom = -265.0
+script = ExtResource("7_e36ub")
 
 [node name="Enemy" type="Node2D" parent="Character"]
 script = ExtResource("6_rvswv")

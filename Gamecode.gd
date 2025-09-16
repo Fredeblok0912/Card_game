@@ -120,7 +120,8 @@ func player_shield(card_id,card_name,card_mult):
 	var played_card_shield = Cardlist.card_database[card_id].get("shield")
 	if played_card_shield != 0:
 		for i in range(card_mult):
-			print(card_name," gains the player ", played_card_shield, " shield")	
+			print(card_name," gains the player ", played_card_shield, " shield")
+			player.gain_shield(played_card_shield)
 	
 func player_heal(card_id,card_name,card_mult):
 	var played_card_heal = Cardlist.card_database[card_id].get("heal")
