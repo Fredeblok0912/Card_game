@@ -3,6 +3,7 @@ extends Node2D
 func _ready():
 	display_cards()
 
+<<<<<<< Updated upstream
 func weighted_randomizer_and_picker()-> Array:
 	var basic_cards = []
 	var common_cards = []
@@ -46,6 +47,8 @@ func weighted_randomizer_and_picker()-> Array:
 			chosen_cards.append(card)
 	return chosen_cards		
 		
+=======
+>>>>>>> Stashed changes
 func display_cards():
 	var cards_id =Cardlist.card_database.keys()
 	cards_id.shuffle()
@@ -57,6 +60,7 @@ func display_cards():
 		var card_id = cards_id[i]
 		var card_sprite := Sprite2D.new()
 		card_sprite.texture = Cardlist.card_sprites_database[card_id]
+<<<<<<< Updated upstream
 
 		card_sprite.scale = Vector2(3,3)
 
@@ -64,5 +68,8 @@ func display_cards():
 
 		card_sprite.scale = Vector2(10,10)
 
+=======
+		card_sprite.scale = Vector2(10,10)
+>>>>>>> Stashed changes
 		card_sprite.position = Vector2(start_x_value + i * spacing, 0)
 		$Cards.add_child(card_sprite)
