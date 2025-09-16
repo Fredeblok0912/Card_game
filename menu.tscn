@@ -7,7 +7,6 @@
 [ext_resource type="Script" uid="uid://ci3kfbyim8dem" path="res://Background animation.gd" id="5_kk3ma"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_l48gv"]
-load_path = "res://.godot/imported/Buttons_pressed1.png-9e56975a12a299ac12b0a1c9247e2043.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ecwwl"]
 animations = [{
