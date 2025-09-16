@@ -1,6 +1,6 @@
 extends AnimatedSprite2D
 
-@export var fps: float = 0  # frames per second
+@export var fps: float = 0.5  # frames per second
 
 func _ready() -> void:
 	play("default")

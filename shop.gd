@@ -58,5 +58,14 @@ func display_cards():
 		var card_sprite := Sprite2D.new()
 		card_sprite.texture = Cardlist.card_sprites_database[card_id]
 		card_sprite.scale = Vector2(3,3)
+
+		card_sprite.scale = Vector2(10,10)
+
+		card_sprite.scale = Vector2(10,10)
+
+		card_sprite.scale = Vector2(10,10)
+
+		card_sprite.scale = Vector2(10,10)
+
 		card_sprite.position = Vector2(start_x_value + i * spacing, 0)
 		$Cards.add_child(card_sprite)
