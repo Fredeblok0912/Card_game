@@ -1,4 +1,4 @@
-extends Character
+extends Node2D
 class_name Enemy
 
 func _turn():

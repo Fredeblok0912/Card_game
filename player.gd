@@ -1,6 +1,5 @@
 extends Character
 class_name Player
 
-
-#func _process(delta: float):
-	#move_player()
+var player_health = 25
+var player_max_health = 25

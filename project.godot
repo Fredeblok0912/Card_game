@@ -20,6 +20,7 @@ Cardlist="*res://Cardlist.gd"
 Game="*res://game.gd"
 Gamecode="*res://Gamecode.gd"
 Enemycode="*res://Enemycode.gd"
+player="*res://player.gd"
 
 [display]
 
