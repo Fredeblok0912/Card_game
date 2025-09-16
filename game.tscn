@@ -203,7 +203,6 @@ offset_bottom = 27.0
 [node name="Animated Sprites" type="Node" parent="."]
 
 [node name="Background_sprite" type="AnimatedSprite2D" parent="Animated Sprites"]
-visible = false
 z_index = -10
 position = Vector2(576, -6.67572e-06)
 scale = Vector2(3.33333, 3.33333)
@@ -224,3 +223,5 @@ script = ExtResource("10_lc2xo")
 position = Vector2(-212, 310)
 scale = Vector2(4, 4)
 texture = ExtResource("13_lc2xo")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Animated Sprites"]
