@@ -138,6 +138,8 @@ func _input(event):
 		draw_cards(1)
 	if event.is_action_released("ui_up"):
 		current_energy = current_energy +1
-		
+
+func enter_shop():
+	get_tree().change_scene_to_file("res://shop.tscn")
 
 	
