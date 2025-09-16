@@ -194,10 +194,13 @@ offset_right = 308.0
 offset_bottom = -289.0
 step = 1.0
 fill_mode = 1
+show_percentage = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Character/Player"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 100.0
+offset_top = -318.0
+offset_right = 152.0
+offset_bottom = -265.0
 script = ExtResource("6_boyg6")
 
 [node name="Enemy" type="Node2D" parent="Character"]

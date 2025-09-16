@@ -1,4 +1,4 @@
-#extends Node2D
+extends Node2D
 #class_name Character
 #@onready var gamecode: Node = get_node("/root/Gamecode")
 #

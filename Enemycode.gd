@@ -6,7 +6,6 @@ func _turn():
 	
 func _attack(value):
 	var player = $Player
-	player.set_health(player. - value)
 	
 func _choose():
 	pass
