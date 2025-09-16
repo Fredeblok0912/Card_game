@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dk7bxyfwb45n0"]
+[gd_scene load_steps=21 format=3 uid="uid://dk7bxyfwb45n0"]
 
 [ext_resource type="Script" uid="uid://62cnljsoecj2" path="res://menu.gd" id="1_ouk20"]
 [ext_resource type="Texture2D" uid="uid://dnmx0jymtp3ru" path="res://Art/Buttons3.png" id="2_ytr4m"]
@@ -101,6 +101,8 @@ animations = [{
 "speed": 1.0
 }]
 
+[sub_resource type="CanvasTexture" id="CanvasTexture_ytr4m"]
+
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_ouk20")
 
@@ -132,10 +134,10 @@ sprite_frames = SubResource("SpriteFrames_ecwwl")
 frame_progress = 0.800219
 
 [node name="Label" type="Label" parent="."]
-offset_left = 770.0
-offset_top = 170.0
-offset_right = 1141.0
-offset_bottom = 265.0
+offset_left = 768.0
+offset_top = 166.0
+offset_right = 1139.0
+offset_bottom = 261.0
 text = "Card Game"
 label_settings = SubResource("LabelSettings_ytr4m")
 
@@ -155,5 +157,15 @@ sprite_frames = SubResource("SpriteFrames_nrnbx")
 script = ExtResource("5_kk3ma")
 fps = 0.5
 
+[node name="Button3" type="Button" parent="."]
+offset_left = 827.0
+offset_top = 840.0
+offset_right = 884.0
+offset_bottom = 871.0
+scale = Vector2(2.7855, 2.90761)
+text = "SHOP"
+icon = SubResource("CanvasTexture_ytr4m")
+
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
