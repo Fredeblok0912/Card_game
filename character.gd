@@ -22,12 +22,3 @@ func set_health(value: int):
 
 func add_shield(value: int):
 	shield = value
-
-
-	
-
-func _ready():
-	if not sprite and has_node("Sprite2D"):
-		sprite = $Sprite2D
-	sprite.hide()
-		

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c3xbw84xea4ft" path="res://character.tscn" id="4_fc0e3"]
 [ext_resource type="Texture2D" uid="uid://dgy4k88yb6bgo" path="res://Art/gamer.png" id="5_hve3p"]
 [ext_resource type="Script" uid="uid://di04a0e3mofuf" path="res://player.gd" id="5_ryrav"]
-[ext_resource type="Script" uid="uid://cmn766he82vbq" path="res://Enemy1.gd" id="6_eow3j"]
+[ext_resource type="Script" uid="uid://cmn766he82vbq" path="res://Enemycode.gd" id="6_eow3j"]
 [ext_resource type="Texture2D" uid="uid://crl0y32to1lqf" path="res://Art/sprite_slime_0.png" id="7_rvswv"]
 [ext_resource type="Texture2D" uid="uid://cybwbfetkel4y" path="res://Art/sprite_slime_1.png" id="8_boyg6"]
 [ext_resource type="Texture2D" uid="uid://klblt1tf7rb0" path="res://Art/Background.png" id="8_vef74"]
@@ -196,24 +196,28 @@ offset_bottom = -289.0
 fill_mode = 1
 show_percentage = false
 
-[node name="Enemy" type="Node2D" parent="Character" node_paths=PackedStringArray("sprite", "health_bar")]
-visible = false
+[node name="Enemy" type="Node2D" parent="Character" node_paths=PackedStringArray("health_bar")]
 script = ExtResource("6_eow3j")
-sprite = NodePath("Sprite2D1")
 health_bar = NodePath("ProgressBar")
 
-[node name="Sprite2D1" type="Sprite2D" parent="Character/Enemy"]
+[node name="Slime_Sprites" type="AnimatedSprite2D" parent="Character/Enemy"]
+position = Vector2(1061, -107)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_f1jbl")
+frame = 1
+frame_progress = 0.13737
 
 [node name="Sprite2D2" type="Sprite2D" parent="Character/Enemy"]
+position = Vector2(-137, 53)
+scale = Vector2(4, 4)
 
 [node name="Sprite2D3" type="Sprite2D" parent="Character/Enemy"]
+position = Vector2(-137, 53)
+scale = Vector2(4, 4)
 
 [node name="ProgressBar" type="ProgressBar" parent="Character/Enemy"]
 offset_right = 4.0
 offset_bottom = 27.0
-
-[node name="Slime_Sprites" type="AnimatedSprite2D" parent="Character/Enemy"]
-sprite_frames = SubResource("SpriteFrames_f1jbl")
 
 [node name="Animated Sprites" type="Node" parent="."]
 
