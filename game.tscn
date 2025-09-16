@@ -205,9 +205,9 @@ offset_bottom = -265.0
 script = ExtResource("6_boyg6")
 
 [node name="Shield Text" type="RichTextLabel" parent="Character/Player"]
-offset_left = 100.0
+offset_left = 309.0
 offset_top = -318.0
-offset_right = 152.0
+offset_right = 361.0
 offset_bottom = -265.0
 script = ExtResource("7_e36ub")
 
