@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dtcpvgfsi2cpv"]
+[gd_scene load_steps=31 format=3 uid="uid://dtcpvgfsi2cpv"]
 
 [ext_resource type="Script" uid="uid://lhlamou0ygmt" path="res://game.gd" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://bd08kuho0r3mb" path="res://Cardlist.gd" id="1_feb5d"]
@@ -12,56 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://b1oej3uky7a3r" path="res://Art/Energi Battery Sprite-Sheet.png" id="9_iotsf"]
 [ext_resource type="Script" uid="uid://ci3kfbyim8dem" path="res://Background animation.gd" id="9_vef74"]
 [ext_resource type="Script" uid="uid://cym5fayah25hk" path="res://Energy Display.gd" id="10_lc2xo"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_boyg6"]
-atlas = ExtResource("9_iotsf")
-region = Rect2(0, 0, 34, 10)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e36ub"]
-atlas = ExtResource("9_iotsf")
-region = Rect2(34, 0, 34, 10)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hb5m1"]
-atlas = ExtResource("9_iotsf")
-region = Rect2(68, 0, 34, 10)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x5p1p"]
-atlas = ExtResource("9_iotsf")
-region = Rect2(102, 0, 34, 10)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qhcbd"]
-atlas = ExtResource("9_iotsf")
-region = Rect2(136, 0, 34, 10)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f1jbl"]
-atlas = ExtResource("9_iotsf")
-region = Rect2(170, 0, 34, 10)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_vaj68"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_boyg6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e36ub")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hb5m1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_x5p1p")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qhcbd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_f1jbl")
-}],
-"loop": true,
-"name": &"new_animation",
-"speed": 5.0
-}]
+[ext_resource type="Texture2D" uid="uid://c04dlj38bnf0d" path="res://Art/Cards/000 Cardback.png" id="13_lc2xo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hve3p"]
 atlas = ExtResource("8_vef74")
@@ -134,6 +85,56 @@ animations = [{
 "speed": 1.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_boyg6"]
+atlas = ExtResource("9_iotsf")
+region = Rect2(0, 0, 68, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e36ub"]
+atlas = ExtResource("9_iotsf")
+region = Rect2(68, 0, 68, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hb5m1"]
+atlas = ExtResource("9_iotsf")
+region = Rect2(136, 0, 68, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5p1p"]
+atlas = ExtResource("9_iotsf")
+region = Rect2(204, 0, 68, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhcbd"]
+atlas = ExtResource("9_iotsf")
+region = Rect2(272, 0, 68, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1jbl"]
+atlas = ExtResource("9_iotsf")
+region = Rect2(340, 0, 68, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vaj68"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_boyg6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e36ub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hb5m1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x5p1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhcbd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1jbl")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
 [node name="Game" type="Node2D"]
 script = ExtResource("1_e2o6t")
 
@@ -199,20 +200,27 @@ offset_top = -95.0
 offset_right = 4.0
 offset_bottom = 27.0
 
-[node name="Energy_sprite" type="AnimatedSprite2D" parent="Character"]
-z_index = -2
-position = Vector2(832, 94)
-scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_vaj68")
-animation = &"new_animation"
-script = ExtResource("10_lc2xo")
+[node name="Animated Sprites" type="Node" parent="."]
 
-[node name="Background_sprite" type="AnimatedSprite2D" parent="."]
+[node name="Background_sprite" type="AnimatedSprite2D" parent="Animated Sprites"]
 visible = false
 z_index = -10
-position = Vector2(576, 0)
-scale = Vector2(2, 2)
+position = Vector2(576, -6.67572e-06)
+scale = Vector2(3.33333, 3.33333)
 sprite_frames = SubResource("SpriteFrames_boyg6")
 frame_progress = 0.104202
 script = ExtResource("9_vef74")
 fps = 0.5
+
+[node name="Energy_sprite" type="AnimatedSprite2D" parent="Animated Sprites"]
+z_index = -2
+position = Vector2(-197, 58)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_vaj68")
+animation = &"new_animation"
+script = ExtResource("10_lc2xo")
+
+[node name="Sprite2D" type="Sprite2D" parent="Animated Sprites"]
+position = Vector2(-212, 310)
+scale = Vector2(4, 4)
+texture = ExtResource("13_lc2xo")

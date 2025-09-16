@@ -33,9 +33,9 @@ func draw_cards(n: int):
 
 var hand_sprites: Array = []
 var card_spacing := 175
-var hand_y := 180
+var hand_y := 300
 var tween_duration := 0.35
-var card_scale := 3
+var card_scale := 4
 
 func add_card(card_id: int) -> void:
 	var card := Area2D.new()
@@ -144,6 +144,9 @@ func player_self_damage(card_id,card_name,card_mult):
 func _input(event):
 	if event.is_action_released("ui_down"):
 		draw_cards(1)
+	if event.is_action_released("ui_up"):
+		current_energy = current_energy +1
+
 	
 
 	
