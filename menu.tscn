@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dk7bxyfwb45n0"]
+[gd_scene load_steps=20 format=3 uid="uid://dk7bxyfwb45n0"]
 
 [ext_resource type="Script" uid="uid://62cnljsoecj2" path="res://menu.gd" id="1_ouk20"]
 [ext_resource type="Texture2D" uid="uid://dnmx0jymtp3ru" path="res://Art/Buttons3.png" id="2_ytr4m"]
@@ -22,6 +22,13 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ytr4m"]
+line_spacing = 6.0
+font_size = 69
+
+[sub_resource type="LabelSettings" id="LabelSettings_l48gv"]
+font_size = 30
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hve3p"]
 atlas = ExtResource("4_ecwwl")
@@ -125,18 +132,20 @@ sprite_frames = SubResource("SpriteFrames_ecwwl")
 frame_progress = 0.800219
 
 [node name="Label" type="Label" parent="."]
-offset_left = 933.0
-offset_top = 394.0
-offset_right = 1019.0
-offset_bottom = 417.0
+offset_left = 770.0
+offset_top = 170.0
+offset_right = 1141.0
+offset_bottom = 265.0
 text = "Card Game"
+label_settings = SubResource("LabelSettings_ytr4m")
 
 [node name="Label2" type="Label" parent="."]
-offset_left = 903.0
-offset_top = 438.0
-offset_right = 1059.0
-offset_bottom = 461.0
+offset_left = 805.0
+offset_top = 269.0
+offset_right = 1096.0
+offset_bottom = 311.0
 text = "The Game, The Card"
+label_settings = SubResource("LabelSettings_l48gv")
 
 [node name="Background_sprite" type="AnimatedSprite2D" parent="."]
 z_index = -10
