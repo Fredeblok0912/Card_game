@@ -22,7 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://c86bc1ote7wq4" path="res://sprite_zombie_1.png" id="20_hb5m1"]
 [ext_resource type="Script" uid="uid://vp51ded4iwdj" path="res://enemy_sprites.gd" id="21_hb5m1"]
 [ext_resource type="Script" uid="uid://cr38awxe7fkwr" path="res://Enemy_health_text.gd" id="22_qhcbd"]
-[ext_resource type="Script" uid="uid://crxyguefblvk5" path="res://enemy_shield_text.gd" id="23_f1jbl"]
+[ext_resource type="Script" uid="uid://crxyguefblvk5" path="res://Enemy_shield_text.gd" id="23_f1jbl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_boyg6"]
 atlas = ExtResource("9_iotsf")
