@@ -240,7 +240,6 @@ scale = Vector2(4, 4)
 texture = ExtResource("13_lc2xo")
 
 [node name="Background_sprite" type="Sprite2D" parent="Animated Sprites"]
-visible = false
 z_index = -10
 position = Vector2(576, 0)
 scale = Vector2(4, 4)
