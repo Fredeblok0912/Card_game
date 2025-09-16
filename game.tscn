@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dtcpvgfsi2cpv"]
+[gd_scene load_steps=37 format=3 uid="uid://dtcpvgfsi2cpv"]
 
 [ext_resource type="Script" uid="uid://lhlamou0ygmt" path="res://game.gd" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://bd08kuho0r3mb" path="res://Cardlist.gd" id="1_feb5d"]
@@ -6,12 +6,44 @@
 [ext_resource type="Texture2D" uid="uid://dgy4k88yb6bgo" path="res://Art/gamer.png" id="5_hve3p"]
 [ext_resource type="Script" uid="uid://di04a0e3mofuf" path="res://player.gd" id="5_ryrav"]
 [ext_resource type="Script" uid="uid://cmn766he82vbq" path="res://Enemy1.gd" id="6_eow3j"]
+[ext_resource type="Texture2D" uid="uid://crl0y32to1lqf" path="res://Art/sprite_slime_0.png" id="7_rvswv"]
+[ext_resource type="Texture2D" uid="uid://cybwbfetkel4y" path="res://Art/sprite_slime_1.png" id="8_boyg6"]
 [ext_resource type="Texture2D" uid="uid://klblt1tf7rb0" path="res://Art/Background.png" id="8_vef74"]
+[ext_resource type="Texture2D" uid="uid://bwcb4cqba8iyv" path="res://Art/sprite_slime_2.png" id="9_e36ub"]
 [ext_resource type="Texture2D" uid="uid://b1oej3uky7a3r" path="res://Art/Energi Battery Sprite-Sheet.png" id="9_iotsf"]
 [ext_resource type="Script" uid="uid://ci3kfbyim8dem" path="res://Background animation.gd" id="9_vef74"]
+[ext_resource type="Texture2D" uid="uid://blxof6n6yhd70" path="res://Art/sprite_slime_3.png" id="10_hb5m1"]
 [ext_resource type="Texture2D" uid="uid://cuw4r2qipmmvx" path="res://Art/image.png" id="10_iotsf"]
 [ext_resource type="Script" uid="uid://cym5fayah25hk" path="res://Energy Display.gd" id="10_lc2xo"]
+[ext_resource type="Texture2D" uid="uid://cm0lxsnak1foi" path="res://Art/sprite_slime_4.png" id="11_x5p1p"]
+[ext_resource type="Texture2D" uid="uid://ddkxwt4s50xj4" path="res://Art/sprite_slime_5.png" id="12_qhcbd"]
 [ext_resource type="Texture2D" uid="uid://c04dlj38bnf0d" path="res://Art/Cards/000 Cardback.png" id="13_lc2xo"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f1jbl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_rvswv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_boyg6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_e36ub")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_hb5m1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_x5p1p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_qhcbd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_boyg6"]
 atlas = ExtResource("9_iotsf")
@@ -179,6 +211,9 @@ health_bar = NodePath("ProgressBar")
 [node name="ProgressBar" type="ProgressBar" parent="Character/Enemy"]
 offset_right = 4.0
 offset_bottom = 27.0
+
+[node name="Slime_Sprites" type="AnimatedSprite2D" parent="Character/Enemy"]
+sprite_frames = SubResource("SpriteFrames_f1jbl")
 
 [node name="Animated Sprites" type="Node" parent="."]
 
