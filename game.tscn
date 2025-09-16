@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dtcpvgfsi2cpv"]
+[gd_scene load_steps=30 format=3 uid="uid://dtcpvgfsi2cpv"]
 
 [ext_resource type="Script" uid="uid://lhlamou0ygmt" path="res://game.gd" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://bd08kuho0r3mb" path="res://Cardlist.gd" id="1_feb5d"]
@@ -9,7 +9,59 @@
 [ext_resource type="Script" uid="uid://c5s5jmgmth824" path="res://Enemy2.gd" id="7_eow3j"]
 [ext_resource type="Script" uid="uid://bkwp530evyem" path="res://Enemy3.gd" id="8_j5wjh"]
 [ext_resource type="Texture2D" uid="uid://klblt1tf7rb0" path="res://Art/Background.png" id="8_vef74"]
+[ext_resource type="Texture2D" uid="uid://b1oej3uky7a3r" path="res://Art/Energi Battery Sprite-Sheet.png" id="9_iotsf"]
 [ext_resource type="Script" uid="uid://ci3kfbyim8dem" path="res://Background animation.gd" id="9_vef74"]
+[ext_resource type="Script" uid="uid://cym5fayah25hk" path="res://Energy Display.gd" id="10_lc2xo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_boyg6"]
+atlas = ExtResource("9_iotsf")
+region = Rect2(0, 0, 24, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e36ub"]
+atlas = ExtResource("9_iotsf")
+region = Rect2(24, 0, 24, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hb5m1"]
+atlas = ExtResource("9_iotsf")
+region = Rect2(48, 0, 24, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5p1p"]
+atlas = ExtResource("9_iotsf")
+region = Rect2(72, 0, 24, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhcbd"]
+atlas = ExtResource("9_iotsf")
+region = Rect2(96, 0, 24, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1jbl"]
+atlas = ExtResource("9_iotsf")
+region = Rect2(120, 0, 24, 7)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vaj68"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_boyg6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e36ub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hb5m1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x5p1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhcbd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1jbl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hve3p"]
 atlas = ExtResource("8_vef74")
@@ -146,6 +198,13 @@ sprite = NodePath("Sprite2D")
 offset_top = -95.0
 offset_right = 4.0
 offset_bottom = 27.0
+
+[node name="Energy_sprite" type="AnimatedSprite2D" parent="Character"]
+z_index = -2
+position = Vector2(830, 124)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_vaj68")
+script = ExtResource("10_lc2xo")
 
 [node name="Background_sprite" type="AnimatedSprite2D" parent="."]
 visible = false

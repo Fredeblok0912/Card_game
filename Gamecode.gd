@@ -86,13 +86,10 @@ func card_clicked(_viewport, event, _shape_idx, card_id, card_node):
 		else:
 			print("card too expensive")
 func remove_card(card_id: int, card_node: Area2D) -> void:
-	# Remove from hand_sprites (by reference)
 	var index = hand_sprites.find(card_node)
 	hand_sprites.remove_at(index)
 	Cardlist.hand_cards.remove_at(index)
-	#Free the node (removes sprite + collision too)
 	card_node.queue_free()
-	#Move remaining Cards to correct positions
 	_update_hand_positions()
 
 func card_played(card_id):
