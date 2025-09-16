@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dtcpvgfsi2cpv"]
+[gd_scene load_steps=29 format=3 uid="uid://dtcpvgfsi2cpv"]
 
 [ext_resource type="Script" uid="uid://lhlamou0ygmt" path="res://game.gd" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://bd08kuho0r3mb" path="res://Cardlist.gd" id="1_feb5d"]
@@ -6,8 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://dgy4k88yb6bgo" path="res://Art/gamer.png" id="5_hve3p"]
 [ext_resource type="Script" uid="uid://di04a0e3mofuf" path="res://player.gd" id="5_ryrav"]
 [ext_resource type="Script" uid="uid://cmn766he82vbq" path="res://Enemy1.gd" id="6_eow3j"]
-[ext_resource type="Script" uid="uid://c5s5jmgmth824" path="res://Enemy2.gd" id="7_eow3j"]
-[ext_resource type="Script" uid="uid://bkwp530evyem" path="res://Enemy3.gd" id="8_j5wjh"]
 [ext_resource type="Texture2D" uid="uid://klblt1tf7rb0" path="res://Art/Background.png" id="8_vef74"]
 [ext_resource type="Texture2D" uid="uid://b1oej3uky7a3r" path="res://Art/Energi Battery Sprite-Sheet.png" id="9_iotsf"]
 [ext_resource type="Script" uid="uid://ci3kfbyim8dem" path="res://Background animation.gd" id="9_vef74"]
@@ -165,40 +163,21 @@ offset_bottom = -289.0
 fill_mode = 1
 show_percentage = false
 
-[node name="Enemy1" type="Node2D" parent="Character" node_paths=PackedStringArray("sprite", "health_bar")]
+[node name="Enemy" type="Node2D" parent="Character" node_paths=PackedStringArray("sprite", "health_bar")]
 visible = false
 script = ExtResource("6_eow3j")
 sprite = NodePath("Sprite2D")
 health_bar = NodePath("ProgressBar")
 
-[node name="Sprite2D" type="Sprite2D" parent="Character/Enemy1"]
+[node name="Sprite2D" type="Sprite2D" parent="Character/Enemy"]
 
-[node name="ProgressBar" type="ProgressBar" parent="Character/Enemy1"]
+[node name="ProgressBar" type="ProgressBar" parent="Character/Enemy"]
 offset_right = 4.0
 offset_bottom = 27.0
 
-[node name="Enemy2" type="Node2D" parent="Character" node_paths=PackedStringArray("sprite")]
-visible = false
-script = ExtResource("7_eow3j")
-sprite = NodePath("Sprite2D")
+[node name="Sprite2D2" type="Sprite2D" parent="Character/Enemy"]
 
-[node name="Sprite2D" type="Sprite2D" parent="Character/Enemy2"]
-
-[node name="ProgressBar" type="ProgressBar" parent="Character/Enemy2"]
-offset_right = 4.0
-offset_bottom = 27.0
-
-[node name="Enemy3" type="Node2D" parent="Character" node_paths=PackedStringArray("sprite")]
-visible = false
-script = ExtResource("8_j5wjh")
-sprite = NodePath("Sprite2D")
-
-[node name="Sprite2D" type="Sprite2D" parent="Character/Enemy3"]
-
-[node name="ProgressBar" type="ProgressBar" parent="Character/Enemy3"]
-offset_top = -95.0
-offset_right = 4.0
-offset_bottom = 27.0
+[node name="Sprite2D3" type="Sprite2D" parent="Character/Enemy"]
 
 [node name="Animated Sprites" type="Node" parent="."]
 

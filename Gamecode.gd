@@ -1,7 +1,7 @@
 extends Node2D
 
 
-	
+
 var current_energy = 0 as int
 	
 	
@@ -132,14 +132,6 @@ func player_self_damage(card_id,card_name,card_mult):
 	if played_card_self_damage != 0:
 		for i in range(card_mult):
 			print(card_name," deals ", played_card_self_damage, " damage to the player")	
-	
-#func get_hand_center() -> Vector2:
-	#if hand_sprites.is_empty():
-		#return Vector2.ZERO
-#
-	#var first = hand_sprites[0].global_position
-	#var last = hand_sprites[hand_sprites.size() - 1].global_position
-	#return (first + last) / 2
 	
 func _input(event):
 	if event.is_action_released("ui_down"):
