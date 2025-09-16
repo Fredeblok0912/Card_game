@@ -166,18 +166,18 @@ show_percentage = false
 [node name="Enemy" type="Node2D" parent="Character" node_paths=PackedStringArray("sprite", "health_bar")]
 visible = false
 script = ExtResource("6_eow3j")
-sprite = NodePath("Sprite2D")
+sprite = NodePath("Sprite2D1")
 health_bar = NodePath("ProgressBar")
 
-[node name="Sprite2D" type="Sprite2D" parent="Character/Enemy"]
-
-[node name="ProgressBar" type="ProgressBar" parent="Character/Enemy"]
-offset_right = 4.0
-offset_bottom = 27.0
+[node name="Sprite2D1" type="Sprite2D" parent="Character/Enemy"]
 
 [node name="Sprite2D2" type="Sprite2D" parent="Character/Enemy"]
 
 [node name="Sprite2D3" type="Sprite2D" parent="Character/Enemy"]
+
+[node name="ProgressBar" type="ProgressBar" parent="Character/Enemy"]
+offset_right = 4.0
+offset_bottom = 27.0
 
 [node name="Animated Sprites" type="Node" parent="."]
 

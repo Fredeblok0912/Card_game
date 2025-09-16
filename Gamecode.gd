@@ -138,7 +138,17 @@ func _input(event):
 		draw_cards(1)
 	if event.is_action_released("ui_up"):
 		current_energy = current_energy +1
+		
+func choose_enemy():
+	return randi_range(1,3)
 
+func spawn_enemy():
+	var value = choose_enemy()
+	var sprite = get_node("Character/Enemy/Sprite2D%d" % value)
+	sprite.show()
+	var health_bar = get_node("Character/Enemy/ProgressBar")
+	var health = 100
+	health_bar.max_value = health
 	
 
 	
