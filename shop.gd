@@ -21,40 +21,40 @@ func weighted_randomizer_and_picker()-> Array:
 			3:
 				rare_cards.append(card_id)
 	var rarity_dick = {
-		0: 0.0,
-		1: 0.5,
-		2: 0.7,
-		3: 0.95,
+		0:{"rarity": 0.0},
+		1:{"rarity": 0.2},
+		2: {"rarity": 0.7},
+		3: {"rarity": 0.95},
 	}
 	for i in range(3):
 		var number = randf()
-		if number < rarity_dick["0"]:
-			basic_cards.shuffle()
-			var card = basic_cards[0]
+		if number > rarity_dick[3]["rarity"]:
+			rare_cards.shuffle()
+			var card = rare_cards[0]
 			chosen_cards.append(card)
-		if number < rarity_dick["1"]:
-			common_cards.shuffle()
-			var card = common_cards[0]
-			chosen_cards.append(card)
-		if number < rarity_dick["2"]:
+		elif  number > rarity_dick[2]["rarity"]:
 			uncommon_cards.shuffle()
 			var card = uncommon_cards[0]
 			chosen_cards.append(card)
-		if number < rarity_dick["3"]:
-			rare_cards.shuffle()
-			var card = rare_cards[0]
+		elif number > rarity_dick[1]["rarity"]:
+			common_cards.shuffle()
+			var card = common_cards[0]
+			chosen_cards.append(card)
+		elif number > rarity_dick[0]["rarity"]:
+			basic_cards.shuffle()
+			var card = basic_cards[0]
 			chosen_cards.append(card)
 	return chosen_cards		
 		
 func display_cards():
 	var cards_id =Cardlist.card_database.keys()
 	cards_id.shuffle()
-	var cards = cards_id.slice(0,3)
+	var cards = weighted_randomizer_and_picker()
 	var spacing = 250
 	var start_x_value = -250
 	
 	for i in range(cards.size()):
-		var card_id = cards_id[i]
+		var card_id = cards[i]
 		var card_sprite := Sprite2D.new()
 		card_sprite.texture = Cardlist.card_sprites_database[card_id]
 		card_sprite.scale = Vector2(3,3)
