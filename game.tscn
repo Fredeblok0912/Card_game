@@ -1,61 +1,23 @@
-[gd_scene load_steps=30 format=3 uid="uid://dtcpvgfsi2cpv"]
+[gd_scene load_steps=37 format=3 uid="uid://dtcpvgfsi2cpv"]
 
 [ext_resource type="Script" uid="uid://lhlamou0ygmt" path="res://game.gd" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://bd08kuho0r3mb" path="res://Cardlist.gd" id="1_feb5d"]
 [ext_resource type="PackedScene" uid="uid://c3xbw84xea4ft" path="res://character.tscn" id="4_fc0e3"]
 [ext_resource type="Texture2D" uid="uid://dgy4k88yb6bgo" path="res://Art/gamer.png" id="5_hve3p"]
 [ext_resource type="Script" uid="uid://di04a0e3mofuf" path="res://player.gd" id="5_ryrav"]
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
-=======
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
-=======
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
-=======
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
 [ext_resource type="Texture2D" uid="uid://crl0y32to1lqf" path="res://Art/sprite_slime_0.png" id="7_rvswv"]
 [ext_resource type="Texture2D" uid="uid://cybwbfetkel4y" path="res://Art/sprite_slime_1.png" id="8_boyg6"]
->>>>>>> 31d7c0d2b890d68e4f9e7cf7684c1060da10879d
 [ext_resource type="Texture2D" uid="uid://klblt1tf7rb0" path="res://Art/Background.png" id="8_vef74"]
+[ext_resource type="Texture2D" uid="uid://bwcb4cqba8iyv" path="res://Art/sprite_slime_2.png" id="9_e36ub"]
 [ext_resource type="Texture2D" uid="uid://b1oej3uky7a3r" path="res://Art/Energi Battery Sprite-Sheet.png" id="9_iotsf"]
 [ext_resource type="Script" uid="uid://ci3kfbyim8dem" path="res://Background animation.gd" id="9_vef74"]
+[ext_resource type="Texture2D" uid="uid://blxof6n6yhd70" path="res://Art/sprite_slime_3.png" id="10_hb5m1"]
 [ext_resource type="Texture2D" uid="uid://cuw4r2qipmmvx" path="res://Art/image.png" id="10_iotsf"]
 [ext_resource type="Script" uid="uid://cym5fayah25hk" path="res://Energy Display.gd" id="10_lc2xo"]
-[ext_resource type="PackedScene" uid="uid://d4b7ursh017s0" path="res://Enemycode.tscn" id="12_iotsf"]
+[ext_resource type="Texture2D" uid="uid://cm0lxsnak1foi" path="res://Art/sprite_slime_4.png" id="11_x5p1p"]
+[ext_resource type="Texture2D" uid="uid://ddkxwt4s50xj4" path="res://Art/sprite_slime_5.png" id="12_qhcbd"]
 [ext_resource type="Texture2D" uid="uid://c04dlj38bnf0d" path="res://Art/Cards/000 Cardback.png" id="13_lc2xo"]
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
-=======
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
-=======
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
-=======
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
 [sub_resource type="GDScript" id="GDScript_e8heu"]
 script/source = "extends Node2D
 "
@@ -86,7 +48,6 @@ animations = [{
 "speed": 5.0
 }]
 
->>>>>>> 31d7c0d2b890d68e4f9e7cf7684c1060da10879d
 [sub_resource type="AtlasTexture" id="AtlasTexture_boyg6"]
 atlas = ExtResource("9_iotsf")
 region = Rect2(0, 0, 68, 20)
@@ -238,26 +199,6 @@ offset_bottom = -289.0
 fill_mode = 1
 show_percentage = false
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
-=======
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
-=======
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
-=======
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
 [node name="Enemy" type="Node2D" parent="Character"]
 script = SubResource("GDScript_e8heu")
 
@@ -283,7 +224,6 @@ offset_right = 1157.0
 offset_bottom = -229.0
 show_percentage = false
 
->>>>>>> 31d7c0d2b890d68e4f9e7cf7684c1060da10879d
 [node name="Animated Sprites" type="Node" parent="."]
 
 [node name="Energy_sprite" type="AnimatedSprite2D" parent="Animated Sprites"]
@@ -314,6 +254,3 @@ scale = Vector2(3.33333, 3.33333)
 sprite_frames = SubResource("SpriteFrames_boyg6")
 frame_progress = 0.104202
 script = ExtResource("9_vef74")
-fps = 0.5
-
-[node name="Enemies" parent="." instance=ExtResource("12_iotsf")]
