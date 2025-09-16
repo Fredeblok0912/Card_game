@@ -2,9 +2,13 @@ extends Node2D
 
 
 	
+var current_energy = 0 as int
+	
+	
 func gamestart(): 
 	Cardlist.current_decklist.shuffle()
 	draw_cards(3)
+	current_energy = 5
 	
 func draw_cards(n: int):
 	for i in range(n):
@@ -72,28 +76,27 @@ func _update_hand_positions() -> void:
 
 func card_clicked(_viewport, event, _shape_idx, card_id, card_node):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		card_played(card_id)
-		
-		# Find index in hand_sprites
-		var sprite_index = hand_sprites.find(card_node)
-		#move card_id to discard
-		Cardlist.discard_pile.append(card_id)
-		#clear the played card from Cardlist.hand_cards and hand_sprites
-		remove_card(card_id, card_node)
-
+		var cardcost = Cardlist.card_database[card_id].get("cost")
+		if not cardcost > current_energy:
+			current_energy = current_energy - cardcost
+			print(current_energy)
+			card_played(card_id)
+			Cardlist.discard_pile.append(card_id)
+			remove_card(card_id, card_node)
+		else:
+			print("card too expensive")
 func remove_card(card_id: int, card_node: Area2D) -> void:
 	# Remove from hand_sprites (by reference)
-	var idx_in_sprites = hand_sprites.find(card_node)
-	if idx_in_sprites != -1:
-		hand_sprites.remove_at(idx_in_sprites)
-		Cardlist.hand_cards.remove_at(idx_in_sprites)
+	var index = hand_sprites.find(card_node)
+	hand_sprites.remove_at(index)
+	Cardlist.hand_cards.remove_at(index)
 	#Free the node (removes sprite + collision too)
 	card_node.queue_free()
 	#Move remaining Cards to correct positions
 	_update_hand_positions()
 
 func card_played(card_id):
-	var card_name = Cardlist.card_database[card_id].get("Name")
+	var card_name = Cardlist.card_database[card_id].get("name")
 	var card_mult = Cardlist.card_database[card_id].get("executionmult")
 	player_damage(card_id,card_name,card_mult)
 	player_shield(card_id,card_name,card_mult)
@@ -133,13 +136,13 @@ func player_self_damage(card_id,card_name,card_mult):
 		for i in range(card_mult):
 			print(card_name," deals ", played_card_self_damage, " damage to the player")	
 	
-func get_hand_center() -> Vector2:
-	if hand_sprites.is_empty():
-		return Vector2.ZERO
-
-	var first = hand_sprites[0].global_position
-	var last = hand_sprites[hand_sprites.size() - 1].global_position
-	return (first + last) / 2
+#func get_hand_center() -> Vector2:
+	#if hand_sprites.is_empty():
+		#return Vector2.ZERO
+#
+	#var first = hand_sprites[0].global_position
+	#var last = hand_sprites[hand_sprites.size() - 1].global_position
+	#return (first + last) / 2
 	
 func _input(event):
 	if event.is_action_released("ui_down"):

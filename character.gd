@@ -23,9 +23,9 @@ func set_health(value: int):
 func add_shield(value: int):
 	shield = value
 
-func move_player():
-	var center = gamecode.get_hand_center()
-	sprite.global_position = center + Vector2(-450,-450)
+#func move_player():
+	#var center = gamecode.get_hand_center()
+	#sprite.global_position = center + Vector2(-450,-450)
 	
 
 func _ready():
