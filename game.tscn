@@ -15,27 +15,27 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_boyg6"]
 atlas = ExtResource("9_iotsf")
-region = Rect2(0, 0, 24, 7)
+region = Rect2(0, 0, 34, 10)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e36ub"]
 atlas = ExtResource("9_iotsf")
-region = Rect2(24, 0, 24, 7)
+region = Rect2(34, 0, 34, 10)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hb5m1"]
 atlas = ExtResource("9_iotsf")
-region = Rect2(48, 0, 24, 7)
+region = Rect2(68, 0, 34, 10)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x5p1p"]
 atlas = ExtResource("9_iotsf")
-region = Rect2(72, 0, 24, 7)
+region = Rect2(102, 0, 34, 10)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhcbd"]
 atlas = ExtResource("9_iotsf")
-region = Rect2(96, 0, 24, 7)
+region = Rect2(136, 0, 34, 10)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f1jbl"]
 atlas = ExtResource("9_iotsf")
-region = Rect2(120, 0, 24, 7)
+region = Rect2(170, 0, 34, 10)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vaj68"]
 animations = [{
@@ -59,7 +59,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_f1jbl")
 }],
 "loop": true,
-"name": &"default",
+"name": &"new_animation",
 "speed": 5.0
 }]
 
@@ -201,9 +201,10 @@ offset_bottom = 27.0
 
 [node name="Energy_sprite" type="AnimatedSprite2D" parent="Character"]
 z_index = -2
-position = Vector2(830, 124)
-scale = Vector2(2, 2)
+position = Vector2(832, 94)
+scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_vaj68")
+animation = &"new_animation"
 script = ExtResource("10_lc2xo")
 
 [node name="Background_sprite" type="AnimatedSprite2D" parent="."]

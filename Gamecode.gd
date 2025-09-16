@@ -32,10 +32,10 @@ func draw_cards(n: int):
 #Cards in hand loading sprites
 
 var hand_sprites: Array = []
-var card_spacing := 115
-var hand_y := 230
+var card_spacing := 175
+var hand_y := 180
 var tween_duration := 0.35
-var card_scale := 2
+var card_scale := 3
 
 func add_card(card_id: int) -> void:
 	var card := Area2D.new()
