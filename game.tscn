@@ -196,31 +196,31 @@ offset_bottom = -289.0
 fill_mode = 1
 show_percentage = false
 
-[node name="Character" type="Node2D" parent="Character"]
+[node name="Enemy" type="Node2D" parent="Character"]
 script = ExtResource("6_rvswv")
 metadata/_custom_type_script = "uid://xos4d1fevbex"
 
-[node name="Slime_Sprites" type="AnimatedSprite2D" parent="Character/Character"]
+[node name="Enemy_health_bar" type="ProgressBar" parent="Character/Enemy"]
+offset_left = 997.0
+offset_top = -256.0
+offset_right = 1157.0
+offset_bottom = -229.0
+show_percentage = false
+
+[node name="Slime_Sprites" type="AnimatedSprite2D" parent="Character/Enemy"]
 position = Vector2(1061, -107)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_f1jbl")
 frame = 1
 frame_progress = 0.13737
 
-[node name="Sprite2D2" type="Sprite2D" parent="Character/Character"]
+[node name="Sprite2D3" type="Sprite2D" parent="Character/Enemy"]
 position = Vector2(-137, 53)
 scale = Vector2(4, 4)
 
-[node name="Sprite2D3" type="Sprite2D" parent="Character/Character"]
+[node name="Sprite2D2" type="Sprite2D" parent="Character/Enemy"]
 position = Vector2(-137, 53)
 scale = Vector2(4, 4)
-
-[node name="Enemy_health_bar" type="ProgressBar" parent="Character/Character"]
-offset_left = 997.0
-offset_top = -256.0
-offset_right = 1157.0
-offset_bottom = -229.0
-show_percentage = false
 
 [node name="Animated Sprites" type="Node" parent="."]
 
