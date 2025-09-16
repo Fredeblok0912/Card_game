@@ -9,6 +9,8 @@ func gamestart():
 	Cardlist.current_decklist.shuffle()
 	draw_cards(3)
 	current_energy = 5
+	spawn_enemy(choose_enemy())
+	
 	
 func draw_cards(n: int):
 	for i in range(n):
@@ -142,10 +144,9 @@ func _input(event):
 func choose_enemy():
 	return randi_range(1,3)
 
-func spawn_enemy():
-	var value = choose_enemy()
+func spawn_enemy(value):
 	var sprite = get_node("Character/Enemy/Sprite2D%d" % value)
-	sprite.show()
+	sprite.visible = true
 	var health_bar = get_node("Character/Enemy/ProgressBar")
 	var health = 100
 	health_bar.max_value = health
