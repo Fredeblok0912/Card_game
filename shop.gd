@@ -4,6 +4,7 @@ func _ready():
 	display_cards()
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 func weighted_randomizer_and_picker()-> Array:
 	var basic_cards = []
 	var common_cards = []
@@ -49,6 +50,8 @@ func weighted_randomizer_and_picker()-> Array:
 		
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 func display_cards():
 	var cards_id =Cardlist.card_database.keys()
 	cards_id.shuffle()
@@ -61,7 +64,11 @@ func display_cards():
 		var card_sprite := Sprite2D.new()
 		card_sprite.texture = Cardlist.card_sprites_database[card_id]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 		card_sprite.scale = Vector2(3,3)
+=======
+		card_sprite.scale = Vector2(10,10)
+>>>>>>> Stashed changes
 =======
 		card_sprite.scale = Vector2(10,10)
 >>>>>>> Stashed changes
