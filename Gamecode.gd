@@ -7,7 +7,6 @@ func gamestart():
 	Cardlist.current_decklist.shuffle()
 	draw_cards(3)
 	current_energy = 5
-	Enemycode.spawn_enemy()
 	
 	
 func draw_cards(n: int):
