@@ -94,11 +94,11 @@ func card_clicked(_viewport, event, _shape_idx, card_id, card_node):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		var cardcost = Cardlist.card_database[card_id].get("cost")
 		if not cardcost > current_energy:
-			current_energy = current_energy - cardcost
 #			print(current_energy)
 			card_played(card_id)
 			Cardlist.discard_pile.append(card_id)
 			remove_card_on_click(card_id, card_node)
+			current_energy = current_energy - cardcost
 		else:
 			print("card too expensive")
 func remove_card_on_click(card_id: int, card_node: Area2D) -> void:
