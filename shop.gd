@@ -37,7 +37,7 @@ func weighted_randomizer_and_picker()-> Array:
 	var rarity_dick = {
 		1:{"rarity": 0.0},
 		2: {"rarity": 0.65},
-		3: {"rarity": 0.80},
+		3: {"rarity": 0.95},
 	}
 	for i in range(3):
 		var number = randf()
