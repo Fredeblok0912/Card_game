@@ -1,6 +1,7 @@
 extends Node
 
-var x_cost = Gamecode.current_energy as int#x cost spends all of the remaining energy
+@onready var gamecode = get_node("/root/Gamecode")
+@onready var x_cost = gamecode.current_energy as int#x cost spends all of the remaining energy
 # Kort Database som en dictionary
 # cost = the amount of energy the card costs
 # damage = how much damage the card deals to the enemy
