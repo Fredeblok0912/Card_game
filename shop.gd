@@ -84,14 +84,10 @@ func display_cards():
 		var sprite_size = card_sprite.texture.get_size() * card_sprite.scale 
 
 		var price_label := Label.new()
-<<<<<<< HEAD
 		var rarity = Cardlist.card_database[card_id]["rarity"]
 		var price = rarity_price[rarity]["price"]
 		price_label.text = str(price)
-=======
-		price_label.text = ("")
 		price_label.text = str(rarity_price[Cardlist.card_database[card_id]["rarity"]].get("price"),"$")
->>>>>>> e5993eeddd3bef12e9f27501c10ed1c9a9a50b9d
 		price_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		price_label.size_flags_horizontal = Control.SIZE_FILL
 		price_label.size = Vector2(sprite_size.x, 20)# grrr jeg fucking hader positionering
@@ -102,7 +98,7 @@ func display_cards():
 
 
 		card.input_event.connect(func(_viewport, event, _shape_idx):
-			if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT and player.money > Cardlist.card_database[card_id].get("cost"):
+			if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT and player.money > int(Cardlist.card_database[card_id].get("cost")):
 				print("Bought: ", card_id)
 				buy_cards(card_id, rarity_price[Cardlist.card_database[card_id]["rarity"]].get("price"))
 				card.queue_free()
