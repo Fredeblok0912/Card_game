@@ -55,7 +55,7 @@ func enemy_regain_health(amount):
 func prepare_action():
 	chosen_move = randi_range(0,3)
 	enemy_database[loaded_enemy]["moves"][chosen_move]
-	print(enemy_database[loaded_enemy]["moves"][chosen_move])
+#	print(enemy_database[loaded_enemy]["moves"][chosen_move])
 	#display the prepared action to the player using Enemy_intent_display
 	
 func action():

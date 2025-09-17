@@ -6,8 +6,9 @@ func _process(delta: float):
 	pass
 	
 func gamestart(): 
-	Cardlist.current_decklist = Cardlist.decklist
-	Cardlist.hand_cards = []
+	Cardlist.current_decklist = Cardlist.decklist.duplicate()
+	Cardlist.discard_pile.clear()
+	clear_hand()
 	_update_hand_positions()
 	Cardlist.current_decklist.shuffle()
 	draw_cards(3)
@@ -26,15 +27,18 @@ func draw_cards(n: int):
 		elif Cardlist.current_decklist.size() <= 0 && Cardlist.discard_pile.size() <= 0:
 			print("Deck and Discard Pile empty")
 		else:
-			Cardlist.current_decklist = Cardlist.discard_pile
-			Cardlist.discard_pile = []
+			Cardlist.current_decklist = Cardlist.discard_pile.duplicate()
+			Cardlist.discard_pile.clear()
 			Cardlist.current_decklist.shuffle()
 			var card_id = Cardlist.current_decklist.pop_front()
 			Cardlist.hand_cards.append(card_id)
 			await get_tree().create_timer(0.3).timeout
 			print("shuffled Discard pile into drawpile and drew a card")
 			add_card(card_id)
-		
+		print("drew a card")
+		print("discard pile contains ",Cardlist.discard_pile)
+		print("hand contains ",Cardlist.hand_cards)
+		print("Draw pile contains ",Cardlist.current_decklist)
 #----------------------------------------------------------------------------
 #Cards in hand loading sprites
 
@@ -91,7 +95,7 @@ func card_clicked(_viewport, event, _shape_idx, card_id, card_node):
 		var cardcost = Cardlist.card_database[card_id].get("cost")
 		if not cardcost > current_energy:
 			current_energy = current_energy - cardcost
-			print(current_energy)
+#			print(current_energy)
 			card_played(card_id)
 			Cardlist.discard_pile.append(card_id)
 			remove_card_on_click(card_id, card_node)
@@ -117,35 +121,35 @@ func player_damage(card_id,card_name,card_mult):
 	var played_card_damage = Cardlist.card_database[card_id].get("damage")
 	if played_card_damage != 0:
 		for i in range(card_mult):
-			print(card_name," deals ", played_card_damage, " damage to the enemy")
+#			print(card_name," deals ", played_card_damage, " damage to the enemy")
 			Enemycode.enemy_take_damage(played_card_damage)
 
 func player_shield(card_id,card_name,card_mult):
 	var played_card_shield = Cardlist.card_database[card_id].get("shield")
 	if played_card_shield != 0:
 		for i in range(card_mult):
-			print(card_name," gains the player ", played_card_shield, " shield")
+#			print(card_name," gains the player ", played_card_shield, " shield")
 			player.gain_shield(played_card_shield)
 	
 func player_heal(card_id,card_name,card_mult):
 	var played_card_heal = Cardlist.card_database[card_id].get("heal")
 	if played_card_heal != 0:
 		for i in range(card_mult):
-			print(card_name," heals the player for ", played_card_heal, " health")
+#			print(card_name," heals the player for ", played_card_heal, " health")
 			player.regain_health(played_card_heal)
 	
 func player_draw(card_id,card_name,card_mult):
 	var played_card_draw = Cardlist.card_database[card_id].get("draw")
 	if played_card_draw != 0:
 		for i in range(card_mult):
-			print(card_name," drew the player ", played_card_draw, " cards")
+#			print(card_name," drew the player ", played_card_draw, " cards")
 			draw_cards(played_card_draw)	
 	
 func player_self_damage(card_id,card_name,card_mult):
 	var played_card_self_damage = Cardlist.card_database[card_id].get("selfdamage")
 	if played_card_self_damage != 0:
 		for i in range(card_mult):
-			print(card_name," deals ", played_card_self_damage, " damage to the player")
+#			print(card_name," deals ", played_card_self_damage, " damage to the player")
 			player.take_damage(played_card_self_damage)
 	
 func _input(event):
@@ -157,4 +161,10 @@ func _input(event):
 func enter_shop():
 	get_tree().change_scene_to_file("res://shop.tscn")
 
-	
+func clear_hand() -> void:
+	for card in hand_sprites:
+		if is_instance_valid(card):
+			card.queue_free()
+			print("Clearing card:", card.name)
+	hand_sprites.clear()
+	Cardlist.hand_cards.clear()
