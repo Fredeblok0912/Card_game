@@ -159,7 +159,9 @@ func _input(event):
 		current_energy = current_energy +1
 
 func enter_shop():
+	player.money += 10
 	get_tree().change_scene_to_file("res://shop.tscn")
+	
 
 func clear_hand() -> void:
 	for card in hand_sprites:
