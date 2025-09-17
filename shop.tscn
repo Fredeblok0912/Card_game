@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bweng20k0j2o1" path="res://shop.gd" id="1_viryw"]
 
 [node name="Shop" type="Node2D"]
+position = Vector2(-1699, -712)
 script = ExtResource("1_viryw")
 
 [node name="Cards" type="Node2D" parent="."]
@@ -15,6 +16,7 @@ offset_top = 200.0
 offset_right = 529.0
 offset_bottom = 245.0
 text = "return to game"
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = -1
@@ -26,6 +28,7 @@ offset_left = -426.0
 offset_top = -179.0
 offset_right = -358.0
 offset_bottom = -121.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="Label"]
 layout_mode = 0
