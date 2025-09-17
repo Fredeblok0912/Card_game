@@ -27,4 +27,14 @@ offset_top = -179.0
 offset_right = -358.0
 offset_bottom = -121.0
 
+[node name="Button" type="Button" parent="Label"]
+layout_mode = 0
+offset_left = 1092.0
+offset_top = 209.0
+offset_right = 1100.0
+offset_bottom = 217.0
+scale = Vector2(2.28844, 1.8948)
+text = "Reroll"
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Label/Button" to="." method="_on_button2_pressed"]

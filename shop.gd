@@ -1,5 +1,6 @@
 extends Node2D
 @onready var label: Label = $Label
+var rerolls = 1
 
 var rarity_price = {
 	001:{"price":10},
@@ -79,6 +80,18 @@ func display_cards():
 		collision.position = Vector2.ZERO 
 		card.add_child(collision)
 
+		var sprite_size = card_sprite.texture.get_size() * card_sprite.scale  # Vector2
+
+		var price_label := Label.new()
+		price_label.text = str(Cardlist.card_database[card_id].get("cost"))
+		price_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		price_label.size_flags_horizontal = Control.SIZE_FILL
+		price_label.size = Vector2(sprite_size.x, 20)# grrr jeg fucking hader 
+		price_label.position = Vector2(-sprite_size.x / 2, sprite_size.y / 2 + 5)
+
+		card.add_child(price_label)
+
+
 
 		card.input_event.connect(func(_viewport, event, _shape_idx):
 			if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT and player.money > Cardlist.card_database[card_id].get("cost"):
@@ -96,3 +109,11 @@ func _on_button_pressed() -> void:
 	Enemycode.Scale_difficulty()
 	Enemycode.load_enemy()
 	Gamecode.gamestart()
+
+
+func _on_button2_pressed() -> void:
+	if player.money > rerolls:
+		player.money -= rerolls
+		display_cards()
+		rerolls += 1
+	
