@@ -6,6 +6,9 @@ func _process(delta: float):
 	pass
 	
 func gamestart(): 
+	Cardlist.current_decklist = Cardlist.decklist
+	Cardlist.hand_cards = []
+	_update_hand_positions()
 	Cardlist.current_decklist.shuffle()
 	draw_cards(3)
 	current_energy = 5
@@ -25,6 +28,7 @@ func draw_cards(n: int):
 		else:
 			Cardlist.current_decklist = Cardlist.discard_pile
 			Cardlist.discard_pile = []
+			Cardlist.current_decklist.shuffle()
 			var card_id = Cardlist.current_decklist.pop_front()
 			Cardlist.hand_cards.append(card_id)
 			await get_tree().create_timer(0.3).timeout
