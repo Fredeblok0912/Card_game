@@ -223,7 +223,7 @@ script = ExtResource("5_ryrav")
 
 [node name="Sprite2D" type="Sprite2D" parent="Characters/Player"]
 z_index = -1
-position = Vector2(227, -112)
+position = Vector2(151, -84)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_hve3p")
 
@@ -247,7 +247,7 @@ metadata/_edit_use_anchors_ = true
 script = ExtResource("6_rvswv")
 
 [node name="Enemy_sprites" type="AnimatedSprite2D" parent="Characters/Enemy"]
-position = Vector2(1061, -107)
+position = Vector2(1041, -74)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_f1jbl")
 animation = &"Zombie"
@@ -268,6 +268,26 @@ offset_right = 1218.0
 offset_bottom = -265.0
 script = ExtResource("23_f1jbl")
 metadata/_edit_use_anchors_ = true
+
+[node name="Enemy_intent_display" type="Node2D" parent="Characters/Enemy"]
+
+[node name="Enemy Attack Text" type="RichTextLabel" parent="Characters/Enemy/Enemy_intent_display"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Enemy Attack Symbol" type="Sprite2D" parent="Characters/Enemy/Enemy_intent_display"]
+
+[node name="Enemy Sheild Text" type="RichTextLabel" parent="Characters/Enemy/Enemy_intent_display"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Enemy Shield Symbol" type="Sprite2D" parent="Characters/Enemy/Enemy_intent_display"]
+
+[node name="Enemy Heal Text" type="RichTextLabel" parent="Characters/Enemy/Enemy_intent_display"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Enemy Heal Symbol" type="Sprite2D" parent="Characters/Enemy/Enemy_intent_display"]
 
 [node name="Button" type="Button" parent="."]
 offset_left = 1257.0
