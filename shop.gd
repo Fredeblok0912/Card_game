@@ -85,6 +85,8 @@ func display_cards():
 		)
 
 		$Cards.add_child(card)
+<<<<<<< HEAD
+=======
 
 
 func _on_button_pressed() -> void:
@@ -94,3 +96,4 @@ func _on_button_pressed() -> void:
 	Enemycode.load_enemy()
 	Gamecode.gamestart()
 	
+>>>>>>> e8befb9e9daef11fdc5a597b2beb9fc71b41c26c
