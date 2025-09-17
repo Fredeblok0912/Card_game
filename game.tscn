@@ -1,7 +1,4 @@
-
-[gd_scene load_steps=45 format=3 uid="uid://dtcpvgfsi2cpv"]
 [gd_scene load_steps=43 format=3 uid="uid://dtcpvgfsi2cpv"]
-
 
 [ext_resource type="Script" uid="uid://lhlamou0ygmt" path="res://game.gd" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://bd08kuho0r3mb" path="res://Cardlist.gd" id="1_feb5d"]
@@ -27,9 +24,6 @@
 [ext_resource type="Script" uid="uid://vp51ded4iwdj" path="res://enemy_sprites.gd" id="21_hb5m1"]
 [ext_resource type="Script" uid="uid://cr38awxe7fkwr" path="res://Enemy_health_text.gd" id="22_qhcbd"]
 [ext_resource type="Script" uid="uid://crxyguefblvk5" path="res://Enemy_shield_text.gd" id="23_f1jbl"]
-[ext_resource type="Script" uid="uid://bfu00exqvq57v" path="res://enemy_attack_text.gd" id="24_f1jbl"]
-[ext_resource type="Script" uid="uid://b1mmwmr6x1suf" path="res://enemy_shield_gain_text.gd" id="25_i2p71"]
-[ext_resource type="Script" uid="uid://b1i7rtk3hr1rm" path="res://enemy_heal_text.gd" id="26_xa8c5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_boyg6"]
 atlas = ExtResource("9_iotsf")
@@ -283,46 +277,5 @@ offset_right = 1218.0
 offset_bottom = -265.0
 script = ExtResource("23_f1jbl")
 metadata/_edit_use_anchors_ = true
-
-[node name="Enemy_intent_display" type="Node2D" parent="Characters/Enemy"]
-
-[node name="Enemy Attack Text" type="RichTextLabel" parent="Characters/Enemy/Enemy_intent_display"]
-offset_left = 881.0
-offset_top = -160.0
-offset_right = 921.0
-offset_bottom = -120.0
-script = ExtResource("24_f1jbl")
-metadata/_edit_use_anchors_ = true
-
-[node name="Enemy Attack Symbol" type="Sprite2D" parent="Characters/Enemy/Enemy_intent_display"]
-position = Vector2(881, -160)
-
-[node name="Enemy Shield Text" type="RichTextLabel" parent="Characters/Enemy/Enemy_intent_display"]
-offset_left = 881.0
-offset_top = -97.0
-offset_right = 921.0
-offset_bottom = -57.0
-script = ExtResource("25_i2p71")
-metadata/_edit_use_anchors_ = true
-
-[node name="Enemy Shield Symbol" type="Sprite2D" parent="Characters/Enemy/Enemy_intent_display"]
-position = Vector2(881, -97)
-
-[node name="Enemy Heal Text" type="RichTextLabel" parent="Characters/Enemy/Enemy_intent_display"]
-offset_left = 881.0
-offset_top = -31.0
-offset_right = 921.0
-offset_bottom = 9.0
-script = ExtResource("26_xa8c5")
-
-[node name="Enemy Heal Symbol" type="Sprite2D" parent="Characters/Enemy/Enemy_intent_display"]
-position = Vector2(881, -31)
-
-[node name="Button" type="Button" parent="."]
-offset_left = 1257.0
-offset_top = 8.0
-offset_right = 1450.0
-offset_bottom = 76.0
-text = "End Turn"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

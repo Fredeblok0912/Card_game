@@ -4,7 +4,7 @@ func _ready():
 	display_cards()
 
 func buy_cards(card_id, price):
-	Cardlist.current_decklist.append(card_id)
+	Cardlist.decklist.append(card_id)
 	player.money -= price
 	
 
@@ -85,3 +85,7 @@ func display_cards():
 		)
 
 		$Cards.add_child(card)
+
+
+func _on_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://game.tscn")
