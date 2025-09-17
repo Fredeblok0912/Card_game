@@ -8,6 +8,7 @@ class_name Character
 @export var shield: int = 0
 @export var sprite: Sprite2D 
 @export var health_bar: ProgressBar
+@export var money: int = 0
 		#
 
 	#
