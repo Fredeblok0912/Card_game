@@ -11,7 +11,6 @@ class_name Character
 @export var money: int = 0
 		#
 
-	#
 func set_health(value: int):
 	health = clamp(value, 0, max_health)
 	if health_bar:
