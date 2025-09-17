@@ -119,6 +119,8 @@ func _on_button_pressed() -> void:
 func _on_button2_pressed() -> void:
 	if player.money > rerolls:
 		player.money -= rerolls
+		for card in $Cards.get_children():
+			card.queue_free()
 		display_cards()
 		rerolls += 1
 	
