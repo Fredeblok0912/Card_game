@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://dtcpvgfsi2cpv"]
+[gd_scene load_steps=46 format=3 uid="uid://dtcpvgfsi2cpv"]
 
 [ext_resource type="Script" uid="uid://lhlamou0ygmt" path="res://game.gd" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://bd08kuho0r3mb" path="res://Cardlist.gd" id="1_feb5d"]
@@ -23,7 +23,10 @@
 [ext_resource type="Texture2D" uid="uid://c86bc1ote7wq4" path="res://sprite_zombie_1.png" id="20_hb5m1"]
 [ext_resource type="Script" uid="uid://vp51ded4iwdj" path="res://enemy_sprites.gd" id="21_hb5m1"]
 [ext_resource type="Script" uid="uid://cr38awxe7fkwr" path="res://Enemy_health_text.gd" id="22_qhcbd"]
-[ext_resource type="Script" uid="uid://crxyguefblvk5" path="res://Enemy_shield_text.gd" id="23_f1jbl"]
+[ext_resource type="Script" uid="uid://crxyguefblvk5" path="res://enemy_shield_text.gd" id="23_f1jbl"]
+[ext_resource type="Script" uid="uid://b1mmwmr6x1suf" path="res://enemy_shield_gain_text.gd" id="25_xa8c5"]
+[ext_resource type="Script" uid="uid://bfu00exqvq57v" path="res://enemy_attack_text.gd" id="26_5b14r"]
+[ext_resource type="Script" uid="uid://b1i7rtk3hr1rm" path="res://enemy_heal_text.gd" id="27_bnpwn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_boyg6"]
 atlas = ExtResource("9_iotsf")
@@ -277,5 +280,28 @@ offset_right = 1218.0
 offset_bottom = -265.0
 script = ExtResource("23_f1jbl")
 metadata/_edit_use_anchors_ = true
+
+[node name="Enemy_Intent_Text" type="Node2D" parent="Characters/Enemy"]
+
+[node name="Enemy Intent Shield Text" type="RichTextLabel" parent="Characters/Enemy/Enemy_Intent_Text"]
+offset_left = 889.0
+offset_top = -105.0
+offset_right = 929.0
+offset_bottom = -65.0
+script = ExtResource("25_xa8c5")
+
+[node name="Enemy Intent Damage Text" type="RichTextLabel" parent="Characters/Enemy/Enemy_Intent_Text"]
+offset_left = 889.0
+offset_top = -162.0
+offset_right = 929.0
+offset_bottom = -122.0
+script = ExtResource("26_5b14r")
+
+[node name="Enemy Intent Heal Text" type="RichTextLabel" parent="Characters/Enemy/Enemy_Intent_Text"]
+offset_left = 889.0
+offset_top = -48.0
+offset_right = 929.0
+offset_bottom = -8.0
+script = ExtResource("27_bnpwn")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
