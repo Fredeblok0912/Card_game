@@ -1,6 +1,13 @@
 extends Node2D
 @onready var label: Label = $Label
 
+var rarity_price = {
+	001:{"price":10},
+	002:{"price":15},
+	003:{"price":20},
+}
+
+
 func _ready():
 	display_cards()
 	label.text = "Money: " + str(player.money)
@@ -29,7 +36,7 @@ func weighted_randomizer_and_picker()-> Array:
 	var rarity_dick = {
 		1:{"rarity": 0.0},
 		2: {"rarity": 0.65},
-		3: {"rarity": 0.95},
+		3: {"rarity": 0.80},
 	}
 	for i in range(3):
 		var number = randf()
@@ -76,7 +83,7 @@ func display_cards():
 		card.input_event.connect(func(_viewport, event, _shape_idx):
 			if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT and player.money > Cardlist.card_database[card_id].get("cost"):
 				print("Bought: ", card_id)
-				buy_cards(card_id, Cardlist.card_database[card_id].get("cost"))
+				buy_cards(card_id, rarity_price[Cardlist.card_database[card_id]["rarity"]].get("price"))
 				card.queue_free()
 		)
 
