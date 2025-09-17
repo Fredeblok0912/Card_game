@@ -1,11 +1,12 @@
 extends Character
 
-var difficulty_mod = 1
+var difficulty_mod = 2
 var loaded_enemy = 0
 
 var enemy_health = 1
 var enemy_max_health = 1
-var enemy_shield = 0
+var enemy_shield = 10
+var chosen_move
 
 var enemy_database = {
 	000: {
@@ -30,7 +31,7 @@ var enemy_database = {
 func load_enemy():
 	loaded_enemy = randi_range(0,1)
 	EnemySprites.set_sprite(loaded_enemy)
-	enemy_max_health = (enemy_database[loaded_enemy]["health"])*difficulty_mod
+	enemy_max_health = ceil((enemy_database[loaded_enemy]["health"])*difficulty_mod)
 	enemy_health = enemy_max_health
 	
 func enemy_take_damage(amount):
@@ -41,6 +42,7 @@ func enemy_take_damage(amount):
 			enemy_health = enemy_health -1
 	if not enemy_health > 0:
 		Gamecode.enter_shop()
+		Scale_difficulty()
 		
 func enemy_gain_shield(amount):
 	enemy_shield = enemy_shield + amount
@@ -51,13 +53,19 @@ func enemy_regain_health(amount):
 			enemy_health = enemy_health +1
 
 func prepare_action():
-	var chosen_move = randi_range(0,3)
-	var What_move_is_the_enemy_gonna_do = enemy_database[loaded_enemy]["moves"][chosen_move]
-	print(What_move_is_the_enemy_gonna_do)
+	chosen_move = randi_range(0,3)
+	enemy_database[loaded_enemy]["moves"][chosen_move]
+	print(enemy_database[loaded_enemy]["moves"][chosen_move])
+	#display the prepared action to the player using Enemy_intent_display
 	
 func action():
-	pass
-	
-func enemy_damage(action_value):
-	pass
+	if enemy_database[loaded_enemy]["moves"][chosen_move]["damage"] != 0:
+		player.take_damage((enemy_database[loaded_enemy]["moves"][chosen_move]["damage"])*difficulty_mod)
+	if enemy_database[loaded_enemy]["moves"][chosen_move]["shield"] != 0:
+		enemy_gain_shield((enemy_database[loaded_enemy]["moves"][chosen_move]["shield"])*difficulty_mod)
+	if enemy_database[loaded_enemy]["moves"][chosen_move]["healing"] != 0:
+		enemy_regain_health((enemy_database[loaded_enemy]["moves"][chosen_move]["healing"])*difficulty_mod)
 			
+func Scale_difficulty():
+	difficulty_mod = difficulty_mod * 1.1 as float
+	print("current difficulty mod is ",difficulty_mod)
