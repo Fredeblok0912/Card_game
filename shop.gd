@@ -5,7 +5,8 @@ func _ready():
 
 func buy_cards(card_id, price):
 	Cardlist.current_decklist.append(card_id)
-	Player.
+	player.money -= price
+	
 
 func weighted_randomizer_and_picker()-> Array:
 	var basic_cards = []
@@ -51,8 +52,6 @@ func weighted_randomizer_and_picker()-> Array:
 	return chosen_cards		
 		
 func display_cards():
-	var cards_id =Cardlist.card_database.keys()
-	cards_id.shuffle()
 	var cards = weighted_randomizer_and_picker()
 	var spacing = 250
 	var start_x_value = -250
@@ -60,23 +59,29 @@ func display_cards():
 	
 	for i in range(cards.size()):
 		var card_id = cards[i]
+
 		var card = Area2D.new()
 		card.position = Vector2(start_x_value + i * spacing, 0)
+		card.input_pickable = true
+
 		var card_sprite := Sprite2D.new()
 		card_sprite.texture = Cardlist.card_sprites_database[card_id]
-		card_sprite.scale = Vector2(cardscale,cardscale)
-		card_sprite.scale = Vector2(10,10)
+		card_sprite.scale = Vector2(cardscale, cardscale)
 		card.add_child(card_sprite)
+
 		var collision = CollisionShape2D.new()
 		var shape = RectangleShape2D.new()
-		shape.size = card_sprite.texture.get_size() * cardscale
+		shape.size = card_sprite.texture.get_size() * card_sprite.scale
 		collision.shape = shape
+		collision.position = Vector2.ZERO 
 		card.add_child(collision)
-		
-		card.input_event.connect(func(viewport, event, shape_idx):
+
+
+		card.input_event.connect(func(_viewport, event, _shape_idx):
 			if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 				print("Bought: ", card_id)
-				buy_cards(card_id)
+				buy_cards(card_id, Cardlist.card_database[card_id].get("cost"))
+				card.queue_free()
 		)
-		
+
 		$Cards.add_child(card)
