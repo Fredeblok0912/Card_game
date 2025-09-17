@@ -93,8 +93,10 @@ func _update_hand_positions() -> void:
 func card_clicked(_viewport, event, _shape_idx, card_id, card_node):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		var cardcost = Cardlist.card_database[card_id].get("cost")
-		if not cardcost > current_energy:
-#			print(current_energy)
+		print("x cost ",Cardlist.x_cost)
+		print("card cost ", cardcost)
+		print("current_energy ",current_energy)
+		if cardcost <= current_energy:
 			card_played(card_id)
 			Cardlist.discard_pile.append(card_id)
 			remove_card_on_click(card_id, card_node)

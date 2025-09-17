@@ -15,9 +15,9 @@ func _ready():
 	
 
 func buy_cards(card_id, price):
-	if player.money > price:
+	if not player.money < price:
 		Cardlist.decklist.append(card_id)
-		player.money -= price
+		player.money = player.money - price
 		label.text = "Money: " + str(player.money)
 	
 
