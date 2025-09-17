@@ -142,6 +142,7 @@ sprite_frames = SubResource("SpriteFrames_nrnbx")
 script = ExtResource("5_kk3ma")
 
 [node name="Button3" type="Button" parent="."]
+visible = false
 offset_left = 827.0
 offset_top = 840.0
 offset_right = 884.0
