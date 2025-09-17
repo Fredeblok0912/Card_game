@@ -78,7 +78,7 @@ func display_cards():
 
 
 		card.input_event.connect(func(_viewport, event, _shape_idx):
-			if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+			if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT and player.money > Cardlist.card_database[card_id].get("cost"):
 				print("Bought: ", card_id)
 				buy_cards(card_id, Cardlist.card_database[card_id].get("cost"))
 				card.queue_free()
