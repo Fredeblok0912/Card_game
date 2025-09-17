@@ -1,11 +1,15 @@
 extends Node2D
+@onready var label: Label = $Label
 
 func _ready():
 	display_cards()
+	label.text = "Money: " + str(player.money)
+	
 
 func buy_cards(card_id, price):
 	Cardlist.decklist.append(card_id)
 	player.money -= price
+	label.text = "Money: " + str(player.money)
 	
 
 func weighted_randomizer_and_picker()-> Array:
@@ -85,14 +89,3 @@ func display_cards():
 		)
 
 		$Cards.add_child(card)
-<<<<<<< HEAD
-=======
-
-
-func _on_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://game.tscn")
-	Enemycode.Scale_difficulty()
-	Enemycode.load_enemy()
-	Gamecode.gamestart()
-	
->>>>>>> e8befb9e9daef11fdc5a597b2beb9fc71b41c26c
