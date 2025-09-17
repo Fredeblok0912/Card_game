@@ -10,7 +10,6 @@ extends Node
 # executionmult = how many times all other stats are applied (an execution stat of 2 makes damage, shield, draw, heal and selfdamage apply that many times)
 # rarity = what rarity the card is
 var card_database = {
-	000: {"name": "Null","cost":0, "damage": 0, "shield": 0, "draw":0, "heal":0, "selfdamage":0,"executionmult":0,"rarity":0},
 	001: {"name": "Swing","cost":1, "damage": 3, "shield": 0, "draw":0, "heal":0, "selfdamage":0,"executionmult":1,"rarity":1},
 	002: {"name": "Slice","cost":2, "damage": 7, "shield": 0, "draw":0, "heal":0, "selfdamage":0,"executionmult":1,"rarity":1},
 	003: {"name": "Smash","cost":3, "damage": 12, "shield": 0, "draw":0, "heal":0, "selfdamage":0,"executionmult":1,"rarity":1},

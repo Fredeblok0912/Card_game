@@ -13,7 +13,6 @@ func buy_cards(card_id, price):
 	
 
 func weighted_randomizer_and_picker()-> Array:
-	var basic_cards = []
 	var common_cards = []
 	var uncommon_cards = []
 	var rare_cards = []
@@ -21,8 +20,6 @@ func weighted_randomizer_and_picker()-> Array:
 	for card_id in Cardlist.card_database.keys():
 		var rarity = Cardlist.card_database[card_id].get("rarity")
 		match rarity:
-			0:
-				basic_cards.append(card_id)
 			1:
 				common_cards.append(card_id)
 			2:
@@ -30,9 +27,8 @@ func weighted_randomizer_and_picker()-> Array:
 			3:
 				rare_cards.append(card_id)
 	var rarity_dick = {
-		0:{"rarity": 0.0},
-		1:{"rarity": 0.2},
-		2: {"rarity": 0.7},
+		1:{"rarity": 0.0},
+		2: {"rarity": 0.65},
 		3: {"rarity": 0.95},
 	}
 	for i in range(3):
@@ -48,10 +44,6 @@ func weighted_randomizer_and_picker()-> Array:
 		elif number > rarity_dick[1]["rarity"]:
 			common_cards.shuffle()
 			var card = common_cards[0]
-			chosen_cards.append(card)
-		elif number > rarity_dick[0]["rarity"]:
-			basic_cards.shuffle()
-			var card = basic_cards[0]
 			chosen_cards.append(card)
 	return chosen_cards		
 		
