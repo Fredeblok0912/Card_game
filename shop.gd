@@ -1,6 +1,6 @@
 extends Node2D
 @onready var label: Label = $Label
-var rerolls = 1
+var rerolls = 5
 
 var rarity_price = {
 	001:{"price":10},
@@ -10,15 +10,15 @@ var rarity_price = {
 
 
 func _ready():
+	rerolls = 5
 	display_cards()
 	label.text = "Money: " + str(player.money)+"$"
 	
 
 func buy_cards(card_id, price):
-	if not player.money < price:
 		Cardlist.decklist.append(card_id)
 		player.money = player.money - price
-		label.text = "Money: " + str(player.money)
+		label.text = "Money: " + str(player.money) + "$"
 	
 
 func weighted_randomizer_and_picker()-> Array:
@@ -100,9 +100,12 @@ func display_cards():
 
 		card.input_event.connect(func(_viewport, event, _shape_idx):
 			if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT and player.money > int(Cardlist.card_database[card_id].get("cost")):
-				print("Bought: ", card_id)
-				buy_cards(card_id, rarity_price[Cardlist.card_database[card_id]["rarity"]].get("price"))
-				card.queue_free()
+				if not player.money < price:
+					print("Bought: ", card_id)
+					buy_cards(card_id, rarity_price[Cardlist.card_database[card_id]["rarity"]].get("price"))
+					card.queue_free()
+				else:
+					print("card too expensive")
 		)
 
 		$Cards.add_child(card)
@@ -117,10 +120,11 @@ func _on_button_pressed() -> void:
 
 
 func _on_button2_pressed() -> void:
-	if player.money > rerolls:
-		player.money -= rerolls
+	if not player.money < rerolls:
+		player.money = player.money - rerolls
 		for card in $Cards.get_children():
 			card.queue_free()
 		display_cards()
-		rerolls += 1
+		rerolls = rerolls + 1
+		label.text = "Money: " + str(player.money) + "$"
 	

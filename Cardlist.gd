@@ -1,8 +1,5 @@
 extends Node
 
-@onready var gamecode = get_node("/root/Gamecode")
-@onready var x_cost = gamecode.current_energy as int#x cos#x cost spends all of the remaining energy
-
 # Kort Database som en dictionary
 # cost = the amount of energy the card costs
 # damage = how much damage the card deals to the enemy
@@ -21,7 +18,7 @@ var card_database = {
 	006: {"name": "Backstab","cost":2, "damage": 9, "shield": 0, "draw":0, "heal":0, "selfdamage":0,"executionmult":1,"rarity":2},
 	007: {"name": "Armor Up!","cost":3, "damage": 0, "shield": 9, "draw":0, "heal":0, "selfdamage":0,"executionmult":1,"rarity":2},
 	008: {"name": "Quick Jab","cost":1, "damage": 3, "shield": 0, "draw":1, "heal":0, "selfdamage":0,"executionmult":1,"rarity":2},
-	009: {"name": "Flurry","cost": x_cost, "damage": 5, "shield": 0, "draw":0, "heal":0, "selfdamage":0,"executionmult":x_cost,"rarity":2},
+	009: {"name": "Flurry","cost": "0ass", "damage": 5, "shield": 0, "draw":0, "heal":0, "selfdamage":0,"executionmult":"x_cost","rarity":2},
 	010: {"name": "Deathblow","cost":5, "damage": 35, "shield": 0, "draw":0, "heal":0, "selfdamage":0,"executionmult":1,"rarity":3},
 	011: {"name": "Singe","cost":1, "damage": 7, "shield": 0, "draw":0, "heal":0, "selfdamage":3,"executionmult":1,"rarity":1},
 	012: {"name": "Flamekick","cost":2, "damage": 15, "shield": 0, "draw":0, "heal":0, "selfdamage":5,"executionmult":1,"rarity":1},
@@ -61,7 +58,7 @@ var card_sprites_database = {
 	}
 
 # Etablering af main Deck Arrays
-var decklist = [9,9,9,9,1,2,2,3,4,4]       		# Det permanente deck som bliver kopieret til hvert combat, er den som man skal add kort til når man køber
+var decklist = [1,2,2,3,4,4]       		# Det permanente deck som bliver kopieret til hvert combat, er den som man skal add kort til når man køber
 var current_decklist = []	# Kort som er i spillerens deck under combat, burde være tom og kopiere inholdet af decklist, men for testing rn er den fyldt
 var hand_cards = []						# Kort som er i spillerens hånd
 #Discard should be empty, this is for testing purposes
