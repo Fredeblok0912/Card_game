@@ -15,9 +15,10 @@ func _ready():
 	
 
 func buy_cards(card_id, price):
-	Cardlist.decklist.append(card_id)
-	player.money -= price
-	label.text = "Money: " + str(player.money)
+	if player.money > price:
+		Cardlist.decklist.append(card_id)
+		player.money -= price
+		label.text = "Money: " + str(player.money)
 	
 
 func weighted_randomizer_and_picker()-> Array:
@@ -80,14 +81,14 @@ func display_cards():
 		collision.position = Vector2.ZERO 
 		card.add_child(collision)
 
-		var sprite_size = card_sprite.texture.get_size() * card_sprite.scale  # Vector2
+		var sprite_size = card_sprite.texture.get_size() * card_sprite.scale 
 
 		var price_label := Label.new()
 		price_label.text = ("")
 		price_label.text = str(rarity_price[Cardlist.card_database[card_id]["rarity"]].get("price"),"$")
 		price_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		price_label.size_flags_horizontal = Control.SIZE_FILL
-		price_label.size = Vector2(sprite_size.x, 20)# grrr jeg fucking hader 
+		price_label.size = Vector2(sprite_size.x, 20)# grrr jeg fucking hader positionering
 		price_label.position = Vector2(-sprite_size.x / 2, sprite_size.y / 2 + 5)
 
 		card.add_child(price_label)
