@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://dtcpvgfsi2cpv"]
+[gd_scene load_steps=43 format=3 uid="uid://dtcpvgfsi2cpv"]
 
 [ext_resource type="Script" uid="uid://lhlamou0ygmt" path="res://game.gd" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://bd08kuho0r3mb" path="res://Cardlist.gd" id="1_feb5d"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://pyr46ojdf4dq" path="res://Player_shield_text.gd" id="7_e36ub"]
 [ext_resource type="Texture2D" uid="uid://crl0y32to1lqf" path="res://Art/sprite_slime_0.png" id="7_rvswv"]
 [ext_resource type="Texture2D" uid="uid://cybwbfetkel4y" path="res://Art/sprite_slime_1.png" id="8_boyg6"]
+[ext_resource type="Script" uid="uid://uq7d7ilonbu7" path="res://characters.gd" id="8_f1jbl"]
 [ext_resource type="Texture2D" uid="uid://klblt1tf7rb0" path="res://Art/Background.png" id="8_vef74"]
 [ext_resource type="Texture2D" uid="uid://bwcb4cqba8iyv" path="res://Art/sprite_slime_2.png" id="9_e36ub"]
 [ext_resource type="Texture2D" uid="uid://b1oej3uky7a3r" path="res://Art/Energi Battery Sprite-Sheet.png" id="9_iotsf"]
@@ -216,7 +217,15 @@ sprite_frames = SubResource("SpriteFrames_boyg6")
 frame_progress = 0.104202
 script = ExtResource("9_vef74")
 
+[node name="Button" type="Button" parent="."]
+offset_left = 1257.0
+offset_top = 8.0
+offset_right = 1450.0
+offset_bottom = 76.0
+text = "End Turn"
+
 [node name="Characters" type="Node" parent="."]
+script = ExtResource("8_f1jbl")
 
 [node name="Player" type="Node2D" parent="Characters"]
 script = ExtResource("5_ryrav")
@@ -268,12 +277,5 @@ offset_right = 1218.0
 offset_bottom = -265.0
 script = ExtResource("23_f1jbl")
 metadata/_edit_use_anchors_ = true
-
-[node name="Button" type="Button" parent="."]
-offset_left = 1257.0
-offset_top = 8.0
-offset_right = 1450.0
-offset_bottom = 76.0
-text = "End Turn"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

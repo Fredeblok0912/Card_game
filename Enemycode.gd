@@ -1,4 +1,4 @@
-extends Node2D
+extends Character
 
 var difficulty_mod = 1
 var loaded_enemy = 0

@@ -3,6 +3,10 @@ extends Node2D
 func _ready():
 	display_cards()
 
+func buy_cards(card_id, price):
+	Cardlist.current_decklist.append(card_id)
+	Player.
+
 func weighted_randomizer_and_picker()-> Array:
 	var basic_cards = []
 	var common_cards = []
@@ -56,17 +60,23 @@ func display_cards():
 	
 	for i in range(cards.size()):
 		var card_id = cards[i]
+		var card = Area2D.new()
+		card.position = Vector2(start_x_value + i * spacing, 0)
 		var card_sprite := Sprite2D.new()
 		card_sprite.texture = Cardlist.card_sprites_database[card_id]
 		card_sprite.scale = Vector2(cardscale,cardscale)
-
 		card_sprite.scale = Vector2(10,10)
-
-		card_sprite.scale = Vector2(10,10)
-
-		card_sprite.scale = Vector2(10,10)
-
-		card_sprite.scale = Vector2(10,10)
-
-		card_sprite.position = Vector2(start_x_value + i * spacing, 0)
-		$Cards.add_child(card_sprite)
+		card.add_child(card_sprite)
+		var collision = CollisionShape2D.new()
+		var shape = RectangleShape2D.new()
+		shape.size = card_sprite.texture.get_size() * cardscale
+		collision.shape = shape
+		card.add_child(collision)
+		
+		card.input_event.connect(func(viewport, event, shape_idx):
+			if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+				print("Bought: ", card_id)
+				buy_cards(card_id)
+		)
+		
+		$Cards.add_child(card)
