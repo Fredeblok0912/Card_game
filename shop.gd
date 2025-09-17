@@ -84,7 +84,6 @@ func display_cards():
 		var sprite_size = card_sprite.texture.get_size() * card_sprite.scale 
 
 		var price_label := Label.new()
-		price_label.text = ("")
 		price_label.text = str(rarity_price[Cardlist.card_database[card_id]["rarity"]].get("price"),"$")
 		price_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		price_label.size_flags_horizontal = Control.SIZE_FILL
