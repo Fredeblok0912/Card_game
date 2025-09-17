@@ -89,3 +89,15 @@ func display_cards():
 		)
 
 		$Cards.add_child(card)
+<<<<<<< HEAD
+=======
+
+
+func _on_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://game.tscn")
+	Gamecode.clear_hand()
+	Enemycode.Scale_difficulty()
+	Enemycode.load_enemy()
+	Gamecode.gamestart()
+	
+>>>>>>> 5503920c5263eb8eb9ab23c52dc8e3613b8d5f64
