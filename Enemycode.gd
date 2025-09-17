@@ -1,11 +1,11 @@
 extends Character
 
-var difficulty_mod = 2
+var difficulty_mod = 1.1
 var loaded_enemy = 0
 
 var enemy_health = 1
 var enemy_max_health = 1
-var enemy_shield = 10
+var enemy_shield = 0
 var chosen_move
 
 var enemy_database = {
@@ -60,11 +60,11 @@ func prepare_action():
 	
 func action():
 	if enemy_database[loaded_enemy]["moves"][chosen_move]["damage"] != 0:
-		player.take_damage((enemy_database[loaded_enemy]["moves"][chosen_move]["damage"])*difficulty_mod)
+		player.take_damage((ceil(enemy_database[loaded_enemy]["moves"][chosen_move]["damage"])*difficulty_mod))
 	if enemy_database[loaded_enemy]["moves"][chosen_move]["shield"] != 0:
-		enemy_gain_shield((enemy_database[loaded_enemy]["moves"][chosen_move]["shield"])*difficulty_mod)
+		enemy_gain_shield((ceil(enemy_database[loaded_enemy]["moves"][chosen_move]["shield"])*difficulty_mod))
 	if enemy_database[loaded_enemy]["moves"][chosen_move]["healing"] != 0:
-		enemy_regain_health((enemy_database[loaded_enemy]["moves"][chosen_move]["healing"])*difficulty_mod)
+		enemy_regain_health((ceil(enemy_database[loaded_enemy]["moves"][chosen_move]["healing"])*difficulty_mod))
 			
 func Scale_difficulty():
 	difficulty_mod = difficulty_mod * 1.1 as float
