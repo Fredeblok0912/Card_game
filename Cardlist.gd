@@ -59,7 +59,7 @@ var card_sprites_database = {
 	}
 
 # Etablering af main Deck Arrays
-var decklist = [1,2,2,3,4,4,20]       		# Det permanente deck som bliver kopieret til hvert combat, er den som man skal add kort til når man køber
+var decklist = [1,2,2,3,4,4]       		# Det permanente deck som bliver kopieret til hvert combat, er den som man skal add kort til når man køber
 var current_decklist = []	# Kort som er i spillerens deck under combat, burde være tom og kopiere inholdet af decklist, men for testing rn er den fyldt
 var hand_cards = []						# Kort som er i spillerens hånd
 #Discard should be empty, this is for testing purposes
