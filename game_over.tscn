@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://de0cqchbpeflh"]
 
-[ext_resource type="Script" path="res://game_over.gd" id="1_y26ei"]
+[ext_resource type="Script" uid="uid://7gjakctndldx" path="res://game_over.gd" id="1_y26ei"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xapjj"]
 font_size = 50
@@ -10,10 +10,10 @@ position = Vector2(955, 518)
 script = ExtResource("1_y26ei")
 
 [node name="Label" type="Label" parent="."]
-offset_left = -161.0
-offset_top = -23.0
-offset_right = 117.0
-offset_bottom = 46.0
+offset_left = 26.0
+offset_top = 20.0
+offset_right = 304.0
+offset_bottom = 89.0
 text = "Game Over"
 label_settings = SubResource("LabelSettings_xapjj")
 
