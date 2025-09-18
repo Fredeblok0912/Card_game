@@ -2,5 +2,4 @@ extends RichTextLabel
 
 
 func _process(delta: float) -> void:
-	set_text(str(player.player_health))
-	
+	$".".text = "[center]%s[/center]" % player.player_health
