@@ -93,6 +93,8 @@ func card_clicked(_viewport, event, _shape_idx, card_id, card_node):
 			card_played(card_id)
 			Cardlist.discard_pile.append(card_id)
 			remove_card_on_click(card_id, card_node)
+			if card_id == 009:
+				current_energy = 0
 			current_energy = current_energy - cardcost
 		else:
 			print("card too expensive")
@@ -118,6 +120,8 @@ func player_damage(card_id,card_name,card_mult):
 		for i in range(card_mult):
 #			print(card_name," deals ", played_card_damage, " damage to the enemy")
 			Enemycode.enemy_take_damage(played_card_damage)
+		if card_id == 009:
+			Enemycode.enemy_take_damage(played_card_damage * current_energy)
 
 func player_shield(card_id,card_name,card_mult):
 	var played_card_shield = Cardlist.card_database[card_id].get("shield")
