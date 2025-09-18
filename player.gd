@@ -1,9 +1,13 @@
 extends Character 
 class_name Player
 
-var player_health = 25
-var player_max_health = 25
+var player_health = 0
+var player_max_health = 0
 var player_shield = 0
+
+func _ready() -> void:
+	player_health = 25
+	player_max_health = 25
 
 func take_damage(amount):
 	print("This take_damage is running on: ", name, " path: ", get_path())

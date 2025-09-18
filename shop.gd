@@ -135,17 +135,17 @@ func _on_button_3_pressed():
 		player.regain_health(ceil(player.player_max_health/2))
 		player.money = player.money - 5
 		label.text = "Money: " + str(player.money)+"$"
-		print("player health ",player.health," player max health ", player.player_max_health)
+		print("player health ",player.player_health," player max health ", player.player_max_health)
 	else:
 		print("Not enough money")
 
 # Increase max health
 func _on_button_4_pressed():
 	if not player.money < 0:
-		player.max_health = player.max_health + 5
-		player.health = player.health + 5
+		player.player_max_health = player.player_max_health + 5
+		player.player_health = player.player_health + 5
 		player.money = player.money - 5
 		label.text = "Money: " + str(player.money)+"$"
-		print("player health ",player.health," player max health ", player.player_max_health)
+		print("player health ",player.player_health," player max health ", player.player_max_health)
 	else:
 		print("Not enough money")
