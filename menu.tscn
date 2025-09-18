@@ -1,90 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://dk7bxyfwb45n0"]
+[gd_scene load_steps=7 format=3 uid="uid://dk7bxyfwb45n0"]
 
 [ext_resource type="Script" uid="uid://62cnljsoecj2" path="res://menu.gd" id="1_ouk20"]
 [ext_resource type="Texture2D" uid="uid://dnmx0jymtp3ru" path="res://Art/Other/Buttons3.png" id="2_ytr4m"]
 [ext_resource type="Texture2D" uid="uid://bfo206hf1jh5x" path="res://Art/Other/Buttons1.png" id="3_l48gv"]
-[ext_resource type="Texture2D" uid="uid://klblt1tf7rb0" path="res://Art/Backgrounds/Background.png" id="4_ecwwl"]
-[ext_resource type="Script" uid="uid://ci3kfbyim8dem" path="res://Background animation.gd" id="5_kk3ma"]
 [ext_resource type="Texture2D" uid="uid://b8akc76lo2hba" path="res://Art/Backgrounds/menu.png" id="6_l48gv"]
 [ext_resource type="PackedScene" uid="uid://5gvarj6y6lxl" path="res://Screen transition.tscn" id="7_ecwwl"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_ytr4m"]
-line_spacing = 6.0
-font_size = 69
-
-[sub_resource type="LabelSettings" id="LabelSettings_l48gv"]
-font_size = 30
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hve3p"]
-atlas = ExtResource("4_ecwwl")
-region = Rect2(0, 0, 576, 324)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mfdv2"]
-atlas = ExtResource("4_ecwwl")
-region = Rect2(576, 0, 576, 324)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_iotsf"]
-atlas = ExtResource("4_ecwwl")
-region = Rect2(1152, 0, 576, 324)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lc2xo"]
-atlas = ExtResource("4_ecwwl")
-region = Rect2(1728, 0, 576, 324)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_215e1"]
-atlas = ExtResource("4_ecwwl")
-region = Rect2(2304, 0, 576, 324)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7sc4i"]
-atlas = ExtResource("4_ecwwl")
-region = Rect2(0, 324, 576, 324)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_80cx4"]
-atlas = ExtResource("4_ecwwl")
-region = Rect2(576, 324, 576, 324)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e8heu"]
-atlas = ExtResource("4_ecwwl")
-region = Rect2(1152, 324, 576, 324)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rvswv"]
-atlas = ExtResource("4_ecwwl")
-region = Rect2(1728, 324, 576, 324)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_nrnbx"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hve3p")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mfdv2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_iotsf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lc2xo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_215e1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7sc4i")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_80cx4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e8heu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rvswv")
-}],
-"loop": true,
-"name": &"default",
-"speed": 1.0
-}]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_ytr4m"]
 
@@ -116,33 +36,8 @@ position = Vector2(137, 42)
 scale = Vector2(4, 4)
 texture = ExtResource("3_l48gv")
 
-[node name="Label" type="Label" parent="."]
-visible = false
-offset_left = 768.0
-offset_top = 166.0
-offset_right = 1139.0
-offset_bottom = 261.0
-text = "Card Game"
-label_settings = SubResource("LabelSettings_ytr4m")
-
-[node name="Label2" type="Label" parent="."]
-visible = false
-offset_left = 805.0
-offset_top = 269.0
-offset_right = 1096.0
-offset_bottom = 311.0
-text = "The Game, The Card"
-label_settings = SubResource("LabelSettings_l48gv")
-
-[node name="Background_sprite" type="AnimatedSprite2D" parent="."]
-visible = false
-z_index = -10
-position = Vector2(961, 541)
-scale = Vector2(3.33333, 3.33333)
-sprite_frames = SubResource("SpriteFrames_nrnbx")
-script = ExtResource("5_kk3ma")
-
 [node name="Button3" type="Button" parent="."]
+visible = false
 offset_left = 827.0
 offset_top = 840.0
 offset_right = 884.0
@@ -153,11 +48,22 @@ icon = SubResource("CanvasTexture_ytr4m")
 
 [node name="New Background Sprite" type="Sprite2D" parent="."]
 z_index = -10
-position = Vector2(960, 540)
+position = Vector2(981, 538)
 scale = Vector2(4, 4)
 texture = ExtResource("6_l48gv")
 
 [node name="CanvasLayer" parent="." instance=ExtResource("7_ecwwl")]
+
+[node name="Label3" type="Label" parent="."]
+z_index = 5
+offset_left = 1756.0
+offset_top = 1009.0
+offset_right = 1876.0
+offset_bottom = 1032.0
+text = "version. 1.0.183"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(981, 538)
 
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
