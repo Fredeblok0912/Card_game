@@ -117,14 +117,17 @@ func card_played(card_id):
 func player_damage(card_id,card_name,card_mult):
 	var played_card_damage = Cardlist.card_database[card_id].get("damage")
 	if played_card_damage != 0:
-		for i in card_mult:
-			if not Enemycode.enemy_health > 0:
-				break
-#			print(card_name," deals ", played_card_damage, " damage to the enemy")
-			Enemycode.enemy_take_damage(played_card_damage)
-		if card_id == 009:
-			Enemycode.enemy_take_damage(played_card_damage * current_energy)
-
+		if card_id == 009: 
+			print(current_energy)
+			for i in current_energy:
+				if not Enemycode.enemy_health < 0:
+					Enemycode.enemy_take_damage(played_card_damage)
+					await get_tree().create_timer(0.2).timeout
+		else:
+			for i in card_mult:
+				if not Enemycode.enemy_health < 0:
+					Enemycode.enemy_take_damage(played_card_damage)
+					await get_tree().create_timer(0.2).timeout
 
 func player_shield(card_id,card_name,card_mult):
 	var played_card_shield = Cardlist.card_database[card_id].get("shield")
