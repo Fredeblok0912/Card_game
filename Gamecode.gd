@@ -189,6 +189,11 @@ func enter_shop():
 	Enemycode.Scale_difficulty()
 	Game.Wincounter = Game.Wincounter + 1
 	ScreenTransition.load_scene("res://shop.tscn")
+	Enemycode.enemy_shield = 0
+	Gamecode.cards_drawn_this_round = 0
+	player.player_shield = 0
+	Gamecode.self_damage_factor = 1
+	Gamecode.self_damage_this_round = 0
 	
 
 func clear_hand() -> void:
