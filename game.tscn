@@ -1,8 +1,7 @@
-[gd_scene load_steps=46 format=3 uid="uid://dtcpvgfsi2cpv"]
+[gd_scene load_steps=62 format=3 uid="uid://dtcpvgfsi2cpv"]
 
 [ext_resource type="Script" uid="uid://lhlamou0ygmt" path="res://game.gd" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://bd08kuho0r3mb" path="res://Cardlist.gd" id="1_feb5d"]
-[ext_resource type="Texture2D" uid="uid://dgy4k88yb6bgo" path="res://Art/Character sprites/gamer.png" id="5_hve3p"]
 [ext_resource type="Script" uid="uid://di04a0e3mofuf" path="res://player.gd" id="5_ryrav"]
 [ext_resource type="Script" uid="uid://d2x500dj2q6h5" path="res://Player_health_text.gd" id="6_boyg6"]
 [ext_resource type="Script" uid="uid://dufw5d6hqw3tp" path="res://Enemycode.gd" id="6_rvswv"]
@@ -10,21 +9,37 @@
 [ext_resource type="Texture2D" uid="uid://crl0y32to1lqf" path="res://Art/Character sprites/sprite_slime_0.png" id="7_rvswv"]
 [ext_resource type="Texture2D" uid="uid://cybwbfetkel4y" path="res://Art/Character sprites/sprite_slime_1.png" id="8_boyg6"]
 [ext_resource type="Script" uid="uid://uq7d7ilonbu7" path="res://characters.gd" id="8_f1jbl"]
+[ext_resource type="Texture2D" uid="uid://m5a1nwvsqgkc" path="res://Art/Character sprites/player sprite frame 0.png" id="8_tb2lt"]
+[ext_resource type="Texture2D" uid="uid://bi6arotht74jc" path="res://Art/Character sprites/player sprite frame 1.png" id="9_cfc7e"]
 [ext_resource type="Texture2D" uid="uid://bwcb4cqba8iyv" path="res://Art/Character sprites/sprite_slime_2.png" id="9_e36ub"]
 [ext_resource type="Texture2D" uid="uid://b1oej3uky7a3r" path="res://Art/Other/Energi Battery Sprite-Sheet.png" id="9_iotsf"]
+[ext_resource type="Texture2D" uid="uid://c8v0sovl72dpf" path="res://Art/Character sprites/playerBlock0.png" id="10_gh0px"]
 [ext_resource type="Texture2D" uid="uid://blxof6n6yhd70" path="res://Art/Character sprites/sprite_slime_3.png" id="10_hb5m1"]
 [ext_resource type="Texture2D" uid="uid://cuw4r2qipmmvx" path="res://Art/Backgrounds/image.png" id="10_iotsf"]
 [ext_resource type="Script" uid="uid://cym5fayah25hk" path="res://Energy Display.gd" id="10_lc2xo"]
 [ext_resource type="FontFile" uid="uid://o03ne25nrn3b" path="res://Pixel Font - 3x4.ttf" id="11_5b14r"]
-[ext_resource type="Script" uid="uid://klgxa0yoepgt" path="res://Player Sprite.gd" id="11_7knny"]
+[ext_resource type="Texture2D" uid="uid://dsmcbaup71pqm" path="res://Art/Character sprites/playerBlock1.png" id="11_v33yl"]
 [ext_resource type="Texture2D" uid="uid://cm0lxsnak1foi" path="res://Art/Character sprites/sprite_slime_4.png" id="11_x5p1p"]
+[ext_resource type="Texture2D" uid="uid://bvbpi5f5oqmqw" path="res://Art/Character sprites/playerBlock2.png" id="12_2tki7"]
 [ext_resource type="Texture2D" uid="uid://ddkxwt4s50xj4" path="res://Art/Character sprites/sprite_slime_5.png" id="12_qhcbd"]
+[ext_resource type="Texture2D" uid="uid://bcipriivvldrg" path="res://Art/Character sprites/playerBlock3.png" id="13_ib7ph"]
+[ext_resource type="Texture2D" uid="uid://b600a8fvg36gj" path="res://Art/Character sprites/playerBlock4.png" id="14_vuohh"]
+[ext_resource type="Texture2D" uid="uid://c6js4h5cxexc3" path="res://Art/Character sprites/playerBlock5.png" id="15_3gvs5"]
+[ext_resource type="Texture2D" uid="uid://5omwarna274y" path="res://Art/Character sprites/playerBlock6.png" id="16_mc3al"]
 [ext_resource type="Script" uid="uid://b6w6wik0jcod" path="res://player_shield_sprite.gd" id="17_4v2jo"]
+[ext_resource type="Texture2D" uid="uid://qtkux85vj1jp" path="res://Art/Character sprites/playerBlock7.png" id="17_bqa6y"]
+[ext_resource type="Texture2D" uid="uid://bt1xk4qgq3t03" path="res://Art/Character sprites/playerBlock8.png" id="18_du4n2"]
 [ext_resource type="Texture2D" uid="uid://pi0csmqovqxk" path="res://sprite_zombie_0.png" id="19_e36ub"]
+[ext_resource type="Texture2D" uid="uid://2xt1oimalr1l" path="res://Art/Character sprites/playerSwing1.png" id="19_ra4rb"]
 [ext_resource type="Texture2D" uid="uid://c86bc1ote7wq4" path="res://sprite_zombie_1.png" id="20_hb5m1"]
+[ext_resource type="Texture2D" uid="uid://qqmc6tpcqmy0" path="res://Art/Character sprites/playerSwing2.png" id="20_ple6s"]
 [ext_resource type="Script" uid="uid://vp51ded4iwdj" path="res://enemy_sprites.gd" id="21_hb5m1"]
+[ext_resource type="Texture2D" uid="uid://di5jmx0vgssqy" path="res://Art/Character sprites/playerSwing3.png" id="21_jo4nb"]
+[ext_resource type="Texture2D" uid="uid://jcvqh5i7no6x" path="res://Art/Character sprites/playerSwing4.png" id="22_56gn1"]
 [ext_resource type="Script" uid="uid://cr38awxe7fkwr" path="res://Game text and symbol display/Enemy_health_text.gd" id="22_qhcbd"]
+[ext_resource type="Texture2D" uid="uid://brks7ufc2jbjd" path="res://Art/Character sprites/playerSwing5.png" id="23_avmo2"]
 [ext_resource type="Script" uid="uid://crxyguefblvk5" path="res://Game text and symbol display/enemy_shield_text.gd" id="23_f1jbl"]
+[ext_resource type="Script" uid="uid://klgxa0yoepgt" path="res://player Sprite.gd" id="24_vyqle"]
 [ext_resource type="Texture2D" uid="uid://spslokn46eks" path="res://Art/Symbols/Health symbol.png" id="25_dhpj7"]
 [ext_resource type="Script" uid="uid://b1mmwmr6x1suf" path="res://Game text and symbol display/enemy_shield_gain_text.gd" id="25_xa8c5"]
 [ext_resource type="Script" uid="uid://bfu00exqvq57v" path="res://Game text and symbol display/enemy_attack_text.gd" id="26_5b14r"]
@@ -86,6 +101,72 @@ animations = [{
 "loop": true,
 "name": &"new_animation",
 "speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xoeau"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_tb2lt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_cfc7e")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_gh0px")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_v33yl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_2tki7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ib7ph")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_vuohh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_3gvs5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_mc3al")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_bqa6y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_du4n2")
+}],
+"loop": false,
+"name": &"Swordblock",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_ra4rb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ple6s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_jo4nb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_56gn1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_avmo2")
+}],
+"loop": false,
+"name": &"Swordswing",
+"speed": 10.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_f1jbl"]
@@ -163,12 +244,15 @@ script = ExtResource("8_f1jbl")
 [node name="Player" type="Node2D" parent="Characters"]
 script = ExtResource("5_ryrav")
 
-[node name="Player_sprite" type="Sprite2D" parent="Characters/Player"]
-z_index = -1
-position = Vector2(227, -112)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("5_hve3p")
-script = ExtResource("11_7knny")
+[node name="Player_sprite" type="AnimatedSprite2D" parent="Characters/Player"]
+z_index = 5
+position = Vector2(218, -100)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_xoeau")
+animation = &"Swordswing"
+frame = 4
+frame_progress = 1.0
+script = ExtResource("24_vyqle")
 
 [node name="Health Text" type="RichTextLabel" parent="Characters/Player"]
 offset_left = 104.0

@@ -132,20 +132,24 @@ func player_damage(card_id,card_name,card_mult):
 		if card_id == 009: 
 			for i in current_energy:
 				if not Enemycode.enemy_health < 0:
+					PlayerSprite.play_swordswing()
 					Enemycode.enemy_take_damage(played_card_damage)
 					await get_tree().create_timer(0.2).timeout
 		if card_id == 015:
 			if not Enemycode.enemy_health < 0:
+				PlayerSprite.play_swordswing()
 				Enemycode.enemy_take_damage(7 + self_damage_this_round)
 				await get_tree().create_timer(0.2).timeout
 		if card_id == 020:
 			for i in cards_drawn_this_round:
 				if not Enemycode.enemy_health < 0:
+					PlayerSprite.play_swordswing()
 					Enemycode.enemy_take_damage(played_card_damage)
 					await get_tree().create_timer(0.2).timeout
 		else:
 			for i in card_mult:
 				if not Enemycode.enemy_health < 0:
+					PlayerSprite.play_swordswing()
 					Enemycode.enemy_take_damage(played_card_damage)
 					await get_tree().create_timer(0.2).timeout
 
