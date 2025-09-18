@@ -35,10 +35,8 @@
 [ext_resource type="Script" path="res://enemy_intent_shield.gd" id="30_aa0lp"]
 [ext_resource type="Script" path="res://enemy_intent_damage.gd" id="32_082n1"]
 [ext_resource type="Texture2D" uid="uid://bs3vb37sxdhlg" path="res://Art/Symbols/Heal symbol.png" id="32_xex6t"]
-
-[ext_resource type="Script" uid="uid://6wyldqry43ag" path="res://enemy_intent_heal.gd" id="36_iu0sx"]
+[ext_resource type="Script" path="res://enemy_intent_heal.gd" id="36_iu0sx"]
 [ext_resource type="PackedScene" uid="uid://5gvarj6y6lxl" path="res://Screen transition.tscn" id="37_iu0sx"]
-
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_boyg6"]
 atlas = ExtResource("9_iotsf")
