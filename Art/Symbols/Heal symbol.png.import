@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cuw4r2qipmmvx"
-path="res://.godot/imported/image.png-c8f5458a4c8355442fd4483be2f19b77.ctex"
+uid="uid://bs3vb37sxdhlg"
+path="res://.godot/imported/Heal symbol.png-19e7590ee9363e161a61ea8164f95573.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/image.png"
-dest_files=["res://.godot/imported/image.png-c8f5458a4c8355442fd4483be2f19b77.ctex"]
+source_file="res://Art/Symbols/Heal symbol.png"
+dest_files=["res://.godot/imported/Heal symbol.png-19e7590ee9363e161a61ea8164f95573.ctex"]
 
 [params]
 

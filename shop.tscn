@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://css7b1vnyfmiq"]
+[gd_scene load_steps=3 format=3 uid="uid://css7b1vnyfmiq"]
 
 [ext_resource type="Script" uid="uid://bweng20k0j2o1" path="res://shop.gd" id="1_viryw"]
+[ext_resource type="Texture2D" uid="uid://dx02wwdnyarn2" path="res://Art/Backgrounds/shop baggrund.png" id="2_e7rdd"]
 
 [node name="Shop" type="Node2D"]
 position = Vector2(-1699, -712)
@@ -38,6 +39,11 @@ scale = Vector2(2.28844, 1.8948)
 text = "Reroll"
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Background shop" type="Sprite2D" parent="."]
+z_index = -10
+scale = Vector2(4, 4)
+texture = ExtResource("2_e7rdd")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Label/Button" to="." method="_on_button2_pressed"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cu1wthf6lr8te"
-path="res://.godot/imported/sprite_zombie_0.png-90ee3474d8e2b6859498535288cdee19.ctex"
+uid="uid://bj8aywvslwl12"
+path="res://.godot/imported/Buttons2.png-cc630e7e2499df2a8eb2ecec4be06ffa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/sprite_zombie_0.png"
-dest_files=["res://.godot/imported/sprite_zombie_0.png-90ee3474d8e2b6859498535288cdee19.ctex"]
+source_file="res://Art/Other/Buttons2.png"
+dest_files=["res://.godot/imported/Buttons2.png-cc630e7e2499df2a8eb2ecec4be06ffa.ctex"]
 
 [params]
 

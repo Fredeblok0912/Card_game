@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crl0y32to1lqf"
-path="res://.godot/imported/sprite_slime_0.png-9845ff14ea98d668c666748841789c90.ctex"
+uid="uid://b1oej3uky7a3r"
+path="res://.godot/imported/Energi Battery Sprite-Sheet.png-a057aee08966d9dcb9dbc619e29cf347.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/sprite_slime_0.png"
-dest_files=["res://.godot/imported/sprite_slime_0.png-9845ff14ea98d668c666748841789c90.ctex"]
+source_file="res://Art/Other/Energi Battery Sprite-Sheet.png"
+dest_files=["res://.godot/imported/Energi Battery Sprite-Sheet.png-a057aee08966d9dcb9dbc619e29cf347.ctex"]
 
 [params]
 
