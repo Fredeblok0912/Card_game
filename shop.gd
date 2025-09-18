@@ -130,18 +130,21 @@ func _on_button2_pressed() -> void:
 	
 
 
-func _on_button_2_pressed() -> void:
+func _on_button_2_pressed():
 	if player.money >= 5:
 		if player.max_health - player.health < 5:
 			player.health = player.max_health
+			player.money -= 5
 		elif player.max_health - player.health > 5:
 			player.health = player.health + 5
+			player.money -= 5
 	else:
 		print("Not enough money")
 
 
-func _on_button_3_pressed() -> void:
+func _on_button_3_pressed():
 	if player.money >= 5:
 		player.max_health = player.max_health + 5
+		player.money -= 5
 	else:
 		print("Not enough money")
