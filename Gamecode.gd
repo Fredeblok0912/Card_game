@@ -6,6 +6,7 @@ func _process(delta: float):
 	pass
 	
 func gamestart(): 
+	await get_tree().create_timer(0.5).timeout
 	Cardlist.current_decklist = Cardlist.decklist.duplicate()
 	Cardlist.discard_pile.clear()
 	clear_hand()
