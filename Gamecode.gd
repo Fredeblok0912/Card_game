@@ -44,6 +44,7 @@ var card_spacing := 235
 var hand_y := 300
 var tween_duration := 0.35
 var card_scale := 4
+var self_damage_factor = 1
 
 func add_card(card_id: int) -> void:
 	var card := Area2D.new()
@@ -156,6 +157,8 @@ func player_self_damage(card_id,card_name,card_mult):
 	if played_card_self_damage != 0:
 		for i in range(card_mult):
 #			print(card_name," deals ", played_card_self_damage, " damage to the player")
+			if card_id == 014:
+				self_damage_factor = 0
 			player.take_damage(played_card_self_damage)
 	
 func _input(event):

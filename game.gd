@@ -10,3 +10,4 @@ func end_turn():
 	Gamecode.current_energy = 5
 	player.player_shield = 0
 	Enemycode.prepare_action()
+	Gamecode.self_damage_factor = 1

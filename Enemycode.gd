@@ -64,5 +64,5 @@ func action():
 		enemy_regain_health((ceil(enemy_database[loaded_enemy]["moves"][chosen_move]["healing"])*difficulty_mod))
 			
 func Scale_difficulty():
-	difficulty_mod = difficulty_mod * 1.1 as float
+	difficulty_mod = difficulty_mod * 1.05 as float
 	print("current difficulty mod is ",difficulty_mod)
