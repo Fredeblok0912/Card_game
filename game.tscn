@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://dtcpvgfsi2cpv"]
+[gd_scene load_steps=47 format=3 uid="uid://dtcpvgfsi2cpv"]
 
 [ext_resource type="Script" uid="uid://lhlamou0ygmt" path="res://game.gd" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://bd08kuho0r3mb" path="res://Cardlist.gd" id="1_feb5d"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://blxof6n6yhd70" path="res://Art/sprite_slime_3.png" id="10_hb5m1"]
 [ext_resource type="Texture2D" uid="uid://cuw4r2qipmmvx" path="res://Art/image.png" id="10_iotsf"]
 [ext_resource type="Script" uid="uid://cym5fayah25hk" path="res://Energy Display.gd" id="10_lc2xo"]
+[ext_resource type="FontFile" uid="uid://o03ne25nrn3b" path="res://Pixel Font - 3x4.ttf" id="11_5b14r"]
 [ext_resource type="Texture2D" uid="uid://cm0lxsnak1foi" path="res://Art/sprite_slime_4.png" id="11_x5p1p"]
 [ext_resource type="Texture2D" uid="uid://ddkxwt4s50xj4" path="res://Art/sprite_slime_5.png" id="12_qhcbd"]
 [ext_resource type="Texture2D" uid="uid://pi0csmqovqxk" path="res://sprite_zombie_0.png" id="19_e36ub"]
@@ -244,16 +245,16 @@ offset_left = 100.0
 offset_top = -318.0
 offset_right = 152.0
 offset_bottom = -265.0
+theme_override_fonts/normal_font = ExtResource("11_5b14r")
 script = ExtResource("6_boyg6")
-metadata/_edit_use_anchors_ = true
 
 [node name="Shield Text" type="RichTextLabel" parent="Characters/Player"]
 offset_left = 309.0
 offset_top = -318.0
 offset_right = 361.0
 offset_bottom = -265.0
+theme_override_fonts/normal_font = ExtResource("11_5b14r")
 script = ExtResource("7_e36ub")
-metadata/_edit_use_anchors_ = true
 
 [node name="Enemy" type="Node2D" parent="Characters"]
 script = ExtResource("6_rvswv")
@@ -270,16 +271,16 @@ offset_left = 957.0
 offset_top = -318.0
 offset_right = 1009.0
 offset_bottom = -265.0
+theme_override_fonts/normal_font = ExtResource("11_5b14r")
 script = ExtResource("22_qhcbd")
-metadata/_edit_use_anchors_ = true
 
 [node name="Enemy Shield Text" type="RichTextLabel" parent="Characters/Enemy"]
 offset_left = 1166.0
 offset_top = -318.0
 offset_right = 1218.0
 offset_bottom = -265.0
+theme_override_fonts/normal_font = ExtResource("11_5b14r")
 script = ExtResource("23_f1jbl")
-metadata/_edit_use_anchors_ = true
 
 [node name="Enemy_Intent_Text" type="Node2D" parent="Characters/Enemy"]
 
@@ -288,6 +289,7 @@ offset_left = 889.0
 offset_top = -105.0
 offset_right = 929.0
 offset_bottom = -65.0
+theme_override_fonts/normal_font = ExtResource("11_5b14r")
 script = ExtResource("25_xa8c5")
 
 [node name="Enemy Intent Damage Text" type="RichTextLabel" parent="Characters/Enemy/Enemy_Intent_Text"]
@@ -295,6 +297,7 @@ offset_left = 889.0
 offset_top = -162.0
 offset_right = 929.0
 offset_bottom = -122.0
+theme_override_fonts/normal_font = ExtResource("11_5b14r")
 script = ExtResource("26_5b14r")
 
 [node name="Enemy Intent Heal Text" type="RichTextLabel" parent="Characters/Enemy/Enemy_Intent_Text"]
@@ -302,6 +305,7 @@ offset_left = 889.0
 offset_top = -48.0
 offset_right = 929.0
 offset_bottom = -8.0
+theme_override_fonts/normal_font = ExtResource("11_5b14r")
 script = ExtResource("27_bnpwn")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
