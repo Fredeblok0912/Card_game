@@ -66,7 +66,7 @@ func display_cards():
 		var card_id = cards[i]
 
 		var card = Area2D.new()
-		card.position = Vector2(start_x_value + i * spacing, 0)
+		card.position = Vector2(start_x_value + i * spacing, -200)
 		card.input_pickable = true
 
 		var card_sprite := Sprite2D.new()
