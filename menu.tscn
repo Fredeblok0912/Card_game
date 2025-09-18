@@ -54,13 +54,13 @@ texture = ExtResource("6_l48gv")
 
 [node name="CanvasLayer" parent="." instance=ExtResource("7_ecwwl")]
 
-[node name="Label3" type="Label" parent="."]
+[node name="Version Label" type="Label" parent="."]
 z_index = 5
 offset_left = 1756.0
 offset_top = 1009.0
 offset_right = 1876.0
 offset_bottom = 1032.0
-text = "version. 1.0.183"
+text = "version. 1.0.200"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(981, 538)

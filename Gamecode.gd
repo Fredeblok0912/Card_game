@@ -1,6 +1,9 @@
 extends Node2D
 
 var current_energy = 0 as int
+var self_damage_factor = 1
+var self_damage_this_round = 0
+var cards_drawn_this_round = 0
 
 func _process(delta: float):
 	pass
@@ -26,6 +29,7 @@ func draw_cards(n: int):
 				Cardlist.hand_cards.append(card_id)
 				await get_tree().create_timer(0.3).timeout
 				add_card(card_id)
+				cards_drawn_this_round = cards_drawn_this_round + 1
 			elif Cardlist.current_decklist.size() <= 0 && Cardlist.discard_pile.size() <= 0:
 				print("Deck and Discard Pile empty")
 			else:
@@ -37,6 +41,7 @@ func draw_cards(n: int):
 				await get_tree().create_timer(0.3).timeout
 				print("shuffled Discard pile into drawpile and drew a card")
 				add_card(card_id)
+				cards_drawn_this_round = cards_drawn_this_round + 1
 #----------------------------------------------------------------------------
 #Cards in hand loading sprites
 
@@ -45,8 +50,7 @@ var card_spacing := 235
 var hand_y := 300
 var tween_duration := 0.35
 var card_scale := 4
-var self_damage_factor = 1
-var self_damage_this_round = 0
+
 
 func add_card(card_id: int) -> void:
 	var card := Area2D.new()
@@ -99,9 +103,13 @@ func card_clicked(_viewport, event, _shape_idx, card_id, card_node):
 			remove_card_on_click(card_id, card_node)
 			if card_id == 009:
 				current_energy = 0
+			if card_id == 014:
+				self_damage_factor = 0
+				print("self damage turned off")
 			current_energy = current_energy - cardcost
 		else:
 			print("card too expensive")
+
 func remove_card_on_click(card_id: int, card_node: Area2D) -> void:
 	var index = hand_sprites.find(card_node)
 	hand_sprites.remove_at(index)
@@ -122,13 +130,19 @@ func player_damage(card_id,card_name,card_mult):
 	var played_card_damage = Cardlist.card_database[card_id].get("damage")
 	if played_card_damage != 0:
 		if card_id == 009: 
-			print(current_energy)
 			for i in current_energy:
 				if not Enemycode.enemy_health < 0:
 					Enemycode.enemy_take_damage(played_card_damage)
 					await get_tree().create_timer(0.2).timeout
 		if card_id == 015:
-			Enemycode.enemy_take_damage(7 + self_damage_this_round)
+			if not Enemycode.enemy_health < 0:
+				Enemycode.enemy_take_damage(7 + self_damage_this_round)
+				await get_tree().create_timer(0.2).timeout
+		if card_id == 020:
+			for i in cards_drawn_this_round:
+				if not Enemycode.enemy_health < 0:
+					Enemycode.enemy_take_damage(played_card_damage)
+					await get_tree().create_timer(0.2).timeout
 		else:
 			for i in card_mult:
 				if not Enemycode.enemy_health < 0:
@@ -160,11 +174,9 @@ func player_self_damage(card_id,card_name,card_mult):
 	var played_card_self_damage = Cardlist.card_database[card_id].get("selfdamage")
 	if played_card_self_damage != 0:
 		for i in range(card_mult):
-#			print(card_name," deals ", played_card_self_damage, " damage to the player")
-			if card_id == 014:
-				self_damage_factor = 0
-			player.take_damage(played_card_self_damage)
-			self_damage_this_round = played_card_self_damage
+			player.take_damage(played_card_self_damage * self_damage_factor)
+			self_damage_this_round = self_damage_this_round + played_card_self_damage
+			print(self_damage_this_round)
 	
 func _input(event):
 	if event.is_action_released("ui_down"):
@@ -175,6 +187,7 @@ func _input(event):
 func enter_shop():
 	player.money += ceil(10 * Enemycode.difficulty_mod)
 	Enemycode.Scale_difficulty()
+	Game.Wincounter = Game.Wincounter + 1
 	ScreenTransition.load_scene("res://shop.tscn")
 	
 

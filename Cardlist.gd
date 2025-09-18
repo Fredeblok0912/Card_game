@@ -24,12 +24,12 @@ var card_database = {
 	012: {"name": "Flamekick","cost":2, "damage": 15, "shield": 0, "draw":0, "heal":0, "selfdamage":5,"executionmult":1,"rarity":1},
 	013: {"name": "Combust","cost":3, "damage": 27, "shield": 0, "draw":0, "heal":0, "selfdamage":9,"executionmult":1,"rarity":2},
 	014: {"name": "Bellow","cost":2, "damage": 0, "shield": 0, "draw":0, "heal":0, "selfdamage":0,"executionmult":1,"rarity":2},
-	015: {"name": "Fireball","cost":2, "damage": "7 + selfdamage", "shield": 0, "draw":0, "heal":0, "selfdamage":0,"executionmult":1,"rarity":3},
+	015: {"name": "Fireball","cost":2, "damage": 7, "shield": 0, "draw":0, "heal":0, "selfdamage":0,"executionmult":1,"rarity":3},
 	016: {"name": "Splash","cost":1, "damage": 1, "shield": 2, "draw":1, "heal":0, "selfdamage":0,"executionmult":1,"rarity":1},
 	017: {"name": "Water Cut","cost":2, "damage": 7, "shield": 0, "draw":1, "heal":0, "selfdamage":0,"executionmult":1,"rarity":1},
 	018: {"name": "Ice Blash","cost":3, "damage": 12, "shield": 0, "draw":2, "heal":0, "selfdamage":0,"executionmult":1,"rarity":2},
 	019: {"name": "Soda","cost":2, "damage": 0, "shield": 3, "draw":2, "heal":3, "selfdamage":0,"executionmult":1,"rarity":2},
-	020: {"name": "Waterfall","cost":2, "damage": 4, "shield": 0, "draw":0, "heal":0, "selfdamage":0,"executionmult":"amount of cards you've drawn this turn [doesnt work yet, this is just a string]","rarity":3},
+	020: {"name": "Waterfall","cost":2, "damage": 4, "shield": 0, "draw":0, "heal":0, "selfdamage":0,"executionmult":1,"rarity":3},
 	021: {"name": "Dual Slash","cost":2, "damage": 4, "shield": 0, "draw":0, "heal":0, "selfdamage":0,"executionmult":2,"rarity":2},
 }
 #Liste over alle kort sprites
@@ -59,7 +59,7 @@ var card_sprites_database = {
 	}
 
 # Etablering af main Deck Arrays
-var decklist = [1,2,2,3,4,4]       		# Det permanente deck som bliver kopieret til hvert combat, er den som man skal add kort til når man køber
+var decklist = [1,2,2,3,4,4,20]       		# Det permanente deck som bliver kopieret til hvert combat, er den som man skal add kort til når man køber
 var current_decklist = []	# Kort som er i spillerens deck under combat, burde være tom og kopiere inholdet af decklist, men for testing rn er den fyldt
 var hand_cards = []						# Kort som er i spillerens hånd
 #Discard should be empty, this is for testing purposes

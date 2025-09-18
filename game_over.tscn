@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://de0cqchbpeflh"]
+[gd_scene load_steps=5 format=3 uid="uid://de0cqchbpeflh"]
 
 [ext_resource type="Script" uid="uid://7gjakctndldx" path="res://game_over.gd" id="1_y26ei"]
+[ext_resource type="Script" uid="uid://lrudukvuo8bt" path="res://Wincounter shower.gd" id="2_ccer4"]
 [ext_resource type="Texture2D" uid="uid://dfo4i75ovm1vr" path="res://Art/Backgrounds/GameOver screen.png" id="2_yxx3c"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xapjj"]
@@ -11,16 +12,18 @@ position = Vector2(955, 518)
 script = ExtResource("1_y26ei")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 26.0
-offset_top = 20.0
-offset_right = 304.0
-offset_bottom = 89.0
-text = "Game Over"
+z_index = 5
+offset_left = -207.0
+offset_top = -237.0
+offset_right = 71.0
+offset_bottom = -168.0
 label_settings = SubResource("LabelSettings_xapjj")
-
-[node name="Camera2D" type="Camera2D" parent="Label"]
+script = ExtResource("2_ccer4")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(26, 20)
 scale = Vector2(4, 4)
 texture = ExtResource("2_yxx3c")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(26, 20)
