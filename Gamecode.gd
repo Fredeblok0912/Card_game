@@ -18,23 +18,24 @@ func gamestart():
 	
 	
 func draw_cards(n: int):
-	for i in range(n):
-		if Cardlist.current_decklist.size() > 0:
-			var card_id = Cardlist.current_decklist.pop_front()
-			Cardlist.hand_cards.append(card_id)
-			await get_tree().create_timer(0.3).timeout
-			add_card(card_id)
-		elif Cardlist.current_decklist.size() <= 0 && Cardlist.discard_pile.size() <= 0:
-			print("Deck and Discard Pile empty")
-		else:
-			Cardlist.current_decklist = Cardlist.discard_pile.duplicate()
-			Cardlist.discard_pile.clear()
-			Cardlist.current_decklist.shuffle()
-			var card_id = Cardlist.current_decklist.pop_front()
-			Cardlist.hand_cards.append(card_id)
-			await get_tree().create_timer(0.3).timeout
-			print("shuffled Discard pile into drawpile and drew a card")
-			add_card(card_id)
+	if not Cardlist.hand_cards.size() >= 7:
+		for i in range(n):
+			if Cardlist.current_decklist.size() > 0:
+				var card_id = Cardlist.current_decklist.pop_front()
+				Cardlist.hand_cards.append(card_id)
+				await get_tree().create_timer(0.3).timeout
+				add_card(card_id)
+			elif Cardlist.current_decklist.size() <= 0 && Cardlist.discard_pile.size() <= 0:
+				print("Deck and Discard Pile empty")
+			else:
+				Cardlist.current_decklist = Cardlist.discard_pile.duplicate()
+				Cardlist.discard_pile.clear()
+				Cardlist.current_decklist.shuffle()
+				var card_id = Cardlist.current_decklist.pop_front()
+				Cardlist.hand_cards.append(card_id)
+				await get_tree().create_timer(0.3).timeout
+				print("shuffled Discard pile into drawpile and drew a card")
+				add_card(card_id)
 #----------------------------------------------------------------------------
 #Cards in hand loading sprites
 
