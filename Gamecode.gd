@@ -88,7 +88,7 @@ func _update_hand_positions() -> void:
 
 func card_clicked(_viewport, event, _shape_idx, card_id, card_node):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		var cardcost = Cardlist.card_database[card_id].get("cost")
+		var cardcost = Cardlist.card_database[card_id].get("cost") as int
 		if cardcost <= current_energy:
 			card_played(card_id)
 			Cardlist.discard_pile.append(card_id)
@@ -117,11 +117,14 @@ func card_played(card_id):
 func player_damage(card_id,card_name,card_mult):
 	var played_card_damage = Cardlist.card_database[card_id].get("damage")
 	if played_card_damage != 0:
-		for i in range(card_mult):
+		for i in card_mult:
+			if not Enemycode.enemy_health > 0:
+				break
 #			print(card_name," deals ", played_card_damage, " damage to the enemy")
 			Enemycode.enemy_take_damage(played_card_damage)
 		if card_id == 009:
 			Enemycode.enemy_take_damage(played_card_damage * current_energy)
+
 
 func player_shield(card_id,card_name,card_mult):
 	var played_card_shield = Cardlist.card_database[card_id].get("shield")

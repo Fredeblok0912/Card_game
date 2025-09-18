@@ -42,6 +42,7 @@ func enemy_take_damage(amount):
 			enemy_health = enemy_health -1
 	if not enemy_health > 0:
 		Gamecode.enter_shop()
+		
 
 		
 func enemy_gain_shield(amount):
