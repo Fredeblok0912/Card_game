@@ -1,6 +1,17 @@
-[gd_scene format=3 uid="uid://de0cqchbpeflh"]
+[gd_scene load_steps=2 format=3 uid="uid://de0cqchbpeflh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xapjj"]
+font_size = 50
 
 [node name="gameOver" type="Node2D"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-1551, 1794)
+[node name="Label" type="Label" parent="."]
+offset_left = 58.0
+offset_top = 35.0
+offset_right = 321.0
+offset_bottom = 104.0
+text = "Game over"
+label_settings = SubResource("LabelSettings_xapjj")
+
+[node name="Camera2D" type="Camera2D" parent="Label"]
+position = Vector2(-1609, 1759)
