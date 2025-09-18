@@ -17,6 +17,7 @@ offset_top = 840.0
 offset_right = 1444.0
 offset_bottom = 925.0
 text = "Quit Game"
+metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Button2"]
 position = Vector2(139, 43)
@@ -30,6 +31,7 @@ offset_right = 673.0
 offset_bottom = 921.0
 text = "
 "
+metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D2" type="Sprite2D" parent="Button"]
 position = Vector2(137, 42)
@@ -61,6 +63,7 @@ offset_top = 1009.0
 offset_right = 1876.0
 offset_bottom = 1032.0
 text = "version. 1.0.201"
+metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(981, 538)
