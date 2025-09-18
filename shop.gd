@@ -129,21 +129,21 @@ func _on_button2_pressed() -> void:
 		rerolls = rerolls + 1
 		label.text = "Money: " + str(player.money) + "$"
 	
-
-
+#restore 50% health
 func _on_button_3_pressed():
 	if player.money >= 5:
 		player.regain_health(ceil(player.player_max_health/2))
+		player.money = player.money - 5
 		label.text = "Money: " + str(player.money)+"$"
 		print("player health ",player.health," player max health ", player.player_max_health)
 	else:
 		print("Not enough money")
 
-
+# Increase max health
 func _on_button_4_pressed():
 	if not player.money < 0:
 		player.max_health = player.max_health + 5
-#¤		player.health = player.health + 5
+		player.health = player.health + 5
 		player.money = player.money - 5
 		label.text = "Money: " + str(player.money)+"$"
 		print("player health ",player.health," player max health ", player.player_max_health)
