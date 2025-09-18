@@ -22,6 +22,7 @@ Gamecode="*res://Gamecode.gd"
 Enemycode="*res://Enemycode.gd"
 player="*res://player.gd"
 EnemySprites="*res://enemy_sprites.gd"
+ScreenTransition="*res://Screen transition.tscn"
 
 [display]
 

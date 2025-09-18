@@ -167,7 +167,7 @@ func _input(event):
 func enter_shop():
 	player.money += ceil(10 * Enemycode.difficulty_mod)
 	Enemycode.Scale_difficulty()
-	get_tree().change_scene_to_file("res://shop.tscn")
+	ScreenTransition.load_scene("res://shop.tscn")
 	
 
 func clear_hand() -> void:

@@ -1,7 +1,7 @@
 extends Node2D
 
 func _on_button_pressed():
-	get_tree().change_scene_to_file("res://game.tscn")
+	ScreenTransition.load_scene("res://game.tscn")
 	Gamecode.gamestart()
 
 func _on_button_2_pressed():
@@ -9,4 +9,4 @@ func _on_button_2_pressed():
 
 
 func _on_button_3_pressed():
-	get_tree().change_scene_to_file("res://shop.tscn")
+		ScreenTransition.load_scene("res://shop.tscn")

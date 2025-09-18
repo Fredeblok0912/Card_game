@@ -25,5 +25,5 @@ func regain_health(amount):
 
 func game_over():
 	Gamecode.clear_hand()
-	get_tree().change_scene_to_file("res://game_over.tscn")
+	ScreenTransition.load_scene("res://game_over.tscn")
 	

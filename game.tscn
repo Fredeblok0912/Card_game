@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://dtcpvgfsi2cpv"]
+[gd_scene load_steps=56 format=3 uid="uid://dtcpvgfsi2cpv"]
 
 [ext_resource type="Script" uid="uid://lhlamou0ygmt" path="res://game.gd" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://bd08kuho0r3mb" path="res://Cardlist.gd" id="1_feb5d"]
@@ -36,6 +36,7 @@
 [ext_resource type="Script" uid="uid://mnh2vectlbbm" path="res://enemy_intent_damage.gd" id="32_082n1"]
 [ext_resource type="Texture2D" uid="uid://bs3vb37sxdhlg" path="res://Art/Symbols/Heal symbol.png" id="32_xex6t"]
 [ext_resource type="Script" uid="uid://6wyldqry43ag" path="res://enemy_intent_heal.gd" id="36_iu0sx"]
+[ext_resource type="PackedScene" uid="uid://5gvarj6y6lxl" path="res://Screen transition.tscn" id="37_iu0sx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_boyg6"]
 atlas = ExtResource("9_iotsf")
@@ -215,7 +216,6 @@ animation = &"new_animation"
 script = ExtResource("10_lc2xo")
 
 [node name="Background_sprite" type="Sprite2D" parent="Static+Animated Sprites"]
-visible = false
 z_index = -10
 position = Vector2(576, 0)
 scale = Vector2(4, 4)
@@ -364,5 +364,7 @@ position = Vector2(908, -31)
 scale = Vector2(4, 4)
 texture = ExtResource("32_xex6t")
 script = ExtResource("36_iu0sx")
+
+[node name="CanvasLayer" parent="." instance=ExtResource("37_iu0sx")]
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

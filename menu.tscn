@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dk7bxyfwb45n0"]
+[gd_scene load_steps=21 format=3 uid="uid://dk7bxyfwb45n0"]
 
 [ext_resource type="Script" uid="uid://62cnljsoecj2" path="res://menu.gd" id="1_ouk20"]
 [ext_resource type="Texture2D" uid="uid://dnmx0jymtp3ru" path="res://Art/Other/Buttons3.png" id="2_ytr4m"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://klblt1tf7rb0" path="res://Art/Backgrounds/Background.png" id="4_ecwwl"]
 [ext_resource type="Script" uid="uid://ci3kfbyim8dem" path="res://Background animation.gd" id="5_kk3ma"]
 [ext_resource type="Texture2D" uid="uid://b8akc76lo2hba" path="res://Art/Backgrounds/menu.png" id="6_l48gv"]
+[ext_resource type="PackedScene" uid="uid://5gvarj6y6lxl" path="res://Screen transition.tscn" id="7_ecwwl"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ytr4m"]
 line_spacing = 6.0
@@ -142,7 +143,6 @@ sprite_frames = SubResource("SpriteFrames_nrnbx")
 script = ExtResource("5_kk3ma")
 
 [node name="Button3" type="Button" parent="."]
-visible = false
 offset_left = 827.0
 offset_top = 840.0
 offset_right = 884.0
@@ -156,6 +156,8 @@ z_index = -10
 position = Vector2(960, 540)
 scale = Vector2(4, 4)
 texture = ExtResource("6_l48gv")
+
+[node name="CanvasLayer" parent="." instance=ExtResource("7_ecwwl")]
 
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
