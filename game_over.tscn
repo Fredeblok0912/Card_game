@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://de0cqchbpeflh"]
+[gd_scene load_steps=4 format=3 uid="uid://de0cqchbpeflh"]
 
 [ext_resource type="Script" uid="uid://7gjakctndldx" path="res://game_over.gd" id="1_y26ei"]
+[ext_resource type="Texture2D" uid="uid://dfo4i75ovm1vr" path="res://Art/Backgrounds/GameOver screen.png" id="2_yxx3c"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xapjj"]
 font_size = 50
@@ -18,3 +19,8 @@ text = "Game Over"
 label_settings = SubResource("LabelSettings_xapjj")
 
 [node name="Camera2D" type="Camera2D" parent="Label"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(26, 20)
+scale = Vector2(4, 4)
+texture = ExtResource("2_yxx3c")
