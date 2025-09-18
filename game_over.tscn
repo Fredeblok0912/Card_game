@@ -1,3 +1,6 @@
 [gd_scene format=3 uid="uid://de0cqchbpeflh"]
 
 [node name="gameOver" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-1551, 1794)

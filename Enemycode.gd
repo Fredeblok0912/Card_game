@@ -36,13 +36,15 @@ func load_enemy():
 	
 func enemy_take_damage(amount):
 	for i in amount:
-		if enemy_shield != 0:
+		if not enemy_shield < 0:
 			enemy_shield = enemy_shield -1
 		else:
 			enemy_health = enemy_health -1
+		print("current shield ",enemy_shield)
+		print("current health ",enemy_health)
 	if not enemy_health > 0:
 		Gamecode.enter_shop()
-		Scale_difficulty()
+
 		
 func enemy_gain_shield(amount):
 	enemy_shield = enemy_shield + amount
@@ -55,8 +57,6 @@ func enemy_regain_health(amount):
 func prepare_action():
 	chosen_move = randi_range(0,3)
 	enemy_database[loaded_enemy]["moves"][chosen_move]
-#	print(enemy_database[loaded_enemy]["moves"][chosen_move])
-	#display the prepared action to the player using Enemy_intent_display
 	
 func action():
 	if enemy_database[loaded_enemy]["moves"][chosen_move]["damage"] != 0:

@@ -35,10 +35,6 @@ func draw_cards(n: int):
 			await get_tree().create_timer(0.3).timeout
 			print("shuffled Discard pile into drawpile and drew a card")
 			add_card(card_id)
-		print("drew a card")
-		print("discard pile contains ",Cardlist.discard_pile)
-		print("hand contains ",Cardlist.hand_cards)
-		print("Draw pile contains ",Cardlist.current_decklist)
 #----------------------------------------------------------------------------
 #Cards in hand loading sprites
 
@@ -159,6 +155,7 @@ func _input(event):
 
 func enter_shop():
 	player.money += ceil(10 * Enemycode.difficulty_mod)
+	Enemycode.Scale_difficulty()
 	get_tree().change_scene_to_file("res://shop.tscn")
 	
 
