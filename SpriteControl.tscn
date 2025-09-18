@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dcb4y1ao7vkeg"]
+[gd_scene load_steps=22 format=3 uid="uid://dcb4y1ao7vkeg"]
 
 [ext_resource type="Script" uid="uid://drvt8c6fuxrle" path="res://spirte_bullshit.gd" id="1_btue8"]
 [ext_resource type="Texture2D" uid="uid://m5a1nwvsqgkc" path="res://Art/Character sprites/player sprite frame 0.png" id="2_xbe63"]
@@ -17,6 +17,9 @@
 [ext_resource type="Texture2D" uid="uid://di5jmx0vgssqy" path="res://Art/Character sprites/playerSwing3.png" id="15_sc4sa"]
 [ext_resource type="Texture2D" uid="uid://jcvqh5i7no6x" path="res://Art/Character sprites/playerSwing4.png" id="16_omg5t"]
 [ext_resource type="Texture2D" uid="uid://brks7ufc2jbjd" path="res://Art/Character sprites/playerSwing5.png" id="17_hyw12"]
+[ext_resource type="AudioStream" uid="uid://cex6ugp3i2hmq" path="res://Art/SFX&Music/ShieldUp.wav" id="18_2262e"]
+[ext_resource type="AudioStream" uid="uid://s360eyjlek6l" path="res://Art/SFX&Music/SwordSwing.wav" id="19_0l1v8"]
+[ext_resource type="AudioStream" uid="uid://numwr8m7eto8" path="res://Art/SFX&Music/MUSIC.mp3" id="20_0l1v8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5s5db"]
 animations = [{
@@ -84,7 +87,7 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="SpriteControl" type="Node2D"]
+[node name="Sprite&MusicControl" type="Node2D"]
 script = ExtResource("1_btue8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -93,3 +96,14 @@ position = Vector2(218, -100)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_5s5db")
 animation = &"Swordswing"
+
+[node name="ShieldUp" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_2262e")
+
+[node name="SwordSwing" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_0l1v8")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_0l1v8")
+autoplay = true
+parameters/looping = true
