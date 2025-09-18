@@ -6,6 +6,7 @@ var player_max_health = 25
 var player_shield = 0
 
 func take_damage(amount):
+	print("This take_damage is running on: ", name, " path: ", get_path())
 	for i in amount:
 		if player_shield != 0:
 			player_shield = player_shield -1

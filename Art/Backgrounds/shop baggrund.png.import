@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnmx0jymtp3ru"
-path="res://.godot/imported/Buttons3.png-95377d9d781fdd6d444688c46a1ce3a2.ctex"
+uid="uid://dx02wwdnyarn2"
+path="res://.godot/imported/shop baggrund.png-1839df984fe900c0d3fb3bb09409172a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Buttons3.png"
-dest_files=["res://.godot/imported/Buttons3.png-95377d9d781fdd6d444688c46a1ce3a2.ctex"]
+source_file="res://Art/Backgrounds/shop baggrund.png"
+dest_files=["res://.godot/imported/shop baggrund.png-1839df984fe900c0d3fb3bb09409172a.ctex"]
 
 [params]
 

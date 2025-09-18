@@ -1,33 +1,42 @@
-[gd_scene load_steps=47 format=3 uid="uid://dtcpvgfsi2cpv"]
+[gd_scene load_steps=52 format=3 uid="uid://dtcpvgfsi2cpv"]
 
 [ext_resource type="Script" uid="uid://lhlamou0ygmt" path="res://game.gd" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://bd08kuho0r3mb" path="res://Cardlist.gd" id="1_feb5d"]
-[ext_resource type="Texture2D" uid="uid://dgy4k88yb6bgo" path="res://Art/gamer.png" id="5_hve3p"]
+[ext_resource type="Texture2D" uid="uid://dgy4k88yb6bgo" path="res://Art/Character sprites/gamer.png" id="5_hve3p"]
 [ext_resource type="Script" uid="uid://di04a0e3mofuf" path="res://player.gd" id="5_ryrav"]
 [ext_resource type="Script" uid="uid://d2x500dj2q6h5" path="res://Player_health_text.gd" id="6_boyg6"]
 [ext_resource type="Script" uid="uid://dufw5d6hqw3tp" path="res://Enemycode.gd" id="6_rvswv"]
 [ext_resource type="Script" uid="uid://pyr46ojdf4dq" path="res://Player_shield_text.gd" id="7_e36ub"]
-[ext_resource type="Texture2D" uid="uid://crl0y32to1lqf" path="res://Art/sprite_slime_0.png" id="7_rvswv"]
-[ext_resource type="Texture2D" uid="uid://cybwbfetkel4y" path="res://Art/sprite_slime_1.png" id="8_boyg6"]
+[ext_resource type="Texture2D" uid="uid://crl0y32to1lqf" path="res://Art/Character sprites/sprite_slime_0.png" id="7_rvswv"]
+[ext_resource type="Texture2D" uid="uid://cybwbfetkel4y" path="res://Art/Character sprites/sprite_slime_1.png" id="8_boyg6"]
 [ext_resource type="Script" uid="uid://uq7d7ilonbu7" path="res://characters.gd" id="8_f1jbl"]
-[ext_resource type="Texture2D" uid="uid://klblt1tf7rb0" path="res://Art/Background.png" id="8_vef74"]
-[ext_resource type="Texture2D" uid="uid://bwcb4cqba8iyv" path="res://Art/sprite_slime_2.png" id="9_e36ub"]
-[ext_resource type="Texture2D" uid="uid://b1oej3uky7a3r" path="res://Art/Energi Battery Sprite-Sheet.png" id="9_iotsf"]
+[ext_resource type="Texture2D" uid="uid://klblt1tf7rb0" path="res://Art/Backgrounds/Background.png" id="8_vef74"]
+[ext_resource type="Texture2D" uid="uid://bwcb4cqba8iyv" path="res://Art/Character sprites/sprite_slime_2.png" id="9_e36ub"]
+[ext_resource type="Texture2D" uid="uid://b1oej3uky7a3r" path="res://Art/Other/Energi Battery Sprite-Sheet.png" id="9_iotsf"]
 [ext_resource type="Script" uid="uid://ci3kfbyim8dem" path="res://Background animation.gd" id="9_vef74"]
-[ext_resource type="Texture2D" uid="uid://blxof6n6yhd70" path="res://Art/sprite_slime_3.png" id="10_hb5m1"]
-[ext_resource type="Texture2D" uid="uid://cuw4r2qipmmvx" path="res://Art/image.png" id="10_iotsf"]
+[ext_resource type="Texture2D" uid="uid://blxof6n6yhd70" path="res://Art/Character sprites/sprite_slime_3.png" id="10_hb5m1"]
+[ext_resource type="Texture2D" uid="uid://cuw4r2qipmmvx" path="res://Art/Backgrounds/image.png" id="10_iotsf"]
 [ext_resource type="Script" uid="uid://cym5fayah25hk" path="res://Energy Display.gd" id="10_lc2xo"]
 [ext_resource type="FontFile" uid="uid://o03ne25nrn3b" path="res://Pixel Font - 3x4.ttf" id="11_5b14r"]
-[ext_resource type="Texture2D" uid="uid://cm0lxsnak1foi" path="res://Art/sprite_slime_4.png" id="11_x5p1p"]
-[ext_resource type="Texture2D" uid="uid://ddkxwt4s50xj4" path="res://Art/sprite_slime_5.png" id="12_qhcbd"]
+[ext_resource type="Script" uid="uid://klgxa0yoepgt" path="res://Player Sprite.gd" id="11_7knny"]
+[ext_resource type="Texture2D" uid="uid://cm0lxsnak1foi" path="res://Art/Character sprites/sprite_slime_4.png" id="11_x5p1p"]
+[ext_resource type="Texture2D" uid="uid://ddkxwt4s50xj4" path="res://Art/Character sprites/sprite_slime_5.png" id="12_qhcbd"]
 [ext_resource type="Texture2D" uid="uid://pi0csmqovqxk" path="res://sprite_zombie_0.png" id="19_e36ub"]
 [ext_resource type="Texture2D" uid="uid://c86bc1ote7wq4" path="res://sprite_zombie_1.png" id="20_hb5m1"]
 [ext_resource type="Script" uid="uid://vp51ded4iwdj" path="res://enemy_sprites.gd" id="21_hb5m1"]
 [ext_resource type="Script" uid="uid://cr38awxe7fkwr" path="res://Enemy_health_text.gd" id="22_qhcbd"]
+
+[ext_resource type="Script" uid="uid://crxyguefblvk5" path="res://enemy_shield_text.gd" id="23_f1jbl"]
+[ext_resource type="Texture2D" uid="uid://spslokn46eks" path="res://Art/Symbols/Health symbol.png" id="25_dhpj7"]
+
 [ext_resource type="Script" uid="uid://crxyguefblvk5" path="res://Enemy_shield_text.gd" id="23_f1jbl"]
+
 [ext_resource type="Script" uid="uid://b1mmwmr6x1suf" path="res://enemy_shield_gain_text.gd" id="25_xa8c5"]
 [ext_resource type="Script" uid="uid://bfu00exqvq57v" path="res://enemy_attack_text.gd" id="26_5b14r"]
+[ext_resource type="Texture2D" uid="uid://bswdgl73kvnms" path="res://Art/Symbols/Shield symbol.png" id="27_7knny"]
 [ext_resource type="Script" uid="uid://b1i7rtk3hr1rm" path="res://enemy_heal_text.gd" id="27_bnpwn"]
+[ext_resource type="Texture2D" uid="uid://h27w70dkfmnf" path="res://Art/Symbols/attack symbol.png" id="30_082n1"]
+[ext_resource type="Texture2D" uid="uid://bs3vb37sxdhlg" path="res://Art/Symbols/Heal symbol.png" id="32_xex6t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_boyg6"]
 atlas = ExtResource("9_iotsf")
@@ -207,6 +216,7 @@ animation = &"new_animation"
 script = ExtResource("10_lc2xo")
 
 [node name="Background_sprite" type="Sprite2D" parent="Static+Animated Sprites"]
+visible = false
 z_index = -10
 position = Vector2(576, 0)
 scale = Vector2(4, 4)
@@ -234,11 +244,12 @@ script = ExtResource("8_f1jbl")
 [node name="Player" type="Node2D" parent="Characters"]
 script = ExtResource("5_ryrav")
 
-[node name="Sprite2D" type="Sprite2D" parent="Characters/Player"]
+[node name="Player_sprite" type="Sprite2D" parent="Characters/Player"]
 z_index = -1
 position = Vector2(227, -112)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_hve3p")
+script = ExtResource("11_7knny")
 
 [node name="Health Text" type="RichTextLabel" parent="Characters/Player"]
 offset_left = 100.0
@@ -271,55 +282,85 @@ animation = &"Zombie"
 script = ExtResource("21_hb5m1")
 
 [node name="Enemy Health Text" type="RichTextLabel" parent="Characters/Enemy"]
-offset_left = 957.0
-offset_top = -318.0
-offset_right = 1009.0
-offset_bottom = -265.0
+offset_left = 963.0
+offset_top = -301.0
+offset_right = 1007.0
+offset_bottom = -277.0
 theme_override_fonts/normal_font = ExtResource("11_5b14r")
 bbcode_enabled = true
 scroll_active = false
 script = ExtResource("22_qhcbd")
 
+[node name="Enemy health sprite" type="Sprite2D" parent="Characters/Enemy"]
+z_index = -1
+position = Vector2(983, -289)
+scale = Vector2(4, 4)
+texture = ExtResource("25_dhpj7")
+
 [node name="Enemy Shield Text" type="RichTextLabel" parent="Characters/Enemy"]
-offset_left = 1166.0
-offset_top = -318.0
-offset_right = 1218.0
-offset_bottom = -265.0
+offset_left = 1175.0
+offset_top = -304.0
+offset_right = 1219.0
+offset_bottom = -280.0
 theme_override_fonts/normal_font = ExtResource("11_5b14r")
 bbcode_enabled = true
 scroll_active = false
 script = ExtResource("23_f1jbl")
 
+[node name="Enemy shield sprite" type="Sprite2D" parent="Characters/Enemy"]
+z_index = -1
+position = Vector2(1195, -292)
+scale = Vector2(4, 4)
+texture = ExtResource("27_7knny")
+
 [node name="Enemy_Intent_Text" type="Node2D" parent="Characters/Enemy"]
 
 [node name="Enemy Intent Shield Text" type="RichTextLabel" parent="Characters/Enemy/Enemy_Intent_Text"]
-offset_left = 889.0
-offset_top = -105.0
-offset_right = 929.0
-offset_bottom = -65.0
+offset_left = 887.0
+offset_top = -101.0
+offset_right = 931.0
+offset_bottom = -76.0
 theme_override_fonts/normal_font = ExtResource("11_5b14r")
 bbcode_enabled = true
 scroll_active = false
 script = ExtResource("25_xa8c5")
 
+[node name="Enemy Intent Shield" type="Sprite2D" parent="Characters/Enemy/Enemy_Intent_Text"]
+z_index = -1
+position = Vector2(907, -88)
+scale = Vector2(4, 4)
+texture = ExtResource("27_7knny")
+
 [node name="Enemy Intent Damage Text" type="RichTextLabel" parent="Characters/Enemy/Enemy_Intent_Text"]
-offset_left = 889.0
-offset_top = -162.0
-offset_right = 929.0
-offset_bottom = -122.0
+offset_left = 891.0
+offset_top = -161.0
+offset_right = 935.0
+offset_bottom = -137.0
 theme_override_fonts/normal_font = ExtResource("11_5b14r")
 bbcode_enabled = true
 scroll_active = false
 script = ExtResource("26_5b14r")
 
+[node name="Enemy Intent Damage" type="Sprite2D" parent="Characters/Enemy/Enemy_Intent_Text"]
+z_index = -1
+position = Vector2(911, -149)
+scale = Vector2(4, 4)
+texture = ExtResource("30_082n1")
+
 [node name="Enemy Intent Heal Text" type="RichTextLabel" parent="Characters/Enemy/Enemy_Intent_Text"]
-offset_left = 889.0
-offset_top = -48.0
-offset_right = 929.0
-offset_bottom = -8.0
+offset_left = 888.0
+offset_top = -43.0
+offset_right = 932.0
+offset_bottom = -19.0
 theme_override_fonts/normal_font = ExtResource("11_5b14r")
 bbcode_enabled = true
 scroll_active = false
 script = ExtResource("27_bnpwn")
+
+[node name="Enemy Intent Heal" type="Sprite2D" parent="Characters/Enemy/Enemy_Intent_Text"]
+z_index = -1
+position = Vector2(908, -31)
+scale = Vector2(4, 4)
+texture = ExtResource("32_xex6t")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
