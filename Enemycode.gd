@@ -40,8 +40,6 @@ func enemy_take_damage(amount):
 			enemy_shield = enemy_shield -1
 		else:
 			enemy_health = enemy_health -1
-		print("current shield ",enemy_shield)
-		print("current health ",enemy_health)
 	if not enemy_health > 0:
 		Gamecode.enter_shop()
 
