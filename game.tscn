@@ -32,10 +32,10 @@
 [ext_resource type="Texture2D" uid="uid://bswdgl73kvnms" path="res://Art/Symbols/Shield symbol.png" id="27_7knny"]
 [ext_resource type="Script" uid="uid://b1i7rtk3hr1rm" path="res://enemy_heal_text.gd" id="27_bnpwn"]
 [ext_resource type="Texture2D" uid="uid://h27w70dkfmnf" path="res://Art/Symbols/attack symbol.png" id="30_082n1"]
-[ext_resource type="Script" uid="uid://qb65fouwv65p" path="res://enemy_intent_shield.gd" id="30_aa0lp"]
-[ext_resource type="Script" uid="uid://mnh2vectlbbm" path="res://enemy_intent_damage.gd" id="32_082n1"]
+[ext_resource type="Script" path="res://enemy_intent_shield.gd" id="30_aa0lp"]
+[ext_resource type="Script" path="res://enemy_intent_damage.gd" id="32_082n1"]
 [ext_resource type="Texture2D" uid="uid://bs3vb37sxdhlg" path="res://Art/Symbols/Heal symbol.png" id="32_xex6t"]
-[ext_resource type="Script" uid="uid://6wyldqry43ag" path="res://enemy_intent_heal.gd" id="36_iu0sx"]
+[ext_resource type="Script" path="res://enemy_intent_heal.gd" id="36_iu0sx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_boyg6"]
 atlas = ExtResource("9_iotsf")
