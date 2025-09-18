@@ -18,7 +18,9 @@ func take_damage(amount):
 			player_shield = player_shield -1
 		else:
 			player_health = player_health -1
-		
+		if not player_health > 0:
+			game_over()
+			break
 func gain_shield(amount):
 	player_shield = player_shield + amount
 	
