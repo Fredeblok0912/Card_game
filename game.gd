@@ -11,3 +11,4 @@ func end_turn():
 	player.player_shield = 0
 	Enemycode.prepare_action()
 	Gamecode.self_damage_factor = 1
+	Gamecode.self_damage_this_round = 0

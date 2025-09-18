@@ -2,6 +2,7 @@ extends Node2D
 @onready var label: Label = $Label
 var rerolls = 5
 
+
 var rarity_price = {
 	001:{"price":10},
 	002:{"price":15},

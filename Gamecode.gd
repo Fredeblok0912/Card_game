@@ -45,6 +45,7 @@ var hand_y := 300
 var tween_duration := 0.35
 var card_scale := 4
 var self_damage_factor = 1
+var self_damage_this_round = 0
 
 func add_card(card_id: int) -> void:
 	var card := Area2D.new()
@@ -125,6 +126,8 @@ func player_damage(card_id,card_name,card_mult):
 				if not Enemycode.enemy_health < 0:
 					Enemycode.enemy_take_damage(played_card_damage)
 					await get_tree().create_timer(0.2).timeout
+		if card_id == 015:
+			Enemycode.enemy_take_damage(7 + self_damage_this_round)
 		else:
 			for i in card_mult:
 				if not Enemycode.enemy_health < 0:
@@ -160,6 +163,7 @@ func player_self_damage(card_id,card_name,card_mult):
 			if card_id == 014:
 				self_damage_factor = 0
 			player.take_damage(played_card_self_damage)
+			self_damage_this_round = played_card_self_damage
 	
 func _input(event):
 	if event.is_action_released("ui_down"):
