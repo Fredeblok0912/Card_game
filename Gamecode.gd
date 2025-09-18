@@ -98,9 +98,9 @@ func card_clicked(_viewport, event, _shape_idx, card_id, card_node):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		var cardcost = Cardlist.card_database[card_id].get("cost") as int
 		if cardcost <= current_energy:
-			card_played(card_id)
 			Cardlist.discard_pile.append(card_id)
 			remove_card_on_click(card_id, card_node)
+			card_played(card_id)
 			if card_id == 009:
 				current_energy = 0
 			if card_id == 014:

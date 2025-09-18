@@ -26,7 +26,7 @@ func gain_shield(amount):
 	
 func regain_health(amount):
 	for i in amount:
-		if player_health != player_max_health:
+		if player_health < player_max_health:
 			player_health = player_health +1
 
 func game_over():
