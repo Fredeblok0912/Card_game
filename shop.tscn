@@ -48,5 +48,23 @@ position = Vector2(22, -11)
 scale = Vector2(4, 4)
 texture = ExtResource("2_e7rdd")
 
+[node name="Button2" type="Button" parent="."]
+offset_left = -238.0
+offset_top = -388.0
+offset_right = -122.0
+offset_bottom = -357.0
+scale = Vector2(1.30854, 1.57223)
+text = "Regain Health"
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 127.0
+offset_top = -384.0
+offset_right = 293.0
+offset_bottom = -353.0
+scale = Vector2(0.93635, 1.45419)
+text = "Increase Max Health"
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Label/Button" to="." method="_on_button2_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
