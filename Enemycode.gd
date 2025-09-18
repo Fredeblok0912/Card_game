@@ -1,6 +1,6 @@
 extends Character
 
-var difficulty_mod = 1
+var difficulty_mod = 10
 var loaded_enemy = 0
 
 var enemy_health = 1
@@ -39,10 +39,11 @@ func enemy_take_damage(amount):
 		if not enemy_health > 0:
 			Gamecode.enter_shop()
 			break
-		if enemy_shield > 0:
-			enemy_shield = enemy_shield -1
 		else:
-			enemy_health = enemy_health -1
+			if enemy_shield > 0:
+				enemy_shield = enemy_shield -1
+			else:
+				enemy_health = enemy_health -1
 		if not enemy_health > 0:
 			Gamecode.enter_shop()
 			break

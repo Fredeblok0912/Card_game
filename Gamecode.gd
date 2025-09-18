@@ -5,10 +5,8 @@ var self_damage_factor = 1
 var self_damage_this_round = 0
 var cards_drawn_this_round = 0
 
-func _process(delta: float):
-	pass
 	
-func gamestart(): 
+func gamestart():
 	await get_tree().create_timer(0.5).timeout
 	Cardlist.current_decklist = Cardlist.decklist.duplicate()
 	Cardlist.discard_pile.clear()
@@ -131,25 +129,31 @@ func player_damage(card_id,card_name,card_mult):
 	if played_card_damage != 0:
 		if card_id == 009: 
 			for i in current_energy:
-				if not Enemycode.enemy_health < 0:
-					PlayerSprite.play_swordswing()
+				if Enemycode.enemy_health > 0:
+					print("enemy health before damage ",Enemycode.enemy_health)
+					SpriteControl.SwingAnimation()
+					await SpriteControl.animated_sprite.animation_finished
 					Enemycode.enemy_take_damage(played_card_damage)
 					await get_tree().create_timer(0.2).timeout
+					print("enemy health after damage ",Enemycode.enemy_health)
 		if card_id == 015:
-			if not Enemycode.enemy_health < 0:
-				PlayerSprite.play_swordswing()
+			if Enemycode.enemy_health > 0:
+				SpriteControl.SwingAnimation()
+				await SpriteControl.animated_sprite.animation_finished
 				Enemycode.enemy_take_damage(7 + self_damage_this_round)
 				await get_tree().create_timer(0.2).timeout
 		if card_id == 020:
 			for i in cards_drawn_this_round:
-				if not Enemycode.enemy_health < 0:
-					PlayerSprite.play_swordswing()
+				if Enemycode.enemy_health > 0:
+					SpriteControl.SwingAnimation()
+					await SpriteControl.animated_sprite.animation_finished
 					Enemycode.enemy_take_damage(played_card_damage)
 					await get_tree().create_timer(0.2).timeout
 		else:
 			for i in card_mult:
-				if not Enemycode.enemy_health < 0:
-					PlayerSprite.play_swordswing()
+				if Enemycode.enemy_health > 0:
+					SpriteControl.SwingAnimation()
+					await SpriteControl.animated_sprite.animation_finished
 					Enemycode.enemy_take_damage(played_card_damage)
 					await get_tree().create_timer(0.2).timeout
 
@@ -157,6 +161,8 @@ func player_shield(card_id,card_name,card_mult):
 	var played_card_shield = Cardlist.card_database[card_id].get("shield")
 	if played_card_shield != 0:
 		for i in range(card_mult):
+			SpriteControl.BlockAnimation()
+			await SpriteControl.animated_sprite.animation_finished
 #			print(card_name," gains the player ", played_card_shield, " shield")
 			player.gain_shield(played_card_shield)
 	

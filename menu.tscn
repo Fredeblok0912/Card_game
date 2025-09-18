@@ -9,9 +9,11 @@
 [sub_resource type="CanvasTexture" id="CanvasTexture_ytr4m"]
 
 [node name="Menu" type="Node2D"]
+z_index = 10
 script = ExtResource("1_ouk20")
 
 [node name="Button2" type="Button" parent="."]
+z_index = 20
 offset_left = 1167.0
 offset_top = 840.0
 offset_right = 1444.0
@@ -20,11 +22,13 @@ text = "Quit Game"
 metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Button2"]
+z_index = 20
 position = Vector2(139, 43)
 scale = Vector2(4, 4)
 texture = ExtResource("2_ytr4m")
 
 [node name="Button" type="Button" parent="."]
+z_index = 20
 offset_left = 397.0
 offset_top = 837.0
 offset_right = 673.0
@@ -34,12 +38,14 @@ text = "
 metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D2" type="Sprite2D" parent="Button"]
+z_index = 20
 position = Vector2(137, 42)
 scale = Vector2(4, 4)
 texture = ExtResource("3_l48gv")
 
 [node name="Button3" type="Button" parent="."]
 visible = false
+z_index = 20
 offset_left = 827.0
 offset_top = 840.0
 offset_right = 884.0
@@ -49,15 +55,16 @@ text = "SHOP"
 icon = SubResource("CanvasTexture_ytr4m")
 
 [node name="New Background Sprite" type="Sprite2D" parent="."]
-z_index = -10
+z_index = 10
 position = Vector2(981, 538)
 scale = Vector2(4, 4)
 texture = ExtResource("6_l48gv")
 
 [node name="CanvasLayer" parent="." instance=ExtResource("7_ecwwl")]
+layer = 128
 
 [node name="Version Label" type="Label" parent="."]
-z_index = 5
+z_index = 20
 offset_left = 1756.0
 offset_top = 1009.0
 offset_right = 1876.0
