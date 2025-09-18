@@ -3,6 +3,7 @@ extends Node2D
 func _on_button_pressed() -> void:
 	end_turn()
 	
+	
 func end_turn():
 	Enemycode.enemy_shield = 0
 	Enemycode.action()

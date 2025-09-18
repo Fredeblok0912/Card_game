@@ -4,6 +4,7 @@ var current_energy = 0 as int
 var self_damage_factor = 1
 var self_damage_this_round = 0
 var cards_drawn_this_round = 0
+signal CardIsGettingProcessed
 
 	
 func gamestart():
@@ -98,7 +99,7 @@ func card_clicked(_viewport, event, _shape_idx, card_id, card_node):
 		if cardcost <= current_energy:
 			Cardlist.discard_pile.append(card_id)
 			remove_card_on_click(card_id, card_node)
-			card_played(card_id)
+			await card_played(card_id)
 			if card_id == 009:
 				current_energy = 0
 			if card_id == 014:
@@ -123,12 +124,13 @@ func card_played(card_id):
 	player_heal(card_id,card_name,card_mult)
 	player_draw(card_id,card_name,card_mult)	
 	player_self_damage(card_id,card_name,card_mult)
+
 	
 func player_damage(card_id,card_name,card_mult):
 	var played_card_damage = Cardlist.card_database[card_id].get("damage")
 	if played_card_damage != 0:
 		if card_id == 009: 
-			for i in current_energy:
+			for i in (current_energy-1):
 				if Enemycode.enemy_health > 0:
 					print("enemy health before damage ",Enemycode.enemy_health)
 					SpriteControl.SwingAnimation()

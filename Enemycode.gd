@@ -1,6 +1,6 @@
 extends Character
 
-var difficulty_mod = 10
+var difficulty_mod = 1
 var loaded_enemy = 0
 
 var enemy_health = 1
