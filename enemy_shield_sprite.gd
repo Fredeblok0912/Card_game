@@ -1,7 +1,7 @@
 extends Sprite2D
 
 func _process(delta: float) -> void:
-	if player.player_shield > 0:
+	if Enemycode.enemy_shield > 0:
 		show()
 	else:
 		hide()
