@@ -10,11 +10,11 @@ script = ExtResource("1_viryw")
 [node name="Cards" type="Node2D" parent="."]
 
 [node name="Button" type="Button" parent="."]
-offset_left = 404.0
-offset_top = 200.0
-offset_right = 529.0
-offset_bottom = 245.0
-text = "return to game"
+offset_left = 534.0
+offset_top = -148.0
+offset_right = 659.0
+offset_bottom = -103.0
+text = "Continue Game"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="."]
@@ -23,25 +23,27 @@ anchor_left = -0.331
 anchor_top = -0.778
 anchor_right = -0.331
 anchor_bottom = -0.778
-offset_left = -426.0
-offset_top = -179.0
-offset_right = -358.0
-offset_bottom = -121.0
+offset_left = -549.0
+offset_top = -316.0
+offset_right = -481.0
+offset_bottom = -258.0
+scale = Vector2(1, 1.27588)
 metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="Label"]
 layout_mode = 0
-offset_left = 1092.0
-offset_top = 209.0
-offset_right = 1100.0
-offset_bottom = 217.0
-scale = Vector2(2.28844, 1.8948)
+offset_left = 1096.0
+offset_top = 14.8917
+offset_right = 1150.0
+offset_bottom = 45.8917
+scale = Vector2(1.52485, 1.40436)
 text = "Reroll"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Background shop" type="Sprite2D" parent="."]
 z_index = -10
+position = Vector2(22, -10)
 scale = Vector2(4, 4)
 texture = ExtResource("2_e7rdd")
 
