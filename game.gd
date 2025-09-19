@@ -1,4 +1,11 @@
 extends Node2D
+
+#var level: int = 1
+#@export var label: Label
+
+#func _ready():
+	#label.text = "Level: " + str(level)
+	
 func _on_button_pressed() -> void:
 	SpriteControl.ButtonclickSFX()
 	end_turn()

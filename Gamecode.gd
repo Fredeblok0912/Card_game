@@ -1,4 +1,5 @@
 extends Node2D
+
 var Level = 0
 var current_energy = 0 as int
 var self_damage_factor = 1
