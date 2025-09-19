@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://css7b1vnyfmiq"]
+[gd_scene load_steps=9 format=3 uid="uid://u0f7burmrh65"]
 
 [ext_resource type="Script" uid="uid://bweng20k0j2o1" path="res://shop.gd" id="1_viryw"]
 [ext_resource type="Texture2D" uid="uid://dx02wwdnyarn2" path="res://Art/Backgrounds/shop baggrund.png" id="2_e7rdd"]
@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://snguvmqmilts" path="res://Art/Other/Shop Button Restaseprite.png" id="5_myf4l"]
 [ext_resource type="Texture2D" uid="uid://bd6ry7tjh55yd" path="res://Art/Other/Shop button Return to combat.png" id="6_p5a0g"]
 [ext_resource type="FontFile" uid="uid://o03ne25nrn3b" path="res://Pixel Font - 3x4.ttf" id="7_myf4l"]
-[ext_resource type="Script" uid="uid://cqkx0p1fg70eo" path="res://Level Counter.gd" id="8_p5a0g"]
+[ext_resource type="Script" path="res://Level Counter.gd" id="8_p5a0g"]
 
 [node name="Shop" type="Node2D"]
 position = Vector2(-1699, -712)
@@ -108,6 +108,24 @@ offset_bottom = -434.0
 theme_override_fonts/normal_font = ExtResource("7_myf4l")
 bbcode_enabled = true
 script = ExtResource("8_p5a0g")
+
+[node name="Health_Regain" type="RichTextLabel" parent="."]
+offset_left = -762.0
+offset_top = 468.0
+offset_right = -612.0
+offset_bottom = 508.0
+
+[node name="Max_Health" type="RichTextLabel" parent="."]
+offset_left = -303.0
+offset_top = 478.0
+offset_right = -263.0
+offset_bottom = 487.0
+
+[node name="Reroll" type="RichTextLabel" parent="."]
+offset_left = 172.0
+offset_top = 474.0
+offset_right = 304.0
+offset_bottom = 490.0
 
 [connection signal="pressed" from="Label/Button" to="." method="_on_button2_pressed"]
 [connection signal="pressed" from="Label/Button/Button" to="." method="_on_button_pressed"]
