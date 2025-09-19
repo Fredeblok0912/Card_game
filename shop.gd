@@ -133,34 +133,22 @@ func _on_button_pressed() -> void:
 
 
 func _on_button2_pressed() -> void:
-<<<<<<< HEAD
 	if not player.money < Reroll_Price:
 		player.money = player.money - Reroll_Price
-=======
-	if not player.money < rerolls:
-		player.money = player.money - rerolls
 		SpriteControl.ButtonclickSFX()
->>>>>>> 26d1686f43f82559c9d6d7a2a2d15216bb9adb03
 		for card in $Cards.get_children():
 			card.queue_free()
 		display_cards()
 		Reroll_Price = Reroll_Price + 1
 		label.text = "Money: " + str(player.money) + "$"
-<<<<<<< HEAD
 		Reroll.text = str(Reroll_Price)
 	
 #restore 50% health
-func _on_button_3_pressed():
-	if player.money >= Health_Regain_Price:
-=======
-	else:
-		SpriteControl.CantDoActionSFX()
-	
+
 #restore 50% health
 func _on_button_3_pressed():
-	if player.money >= 5:
+	if player.money >= Health_Regain_Price:
 		SpriteControl.HealSFX()
->>>>>>> 26d1686f43f82559c9d6d7a2a2d15216bb9adb03
 		player.regain_health(ceil(player.player_max_health/2))
 		player.money = player.money - Health_Regain_Price
 		Health_Regain_Price = Health_Regain_Price + 1
@@ -173,12 +161,8 @@ func _on_button_3_pressed():
 
 # Increase max health
 func _on_button_4_pressed():
-<<<<<<< HEAD
 	if not player.money < Max_Health_Price:
-=======
-	if not player.money < 5:
 		SpriteControl.IncreaseMaxHPSFX()
->>>>>>> 26d1686f43f82559c9d6d7a2a2d15216bb9adb03
 		player.player_max_health = player.player_max_health + 5
 		player.regain_health(5)
 		player.money = player.money - Max_Health_Price
