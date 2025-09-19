@@ -1,14 +1,11 @@
 extends Node2D
-@onready var label = get_tree().root.get_node("/root/Game/Level")
-var level = 1
+var Level = 0
 var current_energy = 0 as int
 var self_damage_factor = 1
 var self_damage_this_round = 0
 var cards_drawn_this_round = 0
-signal CardIsGettingProcessed
 	
 func gamestart():
-#	label.text = "Level: " + str(level)
 	await get_tree().create_timer(0.5).timeout
 	Cardlist.current_decklist = Cardlist.decklist.duplicate()
 	Cardlist.discard_pile.clear()
@@ -208,6 +205,7 @@ func _input(event):
 func enter_shop():
 	player.money += ceil(10 * Enemycode.difficulty_mod)
 	Enemycode.Scale_difficulty()
+	Level = Level + 1 
 	Game.Wincounter = Game.Wincounter + 1
 	ScreenTransition.load_scene("res://shop.tscn")
 	Enemycode.enemy_shield = 0
@@ -235,3 +233,4 @@ func reset():
 	player.money = 0
 	player.player_health = 25
 	player.player_max_health = 25
+	Level = 0
