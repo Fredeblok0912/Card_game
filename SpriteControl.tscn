@@ -1,8 +1,10 @@
-[gd_scene load_steps=40 format=3 uid="uid://dcb4y1ao7vkeg"]
+[gd_scene load_steps=45 format=3 uid="uid://dcb4y1ao7vkeg"]
 
 [ext_resource type="Script" uid="uid://drvt8c6fuxrle" path="res://spirte_bullshit.gd" id="1_btue8"]
+[ext_resource type="AudioStream" uid="uid://bqebya5a2fm1e" path="res://Art/SFX&Music/buttonClick.wav" id="2_liwpg"]
 [ext_resource type="Texture2D" uid="uid://m5a1nwvsqgkc" path="res://Art/Character sprites/player sprite frame 0.png" id="2_xbe63"]
 [ext_resource type="Texture2D" uid="uid://bi6arotht74jc" path="res://Art/Character sprites/player sprite frame 1.png" id="3_3d0p3"]
+[ext_resource type="AudioStream" uid="uid://devud5kqx58ub" path="res://Art/SFX&Music/enemyDie.wav" id="3_al8ul"]
 [ext_resource type="Texture2D" uid="uid://c8v0sovl72dpf" path="res://Art/Character sprites/playerBlock0.png" id="4_mo1al"]
 [ext_resource type="Texture2D" uid="uid://cjhw3ettsqpek" path="res://Art/Character sprites/playerHeal1.png" id="4_tioy6"]
 [ext_resource type="Texture2D" uid="uid://ckrh2bp726lnw" path="res://Art/Character sprites/playerHeal2.png" id="5_1cnwg"]
@@ -37,6 +39,9 @@
 [ext_resource type="Texture2D" uid="uid://pi0csmqovqxk" path="res://sprite_zombie_0.png" id="35_vdcx7"]
 [ext_resource type="Texture2D" uid="uid://c86bc1ote7wq4" path="res://sprite_zombie_1.png" id="36_2ce6s"]
 [ext_resource type="Script" uid="uid://vp51ded4iwdj" path="res://enemy_sprites.gd" id="37_2j128"]
+[ext_resource type="AudioStream" uid="uid://mv2gkdtb20xf" path="res://Art/SFX&Music/shopBuy.wav" id="40_al8ul"]
+[ext_resource type="AudioStream" uid="uid://cnct1uwfgyd34" path="res://Art/SFX&Music/shopIncreaseHP.wav" id="41_sgxfd"]
+[ext_resource type="AudioStream" uid="uid://dke48we5iftgi" path="res://Art/SFX&Music/shopHeal.wav" id="42_vdcx7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5s5db"]
 animations = [{
@@ -173,6 +178,12 @@ animations = [{
 [node name="Sprite&MusicControl" type="Node2D"]
 script = ExtResource("1_btue8")
 
+[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_liwpg")
+
+[node name="EnemyDie" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_al8ul")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 5
 position = Vector2(218, -100)
@@ -197,3 +208,12 @@ scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_wywc4")
 animation = &"Zombie"
 script = ExtResource("37_2j128")
+
+[node name="ShopBuy" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("40_al8ul")
+
+[node name="ShopIncreaseHp" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("41_sgxfd")
+
+[node name="ShopHeal" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("42_vdcx7")

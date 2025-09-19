@@ -17,6 +17,7 @@ func _ready():
 	
 
 func buy_cards(card_id, price):
+		SpriteControl.ShopBuySFX()
 		Cardlist.decklist.append(card_id)
 		player.money = player.money - price
 		label.text = "Money: " + str(player.money) + "$"
@@ -113,6 +114,7 @@ func display_cards():
 
 
 func _on_button_pressed() -> void:
+	SpriteControl.ButtonclickSFX()
 	ScreenTransition.load_scene("res://game.tscn")
 	Gamecode.clear_hand()
 	Enemycode.Scale_difficulty()
@@ -123,6 +125,7 @@ func _on_button_pressed() -> void:
 func _on_button2_pressed() -> void:
 	if not player.money < rerolls:
 		player.money = player.money - rerolls
+		SpriteControl.ButtonclickSFX()
 		for card in $Cards.get_children():
 			card.queue_free()
 		display_cards()
@@ -132,6 +135,7 @@ func _on_button2_pressed() -> void:
 #restore 50% health
 func _on_button_3_pressed():
 	if player.money >= 5:
+		SpriteControl.HealSFX()
 		player.regain_health(ceil(player.player_max_health/2))
 		player.money = player.money - 5
 		label.text = "Money: " + str(player.money)+"$"
@@ -142,6 +146,7 @@ func _on_button_3_pressed():
 # Increase max health
 func _on_button_4_pressed():
 	if not player.money < 5:
+		SpriteControl.IncreaseMaxHPSFX()
 		player.player_max_health = player.player_max_health + 5
 		player.regain_health(5)
 		player.money = player.money - 5
