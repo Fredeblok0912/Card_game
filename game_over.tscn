@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dfo4i75ovm1vr" path="res://Art/Backgrounds/GameOver screen.png" id="2_yxx3c"]
 [ext_resource type="Texture2D" uid="uid://bfo206hf1jh5x" path="res://Art/Other/Buttons1.png" id="4_8u835"]
 [ext_resource type="FontFile" uid="uid://o03ne25nrn3b" path="res://Pixel Font - 3x4.ttf" id="4_ftari"]
-[ext_resource type="Script" uid="uid://p8ctpcgqmyjq" path="res://Wincounter shower.gd" id="5_28vn7"]
+[ext_resource type="Script" uid="uid://p8ctpcgqmyjq" path="res://Wincounter Shower.gd" id="5_28vn7"]
 [ext_resource type="Texture2D" uid="uid://bsqf2t2itmexs" path="res://Art/Other/round counter text.png" id="6_28vn7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xapjj"]
