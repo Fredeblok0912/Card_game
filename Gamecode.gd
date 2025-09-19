@@ -32,6 +32,7 @@ func draw_cards(n: int):
 				cards_drawn_this_round = cards_drawn_this_round + 1
 			elif Cardlist.current_decklist.size() <= 0 && Cardlist.discard_pile.size() <= 0:
 				print("Deck and Discard Pile empty")
+				SpriteControl.CantDoActionSFX()
 			else:
 				Cardlist.current_decklist = Cardlist.discard_pile.duplicate()
 				Cardlist.discard_pile.clear()
@@ -109,6 +110,7 @@ func card_clicked(_viewport, event, _shape_idx, card_id, card_node):
 			current_energy = current_energy - cardcost
 		else:
 			print("card too expensive")
+			SpriteControl.CantDoActionSFX()
 
 func remove_card_on_click(card_id: int, card_node: Area2D) -> void:
 	var index = hand_sprites.find(card_node)

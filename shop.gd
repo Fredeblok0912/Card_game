@@ -108,6 +108,7 @@ func display_cards():
 					card.queue_free()
 				else:
 					print("card too expensive")
+					SpriteControl.CantDoActionSFX()
 		)
 
 		$Cards.add_child(card)
@@ -131,6 +132,8 @@ func _on_button2_pressed() -> void:
 		display_cards()
 		rerolls = rerolls + 1
 		label.text = "Money: " + str(player.money) + "$"
+	else:
+		SpriteControl.CantDoActionSFX()
 	
 #restore 50% health
 func _on_button_3_pressed():
@@ -142,6 +145,7 @@ func _on_button_3_pressed():
 		print("player health ",player.player_health," player max health ", player.player_max_health)
 	else:
 		print("Not enough money")
+		SpriteControl.CantDoActionSFX()
 
 # Increase max health
 func _on_button_4_pressed():
@@ -154,6 +158,7 @@ func _on_button_4_pressed():
 		print("player health ",player.player_health," player max health ", player.player_max_health)
 	else:
 		print("Not enough money")
+		SpriteControl.CantDoActionSFX()
 
 func reset():
 	rerolls = 5

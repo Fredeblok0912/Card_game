@@ -1,7 +1,8 @@
-[gd_scene load_steps=45 format=3 uid="uid://dcb4y1ao7vkeg"]
+[gd_scene load_steps=46 format=3 uid="uid://dcb4y1ao7vkeg"]
 
 [ext_resource type="Script" uid="uid://drvt8c6fuxrle" path="res://spirte_bullshit.gd" id="1_btue8"]
 [ext_resource type="AudioStream" uid="uid://bqebya5a2fm1e" path="res://Art/SFX&Music/buttonClick.wav" id="2_liwpg"]
+[ext_resource type="AudioStream" uid="uid://wpfg55tpw4pn" path="res://Art/SFX&Music/cardPlay.wav" id="2_vdcx7"]
 [ext_resource type="Texture2D" uid="uid://m5a1nwvsqgkc" path="res://Art/Character sprites/player sprite frame 0.png" id="2_xbe63"]
 [ext_resource type="Texture2D" uid="uid://bi6arotht74jc" path="res://Art/Character sprites/player sprite frame 1.png" id="3_3d0p3"]
 [ext_resource type="AudioStream" uid="uid://devud5kqx58ub" path="res://Art/SFX&Music/enemyDie.wav" id="3_al8ul"]
@@ -177,6 +178,9 @@ animations = [{
 
 [node name="Sprite&MusicControl" type="Node2D"]
 script = ExtResource("1_btue8")
+
+[node name="CantDoAction" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_vdcx7")
 
 [node name="ButtonClick" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_liwpg")

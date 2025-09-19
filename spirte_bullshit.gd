@@ -12,7 +12,7 @@ var Enemy_sprites = ["Slime","Zombie"]
 @onready var ShopBuy = $ShopBuy
 @onready var Heal = $ShopIncreaseHp
 @onready var IncreaseMaxHP = $ShopHeal
-
+@onready var CantDoAction = $CantDoAction
 
 
 func _ready() -> void:
@@ -58,3 +58,6 @@ func IncreaseMaxHPSFX():
 
 func HealSFX():
 	Heal.play()
+
+func CantDoActionSFX():
+	CantDoAction.play()
