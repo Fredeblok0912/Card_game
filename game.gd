@@ -16,3 +16,6 @@ func end_turn():
 	Gamecode.self_damage_this_round = 0
 
 var Wincounter = 0
+
+func reset():
+	Wincounter = 0

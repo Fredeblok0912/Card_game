@@ -27,3 +27,12 @@ texture = ExtResource("2_yxx3c")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(26, 20)
+
+[node name="Button" type="Button" parent="."]
+offset_left = -92.0
+offset_top = 159.0
+offset_right = 81.0
+offset_bottom = 263.0
+text = "Return to Menu"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

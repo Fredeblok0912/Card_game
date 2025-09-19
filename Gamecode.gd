@@ -217,3 +217,14 @@ func clear_hand() -> void:
 			print("Clearing card:", card.name)
 	hand_sprites.clear()
 	Cardlist.hand_cards.clear()
+
+func reset():
+	Enemycode.enemy_shield = 0
+	Gamecode.cards_drawn_this_round = 0
+	player.player_shield = 0
+	Gamecode.self_damage_factor = 1
+	Gamecode.self_damage_this_round = 0
+	Enemycode.difficulty_mod = 1
+	player.money = 0
+	player.player_health = 25
+	player.player_max_health = 25

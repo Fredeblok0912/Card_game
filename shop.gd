@@ -149,3 +149,7 @@ func _on_button_4_pressed():
 		print("player health ",player.player_health," player max health ", player.player_max_health)
 	else:
 		print("Not enough money")
+
+func reset():
+	rerolls = 5
+	
