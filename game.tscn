@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://bswdgl73kvnms" path="res://Art/Symbols/Shield symbol.png" id="27_7knny"]
 [ext_resource type="Script" uid="uid://b1i7rtk3hr1rm" path="res://Game text and symbol display/enemy_heal_text.gd" id="27_bnpwn"]
 [ext_resource type="Texture2D" uid="uid://cy6s4ink8ef15" path="res://Art/Other/Buttons1-export.png" id="27_xa8c5"]
+[ext_resource type="Script" uid="uid://cqkx0p1fg70eo" path="res://label.gd" id="27_xa8c5"]
 [ext_resource type="Texture2D" uid="uid://h27w70dkfmnf" path="res://Art/Symbols/attack symbol.png" id="30_082n1"]
 [ext_resource type="Script" uid="uid://qb65fouwv65p" path="res://Game text and symbol display/enemy_intent_shield.gd" id="30_aa0lp"]
 [ext_resource type="Script" uid="uid://cl80ithfccg4r" path="res://Game text and symbol display/enemy_shield_sprite.gd" id="30_l1i01"]
@@ -80,6 +81,13 @@ animations = [{
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_e2o6t")
+
+[node name="Level" type="Label" parent="."]
+offset_left = -224.371
+offset_top = -496.007
+offset_right = -184.371
+offset_bottom = -473.007
+script = ExtResource("27_xa8c5")
 
 [node name="Cardlist" type="Node2D" parent="."]
 script = ExtResource("1_feb5d")
