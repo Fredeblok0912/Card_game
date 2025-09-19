@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://dtcpvgfsi2cpv"]
+[gd_scene load_steps=35 format=3 uid="uid://dtcpvgfsi2cpv"]
 
 [ext_resource type="Script" uid="uid://lhlamou0ygmt" path="res://game.gd" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://bd08kuho0r3mb" path="res://Cardlist.gd" id="1_feb5d"]
@@ -19,7 +19,6 @@
 [ext_resource type="Script" uid="uid://bfu00exqvq57v" path="res://Game text and symbol display/enemy_attack_text.gd" id="26_5b14r"]
 [ext_resource type="Texture2D" uid="uid://bswdgl73kvnms" path="res://Art/Symbols/Shield symbol.png" id="27_7knny"]
 [ext_resource type="Script" uid="uid://b1i7rtk3hr1rm" path="res://Game text and symbol display/enemy_heal_text.gd" id="27_bnpwn"]
-[ext_resource type="Script" path="res://label.gd" id="27_xa8c5"]
 [ext_resource type="Texture2D" uid="uid://cy6s4ink8ef15" path="res://Art/Other/Buttons1-export.png" id="28_5b14r"]
 [ext_resource type="Texture2D" uid="uid://h27w70dkfmnf" path="res://Art/Symbols/attack symbol.png" id="30_082n1"]
 [ext_resource type="Script" uid="uid://qb65fouwv65p" path="res://Game text and symbol display/enemy_intent_shield.gd" id="30_aa0lp"]
@@ -265,6 +264,5 @@ offset_right = -157.0
 offset_bottom = -434.0
 theme_override_fonts/normal_font = ExtResource("11_5b14r")
 bbcode_enabled = true
-script = ExtResource("27_xa8c5")
 
 [connection signal="pressed" from="Buttons1-export/Button" to="." method="_on_button_pressed"]
