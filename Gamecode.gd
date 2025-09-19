@@ -29,6 +29,7 @@ func draw_cards(n: int):
 				Cardlist.hand_cards.append(card_id)
 				await get_tree().create_timer(0.3).timeout
 				add_card(card_id)
+				SpriteControl.CardPlayedSFX()
 				cards_drawn_this_round = cards_drawn_this_round + 1
 			elif Cardlist.current_decklist.size() <= 0 && Cardlist.discard_pile.size() <= 0:
 				print("Deck and Discard Pile empty")
@@ -42,6 +43,7 @@ func draw_cards(n: int):
 				await get_tree().create_timer(0.3).timeout
 				print("shuffled Discard pile into drawpile and drew a card")
 				add_card(card_id)
+				SpriteControl.CardPlayedSFX()
 				cards_drawn_this_round = cards_drawn_this_round + 1
 #----------------------------------------------------------------------------
 #Cards in hand loading sprites
@@ -122,6 +124,7 @@ func remove_card_on_click(card_id: int, card_node: Area2D) -> void:
 func card_played(card_id):
 	var card_name = Cardlist.card_database[card_id].get("name")
 	var card_mult = Cardlist.card_database[card_id].get("executionmult")
+	SpriteControl.CardPlayedSFX()
 	player_damage(card_id,card_name,card_mult)
 	player_shield(card_id,card_name,card_mult)
 	player_heal(card_id,card_name,card_mult)

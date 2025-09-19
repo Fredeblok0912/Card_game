@@ -13,7 +13,7 @@ var Enemy_sprites = ["Slime","Zombie"]
 @onready var Heal = $ShopIncreaseHp
 @onready var IncreaseMaxHP = $ShopHeal
 @onready var CantDoAction = $CantDoAction
-
+@onready var CardPlayed = $CardPlayed
 
 func _ready() -> void:
 	IdleAnimation()
@@ -61,3 +61,6 @@ func HealSFX():
 
 func CantDoActionSFX():
 	CantDoAction.play()
+
+func CardPlayedSFX():
+	CardPlayed.play()

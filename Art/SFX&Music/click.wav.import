@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://wpfg55tpw4pn"
-path="res://.godot/imported/cardPlay.wav-8b443bd3b378c9c6a611d872cf2962a8.sample"
+uid="uid://cyml80ecuo88f"
+path="res://.godot/imported/click.wav-bc54bad1dfc1ef903ac6934a43bfb345.sample"
 
 [deps]
 
-source_file="res://Art/SFX&Music/cardPlay.wav"
-dest_files=["res://.godot/imported/cardPlay.wav-8b443bd3b378c9c6a611d872cf2962a8.sample"]
+source_file="res://Art/SFX&Music/click.wav"
+dest_files=["res://.godot/imported/click.wav-bc54bad1dfc1ef903ac6934a43bfb345.sample"]
 
 [params]
 

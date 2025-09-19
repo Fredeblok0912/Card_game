@@ -36,6 +36,7 @@ offset_top = 294.0
 offset_right = 138.0
 offset_bottom = 376.0
 text = "Return to Menu"
+metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1, 335)
