@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dcb4y1ao7vkeg"]
+[gd_scene load_steps=40 format=3 uid="uid://dcb4y1ao7vkeg"]
 
 [ext_resource type="Script" uid="uid://drvt8c6fuxrle" path="res://spirte_bullshit.gd" id="1_btue8"]
 [ext_resource type="Texture2D" uid="uid://m5a1nwvsqgkc" path="res://Art/Character sprites/player sprite frame 0.png" id="2_xbe63"]
@@ -28,6 +28,15 @@
 [ext_resource type="AudioStream" uid="uid://cex6ugp3i2hmq" path="res://Art/SFX&Music/ShieldUp.wav" id="18_2262e"]
 [ext_resource type="AudioStream" uid="uid://s360eyjlek6l" path="res://Art/SFX&Music/SwordSwing.wav" id="19_0l1v8"]
 [ext_resource type="AudioStream" uid="uid://numwr8m7eto8" path="res://Art/SFX&Music/MUSIC.mp3" id="20_0l1v8"]
+[ext_resource type="Texture2D" uid="uid://crl0y32to1lqf" path="res://Art/Character sprites/sprite_slime_0.png" id="29_6yshb"]
+[ext_resource type="Texture2D" uid="uid://cybwbfetkel4y" path="res://Art/Character sprites/sprite_slime_1.png" id="30_8y0ic"]
+[ext_resource type="Texture2D" uid="uid://bwcb4cqba8iyv" path="res://Art/Character sprites/sprite_slime_2.png" id="31_liwpg"]
+[ext_resource type="Texture2D" uid="uid://blxof6n6yhd70" path="res://Art/Character sprites/sprite_slime_3.png" id="32_al8ul"]
+[ext_resource type="Texture2D" uid="uid://cm0lxsnak1foi" path="res://Art/Character sprites/sprite_slime_4.png" id="33_uxuo1"]
+[ext_resource type="Texture2D" uid="uid://ddkxwt4s50xj4" path="res://Art/Character sprites/sprite_slime_5.png" id="34_sgxfd"]
+[ext_resource type="Texture2D" uid="uid://pi0csmqovqxk" path="res://sprite_zombie_0.png" id="35_vdcx7"]
+[ext_resource type="Texture2D" uid="uid://c86bc1ote7wq4" path="res://sprite_zombie_1.png" id="36_2ce6s"]
+[ext_resource type="Script" uid="uid://vp51ded4iwdj" path="res://enemy_sprites.gd" id="37_2j128"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5s5db"]
 animations = [{
@@ -124,6 +133,43 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_wywc4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_6yshb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_8y0ic")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_liwpg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_al8ul")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_uxuo1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_sgxfd")
+}],
+"loop": true,
+"name": &"Slime",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_vdcx7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_2ce6s")
+}],
+"loop": true,
+"name": &"Zombie",
+"speed": 5.0
+}]
+
 [node name="Sprite&MusicControl" type="Node2D"]
 script = ExtResource("1_btue8")
 
@@ -144,3 +190,10 @@ stream = ExtResource("19_0l1v8")
 stream = ExtResource("20_0l1v8")
 autoplay = true
 parameters/looping = true
+
+[node name="Enemy_sprites" type="AnimatedSprite2D" parent="."]
+position = Vector2(1061, -107)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_wywc4")
+animation = &"Zombie"
+script = ExtResource("37_2j128")

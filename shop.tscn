@@ -1,22 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://css7b1vnyfmiq"]
+[gd_scene load_steps=7 format=3 uid="uid://css7b1vnyfmiq"]
 
 [ext_resource type="Script" uid="uid://bweng20k0j2o1" path="res://shop.gd" id="1_viryw"]
 [ext_resource type="Texture2D" uid="uid://dx02wwdnyarn2" path="res://Art/Backgrounds/shop baggrund.png" id="2_e7rdd"]
+[ext_resource type="Texture2D" uid="uid://dcf227xw2a3ag" path="res://Art/Other/Shop Button Eat.png" id="3_gmb2m"]
+[ext_resource type="Texture2D" uid="uid://sqn6v0sd4hgo" path="res://Art/Other/Shop Button Reroll.png" id="4_8kdgp"]
+[ext_resource type="Texture2D" uid="uid://snguvmqmilts" path="res://Art/Other/Shop Button Restaseprite.png" id="5_myf4l"]
+[ext_resource type="Texture2D" uid="uid://bd6ry7tjh55yd" path="res://Art/Other/Shop button Return to combat.png" id="6_p5a0g"]
 
 [node name="Shop" type="Node2D"]
 position = Vector2(-1699, -712)
 script = ExtResource("1_viryw")
 
 [node name="Cards" type="Node2D" parent="."]
-
-[node name="Button" type="Button" parent="."]
-offset_left = 530.0
-offset_top = -169.0
-offset_right = 658.0
-offset_bottom = -124.0
-scale = Vector2(1.2, 1.46308)
-text = "Continue Game"
-metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = -1
@@ -33,12 +28,27 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="Label"]
 layout_mode = 0
-offset_left = 748.026
-offset_top = 6.77571
-offset_right = 802.026
-offset_bottom = 37.7757
+offset_left = 425.0
+offset_top = 410.0
+offset_right = 594.0
+offset_bottom = 643.0
 scale = Vector2(1.52352, 1.62382)
 text = "Reroll"
+
+[node name="Button" type="Button" parent="Label/Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0719684
+anchor_top = -0.0215644
+anchor_right = 0.00495468
+anchor_bottom = 0.467706
+offset_left = 211.163
+offset_top = 5.02451
+offset_right = 339.163
+offset_bottom = 50.0245
+scale = Vector2(1.2, 1.46308)
+text = "Continue Game"
+metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -48,22 +58,46 @@ scale = Vector2(4, 4)
 texture = ExtResource("2_e7rdd")
 
 [node name="Regain health button" type="Button" parent="."]
-offset_left = -238.0
-offset_top = -388.0
-offset_right = -122.0
-offset_bottom = -357.0
+offset_left = -895.0
+offset_top = 115.0
+offset_right = -597.0
+offset_bottom = 363.0
 scale = Vector2(1.30854, 1.57223)
 text = "Regain Health"
 
 [node name="Increase Max HP button" type="Button" parent="."]
-offset_left = 127.0
-offset_top = -384.0
-offset_right = 293.0
-offset_bottom = -353.0
+offset_left = -426.0
+offset_top = 115.0
+offset_right = -9.0
+offset_bottom = 383.0
 scale = Vector2(0.93635, 1.45419)
 text = "Increase Max Health"
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="ShopButtonEat" type="Sprite2D" parent="."]
+z_index = 10
+position = Vector2(-231, 310)
+scale = Vector2(4, 4)
+texture = ExtResource("3_gmb2m")
+
+[node name="ShopButtonReroll" type="Sprite2D" parent="."]
+z_index = 10
+position = Vector2(236, 310)
+scale = Vector2(4, 4)
+texture = ExtResource("4_8kdgp")
+
+[node name="ShopButtonRestaseprite" type="Sprite2D" parent="."]
+z_index = 10
+position = Vector2(-700, 310)
+scale = Vector2(4, 4)
+texture = ExtResource("5_myf4l")
+
+[node name="ShopButtonReturnToCombat" type="Sprite2D" parent="."]
+z_index = 10
+position = Vector2(697, 310)
+scale = Vector2(4, 4)
+texture = ExtResource("6_p5a0g")
+
 [connection signal="pressed" from="Label/Button" to="." method="_on_button2_pressed"]
+[connection signal="pressed" from="Label/Button/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Regain health button" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="Increase Max HP button" to="." method="_on_button_4_pressed"]

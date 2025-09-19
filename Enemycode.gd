@@ -30,7 +30,8 @@ var enemy_database = {
 
 func load_enemy():
 	loaded_enemy = randi_range(0,1)
-	EnemySprites.set_sprite(loaded_enemy)
+	var loaded_enemy_name = enemy_database[loaded_enemy]["name"]
+	SpriteControl.set_sprite(loaded_enemy_name)
 	enemy_max_health = ceil((enemy_database[loaded_enemy]["health"])*difficulty_mod)
 	enemy_health = enemy_max_health
 	

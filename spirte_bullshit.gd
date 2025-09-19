@@ -1,9 +1,12 @@
 extends Node2D
 
+var Enemy_sprites = ["Slime","Zombie"]
+
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var ShieldUpSFX = $ShieldUp
 @onready var SwordSwingSFX = $SwordSwing
 @onready var BackgroundMusic = $Music
+@onready var Enemy_sprite = $Enemy_sprites
 
 func _ready() -> void:
 	IdleAnimation()
@@ -29,3 +32,8 @@ func HealAnimation():
 	
 func IdleAnimation():
 	animated_sprite.play("Idle")
+
+func set_sprite(chosen):
+	print(chosen)
+	Enemy_sprite.play(chosen)
+	
