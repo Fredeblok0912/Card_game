@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-[gd_scene load_steps=8 format=3 uid="uid://css7b1vnyfmiq"]
-=======
 [gd_scene load_steps=9 format=3 uid="uid://css7b1vnyfmiq"]
->>>>>>> 26d1686f43f82559c9d6d7a2a2d15216bb9adb03
 
 [ext_resource type="Script" uid="uid://bweng20k0j2o1" path="res://shop.gd" id="1_viryw"]
 [ext_resource type="Texture2D" uid="uid://dx02wwdnyarn2" path="res://Art/Backgrounds/shop baggrund.png" id="2_e7rdd"]
@@ -10,12 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://sqn6v0sd4hgo" path="res://Art/Other/Shop Button Reroll.png" id="4_8kdgp"]
 [ext_resource type="Texture2D" uid="uid://snguvmqmilts" path="res://Art/Other/Shop Button Restaseprite.png" id="5_myf4l"]
 [ext_resource type="Texture2D" uid="uid://bd6ry7tjh55yd" path="res://Art/Other/Shop button Return to combat.png" id="6_p5a0g"]
-<<<<<<< HEAD
-[ext_resource type="FontFile" uid="uid://o03ne25nrn3b" path="res://Pixel Font - 3x4.ttf" id="7_8kdgp"]
-=======
 [ext_resource type="FontFile" uid="uid://o03ne25nrn3b" path="res://Pixel Font - 3x4.ttf" id="7_myf4l"]
 [ext_resource type="Script" uid="uid://cqkx0p1fg70eo" path="res://Level Counter.gd" id="8_p5a0g"]
->>>>>>> 26d1686f43f82559c9d6d7a2a2d15216bb9adb03
 
 [node name="Shop" type="Node2D"]
 position = Vector2(-1699, -712)
@@ -107,36 +99,6 @@ position = Vector2(697, 310)
 scale = Vector2(4, 4)
 texture = ExtResource("6_p5a0g")
 
-<<<<<<< HEAD
-[node name="Health_Regain" type="RichTextLabel" parent="."]
-top_level = true
-offset_left = -2520.0
-offset_top = -272.0
-offset_right = -2381.0
-offset_bottom = -68.0
-theme_override_fonts/normal_font = ExtResource("7_8kdgp")
-fit_content = true
-visible_characters = 1
-
-[node name="Max_Health" type="RichTextLabel" parent="."]
-top_level = true
-offset_left = -1968.0
-offset_top = -272.0
-offset_right = -1966.0
-offset_bottom = -261.0
-scale = Vector2(65.5374, 4.00411)
-theme_override_fonts/normal_font = ExtResource("7_8kdgp")
-fit_content = true
-
-[node name="Reroll" type="RichTextLabel" parent="."]
-top_level = true
-offset_left = -1487.0
-offset_top = -270.0
-offset_right = -1382.0
-offset_bottom = -232.0
-theme_override_fonts/normal_font = ExtResource("7_8kdgp")
-fit_content = true
-=======
 [node name="Level Counter" type="RichTextLabel" parent="."]
 z_index = 5
 offset_left = -951.0
@@ -146,7 +108,6 @@ offset_bottom = -434.0
 theme_override_fonts/normal_font = ExtResource("7_myf4l")
 bbcode_enabled = true
 script = ExtResource("8_p5a0g")
->>>>>>> 26d1686f43f82559c9d6d7a2a2d15216bb9adb03
 
 [connection signal="pressed" from="Label/Button" to="." method="_on_button2_pressed"]
 [connection signal="pressed" from="Label/Button/Button" to="." method="_on_button_pressed"]
