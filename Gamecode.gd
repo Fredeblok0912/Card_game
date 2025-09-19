@@ -1,8 +1,6 @@
 extends Node2D
-<<<<<<< HEAD
-=======
+
 var Level = 0
->>>>>>> 26d1686f43f82559c9d6d7a2a2d15216bb9adb03
 var current_energy = 0 as int
 var self_damage_factor = 1
 var self_damage_this_round = 0
