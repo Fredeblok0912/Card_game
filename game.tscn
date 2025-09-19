@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://dtcpvgfsi2cpv"]
+[gd_scene load_steps=36 format=3 uid="uid://dtcpvgfsi2cpv"]
 
 [ext_resource type="Script" uid="uid://lhlamou0ygmt" path="res://game.gd" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://bd08kuho0r3mb" path="res://Cardlist.gd" id="1_feb5d"]
@@ -19,7 +19,8 @@
 [ext_resource type="Script" uid="uid://bfu00exqvq57v" path="res://Game text and symbol display/enemy_attack_text.gd" id="26_5b14r"]
 [ext_resource type="Texture2D" uid="uid://bswdgl73kvnms" path="res://Art/Symbols/Shield symbol.png" id="27_7knny"]
 [ext_resource type="Script" uid="uid://b1i7rtk3hr1rm" path="res://Game text and symbol display/enemy_heal_text.gd" id="27_bnpwn"]
-[ext_resource type="Script" uid="uid://cqkx0p1fg70eo" path="res://label.gd" id="27_xa8c5"]
+[ext_resource type="Script" uid="uid://cqkx0p1fg70eo" path="res://Level Counter.gd" id="27_xa8c5"]
+[ext_resource type="Texture2D" uid="uid://cy6s4ink8ef15" path="res://Art/Other/Buttons1-export.png" id="28_5b14r"]
 [ext_resource type="Texture2D" uid="uid://h27w70dkfmnf" path="res://Art/Symbols/attack symbol.png" id="30_082n1"]
 [ext_resource type="Script" uid="uid://qb65fouwv65p" path="res://Game text and symbol display/enemy_intent_shield.gd" id="30_aa0lp"]
 [ext_resource type="Script" uid="uid://cl80ithfccg4r" path="res://Game text and symbol display/enemy_shield_sprite.gd" id="30_l1i01"]
@@ -81,13 +82,6 @@ animations = [{
 [node name="Game" type="Node2D"]
 script = ExtResource("1_e2o6t")
 
-[node name="Level" type="Label" parent="."]
-offset_left = -224.371
-offset_top = -496.007
-offset_right = -184.371
-offset_bottom = -473.007
-script = ExtResource("27_xa8c5")
-
 [node name="Cardlist" type="Node2D" parent="."]
 script = ExtResource("1_feb5d")
 
@@ -109,14 +103,6 @@ z_index = -10
 position = Vector2(576, 0)
 scale = Vector2(4, 4)
 texture = ExtResource("10_iotsf")
-
-[node name="Button" type="Button" parent="."]
-offset_left = 1257.0
-offset_top = 8.0
-offset_right = 1450.0
-offset_bottom = 76.0
-text = "End Turn"
-metadata/_edit_use_anchors_ = true
 
 [node name="Characters" type="Node2D" parent="."]
 script = ExtResource("8_f1jbl")
@@ -196,6 +182,7 @@ texture = ExtResource("27_7knny")
 script = ExtResource("30_l1i01")
 
 [node name="Enemy_Intent_Text" type="Node2D" parent="Characters/Enemy"]
+position = Vector2(-29, -2)
 
 [node name="Enemy Intent Shield Text" type="RichTextLabel" parent="Characters/Enemy/Enemy_Intent_Text"]
 offset_left = 887.0
@@ -215,10 +202,10 @@ texture = ExtResource("27_7knny")
 script = ExtResource("30_aa0lp")
 
 [node name="Enemy Intent Damage Text" type="RichTextLabel" parent="Characters/Enemy/Enemy_Intent_Text"]
-offset_left = 891.0
-offset_top = -161.0
-offset_right = 935.0
-offset_bottom = -137.0
+offset_left = 887.0
+offset_top = -163.0
+offset_right = 931.0
+offset_bottom = -139.0
 theme_override_fonts/normal_font = ExtResource("11_5b14r")
 bbcode_enabled = true
 scroll_active = false
@@ -226,16 +213,16 @@ script = ExtResource("26_5b14r")
 
 [node name="Enemy Intent Damage" type="Sprite2D" parent="Characters/Enemy/Enemy_Intent_Text"]
 z_index = -1
-position = Vector2(911, -149)
+position = Vector2(907, -151)
 scale = Vector2(4, 4)
 texture = ExtResource("30_082n1")
 script = ExtResource("32_082n1")
 
 [node name="Enemy Intent Heal Text" type="RichTextLabel" parent="Characters/Enemy/Enemy_Intent_Text"]
 offset_left = 888.0
-offset_top = -43.0
+offset_top = -37.0
 offset_right = 932.0
-offset_bottom = -19.0
+offset_bottom = -13.0
 theme_override_fonts/normal_font = ExtResource("11_5b14r")
 bbcode_enabled = true
 scroll_active = false
@@ -243,11 +230,41 @@ script = ExtResource("27_bnpwn")
 
 [node name="Enemy Intent Heal" type="Sprite2D" parent="Characters/Enemy/Enemy_Intent_Text"]
 z_index = -1
-position = Vector2(908, -31)
+position = Vector2(907, -25)
 scale = Vector2(4, 4)
 texture = ExtResource("32_xex6t")
 script = ExtResource("36_iu0sx")
 
 [node name="CanvasLayer" parent="." instance=ExtResource("37_iu0sx")]
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="Buttons1-export" type="Sprite2D" parent="."]
+z_index = 10
+position = Vector2(1359, 37)
+scale = Vector2(4, 4)
+texture = ExtResource("28_5b14r")
+
+[node name="Button" type="Button" parent="Buttons1-export"]
+custom_minimum_size = Vector2(1, 1)
+anchors_preset = -1
+anchor_left = -237.765
+anchor_top = -24.4333
+anchor_right = -237.765
+anchor_bottom = -24.4333
+offset_left = 19217.9
+offset_top = 478.667
+offset_right = 19299.9
+offset_bottom = 499.667
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Level Counter" type="RichTextLabel" parent="."]
+z_index = 5
+offset_left = -375.0
+offset_top = -531.0
+offset_right = -157.0
+offset_bottom = -434.0
+theme_override_fonts/normal_font = ExtResource("11_5b14r")
+bbcode_enabled = true
+script = ExtResource("27_xa8c5")
+
+[connection signal="pressed" from="Buttons1-export/Button" to="." method="_on_button_pressed"]

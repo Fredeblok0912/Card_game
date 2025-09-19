@@ -39,6 +39,7 @@ func enemy_take_damage(amount):
 	for i in amount:
 		if not enemy_health > 0:
 			Gamecode.enter_shop()
+			SpriteControl.EnemyDieSFX()
 			break
 		else:
 			if enemy_shield > 0:
@@ -47,6 +48,7 @@ func enemy_take_damage(amount):
 				enemy_health = enemy_health -1
 		if not enemy_health > 0:
 			Gamecode.enter_shop()
+			SpriteControl.EnemyDieSFX()
 			break
 func enemy_gain_shield(amount):
 	enemy_shield = enemy_shield + amount

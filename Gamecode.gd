@@ -1,9 +1,12 @@
 extends Node2D
+<<<<<<< HEAD
+=======
+var Level = 0
+>>>>>>> 26d1686f43f82559c9d6d7a2a2d15216bb9adb03
 var current_energy = 0 as int
 var self_damage_factor = 1
 var self_damage_this_round = 0
 var cards_drawn_this_round = 0
-signal CardIsGettingProcessed
 	
 func gamestart():
 	await get_tree().create_timer(0.5).timeout
@@ -26,9 +29,11 @@ func draw_cards(n: int):
 				Cardlist.hand_cards.append(card_id)
 				await get_tree().create_timer(0.3).timeout
 				add_card(card_id)
+				SpriteControl.CardPlayedSFX()
 				cards_drawn_this_round = cards_drawn_this_round + 1
 			elif Cardlist.current_decklist.size() <= 0 && Cardlist.discard_pile.size() <= 0:
 				print("Deck and Discard Pile empty")
+				SpriteControl.CantDoActionSFX()
 			else:
 				Cardlist.current_decklist = Cardlist.discard_pile.duplicate()
 				Cardlist.discard_pile.clear()
@@ -38,6 +43,7 @@ func draw_cards(n: int):
 				await get_tree().create_timer(0.3).timeout
 				print("shuffled Discard pile into drawpile and drew a card")
 				add_card(card_id)
+				SpriteControl.CardPlayedSFX()
 				cards_drawn_this_round = cards_drawn_this_round + 1
 #----------------------------------------------------------------------------
 #Cards in hand loading sprites
@@ -106,6 +112,7 @@ func card_clicked(_viewport, event, _shape_idx, card_id, card_node):
 			current_energy = current_energy - cardcost
 		else:
 			print("card too expensive")
+			SpriteControl.CantDoActionSFX()
 
 func remove_card_on_click(card_id: int, card_node: Area2D) -> void:
 	var index = hand_sprites.find(card_node)
@@ -117,6 +124,7 @@ func remove_card_on_click(card_id: int, card_node: Area2D) -> void:
 func card_played(card_id):
 	var card_name = Cardlist.card_database[card_id].get("name")
 	var card_mult = Cardlist.card_database[card_id].get("executionmult")
+	SpriteControl.CardPlayedSFX()
 	player_damage(card_id,card_name,card_mult)
 	player_shield(card_id,card_name,card_mult)
 	player_heal(card_id,card_name,card_mult)
@@ -170,6 +178,7 @@ func player_heal(card_id,card_name,card_mult):
 	var played_card_heal = Cardlist.card_database[card_id].get("heal")
 	if played_card_heal != 0:
 		for i in range(card_mult):
+			SpriteControl.HealSFX()
 			SpriteControl.HealAnimation()
 			await SpriteControl.animated_sprite.animation_finished
 #			print(card_name," heals the player for ", played_card_heal, " health")
@@ -199,6 +208,7 @@ func _input(event):
 func enter_shop():
 	player.money += ceil(10 * Enemycode.difficulty_mod)
 	Enemycode.Scale_difficulty()
+	Level = Level + 1 
 	Game.Wincounter = Game.Wincounter + 1
 	ScreenTransition.load_scene("res://shop.tscn")
 	Enemycode.enemy_shield = 0
@@ -226,3 +236,4 @@ func reset():
 	player.money = 0
 	player.player_health = 25
 	player.player_max_health = 25
+	Level = 0
