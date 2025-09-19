@@ -21,5 +21,11 @@ func BlockAnimation():
 	await SpriteControl.animated_sprite.animation_finished
 	animated_sprite.play("Idle")
 	
+func HealAnimation():
+	animated_sprite.play("PotionDrink")
+	ShieldUpSFX.play()
+	await SpriteControl.animated_sprite.animation_finished
+	animated_sprite.play("Idle")
+	
 func IdleAnimation():
 	animated_sprite.play("Idle")

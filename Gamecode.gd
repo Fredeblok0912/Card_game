@@ -172,6 +172,8 @@ func player_heal(card_id,card_name,card_mult):
 	var played_card_heal = Cardlist.card_database[card_id].get("heal")
 	if played_card_heal != 0:
 		for i in range(card_mult):
+			SpriteControl.HealAnimation()
+			await SpriteControl.animated_sprite.animation_finished
 #			print(card_name," heals the player for ", played_card_heal, " health")
 			player.regain_health(played_card_heal)
 	

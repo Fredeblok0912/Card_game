@@ -1,15 +1,23 @@
-[gd_scene load_steps=22 format=3 uid="uid://dcb4y1ao7vkeg"]
+[gd_scene load_steps=30 format=3 uid="uid://dcb4y1ao7vkeg"]
 
 [ext_resource type="Script" uid="uid://drvt8c6fuxrle" path="res://spirte_bullshit.gd" id="1_btue8"]
 [ext_resource type="Texture2D" uid="uid://m5a1nwvsqgkc" path="res://Art/Character sprites/player sprite frame 0.png" id="2_xbe63"]
 [ext_resource type="Texture2D" uid="uid://bi6arotht74jc" path="res://Art/Character sprites/player sprite frame 1.png" id="3_3d0p3"]
 [ext_resource type="Texture2D" uid="uid://c8v0sovl72dpf" path="res://Art/Character sprites/playerBlock0.png" id="4_mo1al"]
+[ext_resource type="Texture2D" uid="uid://cjhw3ettsqpek" path="res://Art/Character sprites/playerHeal1.png" id="4_tioy6"]
+[ext_resource type="Texture2D" uid="uid://ckrh2bp726lnw" path="res://Art/Character sprites/playerHeal2.png" id="5_1cnwg"]
 [ext_resource type="Texture2D" uid="uid://dsmcbaup71pqm" path="res://Art/Character sprites/playerBlock1.png" id="5_dusiu"]
+[ext_resource type="Texture2D" uid="uid://bow14cekqnek" path="res://Art/Character sprites/playerHeal3.png" id="6_5mhk5"]
 [ext_resource type="Texture2D" uid="uid://bvbpi5f5oqmqw" path="res://Art/Character sprites/playerBlock2.png" id="6_842uh"]
+[ext_resource type="Texture2D" uid="uid://l6o7lh0wriu3" path="res://Art/Character sprites/playerHeal4.png" id="7_qarwd"]
 [ext_resource type="Texture2D" uid="uid://bcipriivvldrg" path="res://Art/Character sprites/playerBlock3.png" id="7_thx5a"]
+[ext_resource type="Texture2D" uid="uid://s40h37w2mleh" path="res://Art/Character sprites/playerHeal5.png" id="8_3ao52"]
 [ext_resource type="Texture2D" uid="uid://b600a8fvg36gj" path="res://Art/Character sprites/playerBlock4.png" id="8_x8c4i"]
 [ext_resource type="Texture2D" uid="uid://c6js4h5cxexc3" path="res://Art/Character sprites/playerBlock5.png" id="9_h5bof"]
+[ext_resource type="Texture2D" uid="uid://nuhcrg51pjo5" path="res://Art/Character sprites/playerHeal6.png" id="9_xu43t"]
 [ext_resource type="Texture2D" uid="uid://5omwarna274y" path="res://Art/Character sprites/playerBlock6.png" id="10_k8txa"]
+[ext_resource type="Texture2D" uid="uid://bq3i0twvnnrve" path="res://Art/Character sprites/playerHeal7.png" id="10_wteew"]
+[ext_resource type="Texture2D" uid="uid://7ytnkcesq2ho" path="res://Art/Character sprites/playerHeal8.png" id="11_8ubr5"]
 [ext_resource type="Texture2D" uid="uid://qtkux85vj1jp" path="res://Art/Character sprites/playerBlock7.png" id="11_me3bn"]
 [ext_resource type="Texture2D" uid="uid://bt1xk4qgq3t03" path="res://Art/Character sprites/playerBlock8.png" id="12_bla1u"]
 [ext_resource type="Texture2D" uid="uid://2xt1oimalr1l" path="res://Art/Character sprites/playerSwing1.png" id="13_w624c"]
@@ -33,6 +41,35 @@ animations = [{
 "loop": true,
 "name": &"Idle",
 "speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_tioy6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1cnwg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5mhk5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qarwd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_3ao52")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xu43t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_wteew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_8ubr5")
+}],
+"loop": false,
+"name": &"PotionDrink",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -95,7 +132,7 @@ z_index = 5
 position = Vector2(218, -100)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_5s5db")
-animation = &"Swordswing"
+animation = &"PotionDrink"
 
 [node name="ShieldUp" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_2262e")
