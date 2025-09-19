@@ -1,13 +1,14 @@
 extends Node2D
-
+@onready var label = get_tree().root.get_node("/root/Game/Level")
+var level = 1
 var current_energy = 0 as int
 var self_damage_factor = 1
 var self_damage_this_round = 0
 var cards_drawn_this_round = 0
 signal CardIsGettingProcessed
-
 	
 func gamestart():
+	label.text = "Level: " + str(level)
 	await get_tree().create_timer(0.5).timeout
 	Cardlist.current_decklist = Cardlist.decklist.duplicate()
 	Cardlist.discard_pile.clear()
