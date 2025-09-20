@@ -4,6 +4,25 @@ var current_energy = 0 as int
 var self_damage_factor = 1
 var self_damage_this_round = 0
 var cards_drawn_this_round = 0
+var play_queue: Array = []
+var is_playing_card: bool = false
+
+var action_queue: Array = []
+var is_processing: bool = false
+
+func queue_action(action: Callable) -> void:
+	action_queue.append(action)
+	if not is_processing:
+		_process_queue()
+func _process_queue() -> void:
+	if action_queue.is_empty():
+		is_processing = false
+		return
+	is_processing = true
+	var next_action: Callable = action_queue.pop_front()
+	await next_action.call()
+	await get_tree().create_timer(0.5).timeout
+	_process_queue()
 	
 func gamestart():
 	await get_tree().create_timer(0.5).timeout
@@ -97,16 +116,18 @@ func _update_hand_positions() -> void:
 func card_clicked(_viewport, event, _shape_idx, card_id, card_node):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		var cardcost = Cardlist.card_database[card_id].get("cost") as int
-		if cardcost <= current_energy:
+		if cardcost <= Gamecode.current_energy:
 			Cardlist.discard_pile.append(card_id)
 			remove_card_on_click(card_id, card_node)
-			await card_played(card_id)
-			if card_id == 009:
-				current_energy = 0
-			if card_id == 014:
-				self_damage_factor = 0
-				print("self damage turned off")
-			current_energy = current_energy - cardcost
+			Gamecode.queue_action(func() -> void:
+				await Gamecode.card_played(card_id)
+				if card_id == 009:
+					Gamecode.current_energy = 0
+				if card_id == 014:
+					Gamecode.self_damage_factor = 0
+					print("self damage turned off")
+				Gamecode.current_energy -= cardcost
+			)
 		else:
 			print("card too expensive")
 			SpriteControl.CantDoActionSFX()
@@ -192,6 +213,7 @@ func player_self_damage(card_id,card_name,card_mult):
 	var played_card_self_damage = Cardlist.card_database[card_id].get("selfdamage")
 	if played_card_self_damage != 0:
 		for i in range(card_mult):
+			SpriteControl.PlayerTookDamage()
 			player.take_damage(played_card_self_damage * self_damage_factor)
 			self_damage_this_round = self_damage_this_round + played_card_self_damage
 			print(self_damage_this_round)

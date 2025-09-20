@@ -65,10 +65,16 @@ func prepare_action():
 func action():
 	if enemy_database[loaded_enemy]["moves"][chosen_move]["damage"] != 0:
 		player.take_damage((ceil(enemy_database[loaded_enemy]["moves"][chosen_move]["damage"])*difficulty_mod))
+		SpriteControl.PlayerTookDamage()
+		await get_tree().create_timer(0.5).timeout
 	if enemy_database[loaded_enemy]["moves"][chosen_move]["shield"] != 0:
 		enemy_gain_shield((ceil(enemy_database[loaded_enemy]["moves"][chosen_move]["shield"])*difficulty_mod))
+		SpriteControl.ShieldUpSFX()
+		await get_tree().create_timer(0.5).timeout
 	if enemy_database[loaded_enemy]["moves"][chosen_move]["healing"] != 0:
 		enemy_regain_health((ceil(enemy_database[loaded_enemy]["moves"][chosen_move]["healing"])*difficulty_mod))
+		SpriteControl.HealSFX()
+		await get_tree().create_timer(0.5).timeout
 			
 func Scale_difficulty():
 	difficulty_mod = difficulty_mod * 1.05 as float

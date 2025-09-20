@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://volpl2u1tcwh"
-path="res://.godot/imported/008 Quick Jab.png-7ea6637eb3a61f0bf4a34165ca803943.ctex"
+uid="uid://b3m6cfd5mpea2"
+path="res://.godot/imported/playerHit1.png-7409ab9a174eb4542b48cec762381b8e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Cards/008 Quick Jab.png"
-dest_files=["res://.godot/imported/008 Quick Jab.png-7ea6637eb3a61f0bf4a34165ca803943.ctex"]
+source_file="res://Art/Character sprites/playerHit1.png"
+dest_files=["res://.godot/imported/playerHit1.png-7409ab9a174eb4542b48cec762381b8e.ctex"]
 
 [params]
 

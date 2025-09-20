@@ -3,8 +3,8 @@ extends Node2D
 var Enemy_sprites = ["Slime","Zombie"]
 
 @onready var animated_sprite = $AnimatedSprite2D
-@onready var ShieldUpSFX = $ShieldUp
-@onready var SwordSwingSFX = $SwordSwing
+@onready var ShieldUp = $ShieldUp
+@onready var SwordSwing = $SwordSwing
 @onready var BackgroundMusic = $Music
 @onready var Enemy_sprite = $Enemy_sprites
 @onready var EnemyDie = $EnemyDie
@@ -14,6 +14,7 @@ var Enemy_sprites = ["Slime","Zombie"]
 @onready var IncreaseMaxHP = $ShopHeal
 @onready var CantDoAction = $CantDoAction
 @onready var CardPlayed = $CardPlayed
+@onready var PlayerHit = $PlayerHit
 
 func _ready() -> void:
 	IdleAnimation()
@@ -21,13 +22,13 @@ func _ready() -> void:
 
 func SwingAnimation():
 	animated_sprite.play("Swordswing")
-	SwordSwingSFX.play()
+	SwordSwing.play()
 	await animated_sprite.animation_finished
 	animated_sprite.play("Idle")
 
 func BlockAnimation():
 	animated_sprite.play("Swordblock")
-	ShieldUpSFX.play()
+	ShieldUpSFX()
 	await SpriteControl.animated_sprite.animation_finished
 	animated_sprite.play("Idle")
 	
@@ -58,9 +59,21 @@ func IncreaseMaxHPSFX():
 
 func HealSFX():
 	Heal.play()
+	
+func ShieldUpSFX():
+	ShieldUp.play()
 
 func CantDoActionSFX():
 	CantDoAction.play()
 
 func CardPlayedSFX():
 	CardPlayed.play()
+	
+func PlayerHitSFX():
+	PlayerHit.play()
+	
+func PlayerTookDamage():
+	animated_sprite.play("PlayerHit")
+	PlayerHit.play()
+	await SpriteControl.animated_sprite.animation_finished
+	animated_sprite.play("Idle")

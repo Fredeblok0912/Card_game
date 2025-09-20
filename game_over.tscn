@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://de0cqchbpeflh"]
 
 [ext_resource type="Script" uid="uid://7gjakctndldx" path="res://game_over.gd" id="1_y26ei"]
-[ext_resource type="Script" uid="uid://lrudukvuo8bt" path="res://Wincounter shower.gd" id="2_ccer4"]
+[ext_resource type="Script" uid="uid://c0bde2cl2grfs" path="res://Wincounter shower.gd" id="2_ccer4"]
 [ext_resource type="Texture2D" uid="uid://dfo4i75ovm1vr" path="res://Art/Backgrounds/GameOver screen.png" id="2_yxx3c"]
 [ext_resource type="Texture2D" uid="uid://bfo206hf1jh5x" path="res://Art/Other/Buttons1.png" id="4_8u835"]
 
