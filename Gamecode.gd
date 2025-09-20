@@ -117,6 +117,7 @@ func card_clicked(_viewport, event, _shape_idx, card_id, card_node):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		var cardcost = Cardlist.card_database[card_id].get("cost") as int
 		if cardcost <= Gamecode.current_energy:
+			Gamecode.current_energy -= cardcost
 			Cardlist.discard_pile.append(card_id)
 			remove_card_on_click(card_id, card_node)
 			Gamecode.queue_action(func() -> void:
@@ -126,7 +127,6 @@ func card_clicked(_viewport, event, _shape_idx, card_id, card_node):
 				if card_id == 014:
 					Gamecode.self_damage_factor = 0
 					print("self damage turned off")
-				Gamecode.current_energy -= cardcost
 			)
 		else:
 			print("card too expensive")
