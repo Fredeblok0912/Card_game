@@ -3,9 +3,7 @@ extends Node2D
 @onready var Health_Regain = $Health_Regain
 @onready var Max_Health = $Max_Health
 @onready var Reroll = $Reroll
-var Health_Regain_Price = 5
-var Max_Health_Price = 5
-var Reroll_Price = 5
+
 
 
 
@@ -20,10 +18,6 @@ var rarity_price = {
 func _ready():
 	display_cards()
 	label.text = "Money: " + str(player.money)+"$"
-	Health_Regain.text = str(Health_Regain_Price)
-	Max_Health.text = str(Max_Health_Price)
-	Reroll.text = str(Reroll_Price)
-	
 
 func buy_cards(card_id, price):
 		SpriteControl.ShopBuySFX()
@@ -125,6 +119,7 @@ func display_cards():
 
 func _on_button_pressed() -> void:
 	SpriteControl.ButtonclickSFX()
+	player.Reroll_Price = 5
 	ScreenTransition.load_scene("res://game.tscn")
 	Gamecode.clear_hand()
 	Enemycode.Scale_difficulty()
@@ -133,26 +128,25 @@ func _on_button_pressed() -> void:
 
 
 func _on_button2_pressed() -> void:
-	if not player.money < Reroll_Price:
-		player.money = player.money - Reroll_Price
+	if not player.money < player.Reroll_Price:
+		player.money = player.money -player.Reroll_Price
 		SpriteControl.ButtonclickSFX()
 		for card in $Cards.get_children():
 			card.queue_free()
 		display_cards()
-		Reroll_Price = Reroll_Price + 1
+		player.Reroll_Price = player.Reroll_Price + 1
 		label.text = "Money: " + str(player.money) + "$"
-		Reroll.text = str(Reroll_Price)
 	else:
 		SpriteControl.CantDoActionSFX()
 	
 #restore 50% health
 func _on_button_3_pressed():
-	if player.money >= Health_Regain_Price:
+	if player.money >= player.Health_Regain_Price:
 		SpriteControl.HealSFX()
 		player.regain_health(ceil(player.player_max_health/2))
-		player.money = player.money - Health_Regain_Price
+		player.money = player.money - player.Health_Regain_Price
 		label.text = "Money: " + str(player.money)+"$"
-		Health_Regain.text = str(Health_Regain_Price)
+		player.Health_Regain_Price = player.Health_Regain_Price + 1
 		print("player health ",player.player_health," player max health ", player.player_max_health)
 	else:
 		print("Not enough money")
@@ -160,20 +154,17 @@ func _on_button_3_pressed():
 
 # Increase max health
 func _on_button_4_pressed():
-	if not player.money < Max_Health_Price:
+	if not player.money < player.Max_Health_Price:
 		SpriteControl.IncreaseMaxHPSFX()
 		player.player_max_health = player.player_max_health + 5
 		player.regain_health(5)
-		player.money = player.money - Max_Health_Price
+		player.money = player.money - player.Max_Health_Price
+		player.Max_Health_Price = player.Max_Health_Price + 1
 		label.text = "Money: " + str(player.money)+"$"
-		Max_Health.text = str(Max_Health_Price)
 		print("player health ",player.player_health," player max health ", player.player_max_health)
 	else:
 		print("Not enough money")
 		SpriteControl.CantDoActionSFX()
 
-func reset():
-	Reroll_Price = 5
-	Max_Health_Price = 5
-	Health_Regain_Price = 5
+
 	

@@ -218,23 +218,23 @@ func player_self_damage(card_id,card_name,card_mult):
 			self_damage_this_round = self_damage_this_round + played_card_self_damage
 			print(self_damage_this_round)
 	
-	var dirty_cheater = false
+var dirty_cheater = false
 func _input(event):
-
 	if event.is_action_released("ui_down"):
 		draw_cards(1)
-		var dirty_cheater = true
+		print("ahahah")
+		dirty_cheater = true
 	if event.is_action_released("ui_up"):
 		current_energy = current_energy +1
-		var dirty_cheater = true
+		dirty_cheater = true
 	if event.is_action_released("ui_left"):
 		Game.Wincounter = Game.Wincounter + 1
 		Level = Level + 1 
 		Enemycode.Scale_difficulty()
-		var dirty_cheater = true
+		dirty_cheater = true
 	if event.is_action_released("ui_right"):
-		player.regain_health(player.player_max_health)
-		var dirty_cheater = true
+		player.money = player.money + 10
+		dirty_cheater = true
 
 func enter_shop():
 	player.money += ceil(10 * Enemycode.difficulty_mod)
@@ -258,6 +258,7 @@ func clear_hand() -> void:
 	Cardlist.hand_cards.clear()
 
 func reset():
+	await get_tree().create_timer(0.5).timeout
 	Enemycode.enemy_shield = 0
 	Gamecode.cards_drawn_this_round = 0
 	player.player_shield = 0
@@ -268,3 +269,5 @@ func reset():
 	player.player_health = 25
 	player.player_max_health = 25
 	Level = 0
+	dirty_cheater = false
+	

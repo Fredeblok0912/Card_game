@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://dtcpvgfsi2cpv"]
+[gd_scene load_steps=38 format=3 uid="uid://dtcpvgfsi2cpv"]
 
 [ext_resource type="Script" uid="uid://lhlamou0ygmt" path="res://game.gd" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://bd08kuho0r3mb" path="res://Cardlist.gd" id="1_feb5d"]
@@ -21,6 +21,8 @@
 [ext_resource type="Script" uid="uid://b1i7rtk3hr1rm" path="res://Game text and symbol display/enemy_heal_text.gd" id="27_bnpwn"]
 [ext_resource type="Script" uid="uid://cqkx0p1fg70eo" path="res://Level Counter.gd" id="27_xa8c5"]
 [ext_resource type="Texture2D" uid="uid://cy6s4ink8ef15" path="res://Art/Other/Buttons1-export.png" id="28_5b14r"]
+[ext_resource type="Texture2D" uid="uid://bhf3qjp0g5d4f" path="res://Art/Other/cheater text.png" id="28_36jdj"]
+[ext_resource type="Script" uid="uid://7bidf1ik64lf" path="res://CheaterCheck.gd" id="29_xfvwf"]
 [ext_resource type="Texture2D" uid="uid://h27w70dkfmnf" path="res://Art/Symbols/attack symbol.png" id="30_082n1"]
 [ext_resource type="Script" uid="uid://qb65fouwv65p" path="res://Game text and symbol display/enemy_intent_shield.gd" id="30_aa0lp"]
 [ext_resource type="Script" uid="uid://cl80ithfccg4r" path="res://Game text and symbol display/enemy_shield_sprite.gd" id="30_l1i01"]
@@ -266,5 +268,11 @@ offset_bottom = -434.0
 theme_override_fonts/normal_font = ExtResource("11_5b14r")
 bbcode_enabled = true
 script = ExtResource("27_xa8c5")
+
+[node name="CheaterText" type="Sprite2D" parent="."]
+position = Vector2(-62, -515)
+scale = Vector2(8, 8)
+texture = ExtResource("28_36jdj")
+script = ExtResource("29_xfvwf")
 
 [connection signal="pressed" from="Buttons1-export/Button" to="." method="_on_button_pressed"]

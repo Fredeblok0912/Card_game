@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://u0f7burmrh65"]
+[gd_scene load_steps=12 format=3 uid="uid://css7b1vnyfmiq"]
 
 [ext_resource type="Script" uid="uid://bweng20k0j2o1" path="res://shop.gd" id="1_viryw"]
 [ext_resource type="Texture2D" uid="uid://dx02wwdnyarn2" path="res://Art/Backgrounds/shop baggrund.png" id="2_e7rdd"]
@@ -7,7 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://snguvmqmilts" path="res://Art/Other/Shop Button Restaseprite.png" id="5_myf4l"]
 [ext_resource type="Texture2D" uid="uid://bd6ry7tjh55yd" path="res://Art/Other/Shop button Return to combat.png" id="6_p5a0g"]
 [ext_resource type="FontFile" uid="uid://o03ne25nrn3b" path="res://Pixel Font - 3x4.ttf" id="7_myf4l"]
-[ext_resource type="Script" path="res://Level Counter.gd" id="8_p5a0g"]
+[ext_resource type="Script" uid="uid://cqkx0p1fg70eo" path="res://Level Counter.gd" id="8_p5a0g"]
+[ext_resource type="Script" uid="uid://ck61vo1cwejvi" path="res://health_regain_price.gd" id="9_p5a0g"]
+[ext_resource type="Script" uid="uid://v57hgrhjeb3d" path="res://max_health_price.gd" id="10_sw5c6"]
+[ext_resource type="Script" uid="uid://c1e4465hk0q0g" path="res://reroll_price.gd" id="11_msgp6"]
 
 [node name="Shop" type="Node2D"]
 position = Vector2(-1699, -712)
@@ -109,23 +112,35 @@ theme_override_fonts/normal_font = ExtResource("7_myf4l")
 bbcode_enabled = true
 script = ExtResource("8_p5a0g")
 
-[node name="Health_Regain" type="RichTextLabel" parent="."]
-offset_left = -762.0
-offset_top = 468.0
-offset_right = -612.0
-offset_bottom = 508.0
+[node name="Health_Regain_Price" type="RichTextLabel" parent="."]
+z_index = 100
+offset_left = -714.0
+offset_top = 444.0
+offset_right = -682.0
+offset_bottom = 464.0
+theme_override_fonts/normal_font = ExtResource("7_myf4l")
+bbcode_enabled = true
+script = ExtResource("9_p5a0g")
 
-[node name="Max_Health" type="RichTextLabel" parent="."]
-offset_left = -303.0
-offset_top = 478.0
-offset_right = -263.0
-offset_bottom = 487.0
+[node name="Max_Health_Price" type="RichTextLabel" parent="."]
+z_index = 100
+offset_left = -245.0
+offset_top = 444.0
+offset_right = -213.0
+offset_bottom = 464.0
+theme_override_fonts/normal_font = ExtResource("7_myf4l")
+bbcode_enabled = true
+script = ExtResource("10_sw5c6")
 
-[node name="Reroll" type="RichTextLabel" parent="."]
-offset_left = 172.0
-offset_top = 474.0
-offset_right = 304.0
-offset_bottom = 490.0
+[node name="Reroll_Price" type="RichTextLabel" parent="."]
+z_index = 100
+offset_left = 222.0
+offset_top = 444.0
+offset_right = 254.0
+offset_bottom = 464.0
+theme_override_fonts/normal_font = ExtResource("7_myf4l")
+bbcode_enabled = true
+script = ExtResource("11_msgp6")
 
 [connection signal="pressed" from="Label/Button" to="." method="_on_button2_pressed"]
 [connection signal="pressed" from="Label/Button/Button" to="." method="_on_button_pressed"]

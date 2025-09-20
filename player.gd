@@ -4,6 +4,9 @@ class_name Player
 var player_health = 0
 var player_max_health = 0
 var player_shield = 0
+var Reroll_Price = 5
+var Max_Health_Price = 5
+var Health_Regain_Price = 5
 
 func _ready() -> void:
 	player_health = 25
@@ -32,4 +35,6 @@ func regain_health(amount):
 func game_over():
 	Gamecode.clear_hand()
 	ScreenTransition.load_scene("res://game_over.tscn")
-	
+	player.Reroll_Price = 5
+	player.Max_Health_Price = 5
+	player.Health_Regain_Price = 5
