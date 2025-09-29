@@ -1,12 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://dk7bxyfwb45n0"]
+[gd_scene load_steps=9 format=3 uid="uid://dk7bxyfwb45n0"]
 
-[ext_resource type="Script" path="res://menu.gd" id="1_ouk20"]
+[ext_resource type="Script" uid="uid://62cnljsoecj2" path="res://menu.gd" id="1_ouk20"]
 [ext_resource type="Texture2D" uid="uid://dnmx0jymtp3ru" path="res://Art/Other/Buttons3.png" id="2_ytr4m"]
 [ext_resource type="Texture2D" uid="uid://0thavs1u2uao" path="res://Art/Other/Startbutton.png" id="3_ytr4m"]
 [ext_resource type="Texture2D" uid="uid://b8akc76lo2hba" path="res://Art/Backgrounds/menu.png" id="6_l48gv"]
 [ext_resource type="PackedScene" uid="uid://5gvarj6y6lxl" path="res://Screen transition.tscn" id="7_ecwwl"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_ytr4m"]
+
+[sub_resource type="Theme" id="Theme_l48gv"]
+default_base_scale = 2.0
+
+[sub_resource type="Theme" id="Theme_ytr4m"]
 
 [node name="Menu" type="Node2D"]
 z_index = 10
@@ -63,6 +68,74 @@ texture = ExtResource("6_l48gv")
 [node name="CanvasLayer" parent="." instance=ExtResource("7_ecwwl")]
 layer = 128
 
+[node name="Button4" type="Button" parent="CanvasLayer"]
+top_level = true
+visibility_layer = 513
+offset_left = 1831.0
+offset_top = 5.0
+offset_right = 1861.0
+offset_bottom = 36.0
+scale = Vector2(2.93225, 2.68245)
+text = "⚙"
+
+[node name="SettingsWindow" type="Window" parent="CanvasLayer/Button4"]
+position = Vector2i(0, 36)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Button4/SettingsWindow"]
+custom_minimum_size = Vector2(100, 100)
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Button4/SettingsWindow/VBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+theme = SubResource("Theme_l48gv")
+
+[node name="Label" type="Label" parent="CanvasLayer/Button4/SettingsWindow/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Audio
+"
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer/Button4/SettingsWindow/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = -40.0
+max_value = 0.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/Button4/SettingsWindow/VBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Button4/SettingsWindow/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Fullscreen"
+
+[node name="CheckBox" type="CheckBox" parent="CanvasLayer/Button4/SettingsWindow/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/Button4/SettingsWindow/VBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+theme = SubResource("Theme_ytr4m")
+
+[node name="Label" type="Label" parent="CanvasLayer/Button4/SettingsWindow/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "Close Settings"
+
+[node name="Button" type="Button" parent="CanvasLayer/Button4/SettingsWindow/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
 [node name="Version Label" type="Label" parent="."]
 z_index = 20
 offset_left = 1756.0
@@ -78,3 +151,7 @@ position = Vector2(981, 538)
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button4" to="." method="_on_settings_pressed"]
+[connection signal="value_changed" from="CanvasLayer/Button4/SettingsWindow/VBoxContainer/HBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="toggled" from="CanvasLayer/Button4/SettingsWindow/VBoxContainer/HBoxContainer2/CheckBox" to="." method="_on_check_box_toggled"]
+[connection signal="pressed" from="CanvasLayer/Button4/SettingsWindow/VBoxContainer/HBoxContainer3/Button" to="." method="_on_close_button_pressed"]
