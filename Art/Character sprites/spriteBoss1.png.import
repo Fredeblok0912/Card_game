@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://du0uvaq6j4fn1"
-path="res://.godot/imported/012 FlameKick.png-97912dd621b5ed770562232a52baf474.ctex"
+uid="uid://b2h4ha7np4c6v"
+path="res://.godot/imported/spriteBoss1.png-0c67ecf873184d73060965f2539a27d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Cards/012 FlameKick.png"
-dest_files=["res://.godot/imported/012 FlameKick.png-97912dd621b5ed770562232a52baf474.ctex"]
+source_file="res://Art/Character sprites/spriteBoss1.png"
+dest_files=["res://.godot/imported/spriteBoss1.png-0c67ecf873184d73060965f2539a27d1.ctex"]
 
 [params]
 

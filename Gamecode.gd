@@ -4,6 +4,7 @@ var current_energy = 0 as int
 var self_damage_factor = 1
 var self_damage_this_round = 0
 var cards_drawn_this_round = 0
+var cards_played_this_round = 0
 var play_queue: Array = []
 var is_playing_card: bool = false
 
@@ -140,6 +141,7 @@ func remove_card_on_click(card_id: int, card_node: Area2D) -> void:
 	_update_hand_positions()
 
 func card_played(card_id):
+	cards_played_this_round = cards_played_this_round + 1
 	var card_name = Cardlist.card_database[card_id].get("name")
 	var card_mult = Cardlist.card_database[card_id].get("executionmult")
 	SpriteControl.CardPlayedSFX()
@@ -148,6 +150,7 @@ func card_played(card_id):
 	player_heal(card_id,card_name,card_mult)
 	player_draw(card_id,card_name,card_mult)	
 	player_self_damage(card_id,card_name,card_mult)
+	player_regain_energy(card_id,card_name,card_mult)
 
 	
 func player_damage(card_id,card_name,card_mult):
@@ -156,12 +159,10 @@ func player_damage(card_id,card_name,card_mult):
 		if card_id == 009: 
 			for i in (current_energy-1):
 				if Enemycode.enemy_health > 0:
-					print("enemy health before damage ",Enemycode.enemy_health)
 					SpriteControl.SwingAnimation()
 					await SpriteControl.animated_sprite.animation_finished
 					Enemycode.enemy_take_damage(played_card_damage)
 					await get_tree().create_timer(0.2).timeout
-					print("enemy health after damage ",Enemycode.enemy_health)
 		if card_id == 015:
 			if Enemycode.enemy_health > 0:
 				SpriteControl.SwingAnimation()
@@ -216,13 +217,17 @@ func player_self_damage(card_id,card_name,card_mult):
 			SpriteControl.PlayerTookDamage()
 			player.take_damage(played_card_self_damage * self_damage_factor)
 			self_damage_this_round = self_damage_this_round + played_card_self_damage
-			print(self_damage_this_round)
+
+func player_regain_energy(card_id,card_name,card_mult):
+	var played_card_energy_regained = Cardlist.card_database[card_id].get("energy_regain")
+	if played_card_energy_regained != 0:
+		for i in range(card_mult):
+			player.regain_energy(played_card_energy_regained)
 	
 var dirty_cheater = false
 func _input(event):
 	if event.is_action_released("ui_down"):
 		draw_cards(1)
-		print("ahahah")
 		dirty_cheater = true
 	if event.is_action_released("ui_up"):
 		current_energy = current_energy +1
@@ -247,6 +252,7 @@ func enter_shop():
 	player.player_shield = 0
 	Gamecode.self_damage_factor = 1
 	Gamecode.self_damage_this_round = 0
+	cards_played_this_round = 0
 	
 
 func clear_hand() -> void:
@@ -260,6 +266,7 @@ func clear_hand() -> void:
 func reset():
 	await get_tree().create_timer(0.5).timeout
 	Enemycode.enemy_shield = 0
+	cards_played_this_round = 0
 	Gamecode.cards_drawn_this_round = 0
 	player.player_shield = 0
 	Gamecode.self_damage_factor = 1

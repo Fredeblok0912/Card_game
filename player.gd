@@ -31,6 +31,11 @@ func regain_health(amount):
 	for i in amount:
 		if player_health < player_max_health:
 			player_health = player_health +1
+			
+func regain_energy(amount):
+	for i in amount:
+		if Gamecode.current_energy != 5:
+			Gamecode.current_energy = Gamecode.current_energy + 1
 
 func game_over():
 	Gamecode.clear_hand()
