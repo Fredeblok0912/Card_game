@@ -1,6 +1,6 @@
-[gd_scene load_steps=52 format=4 uid="uid://dcb4y1ao7vkeg"]
+[gd_scene load_steps=53 format=4 uid="uid://dcb4y1ao7vkeg"]
 
-[ext_resource type="Script" uid="uid://drvt8c6fuxrle" path="res://spirte_bullshit.gd" id="1_btue8"]
+[ext_resource type="Script" path="res://spirte_bullshit.gd" id="1_btue8"]
 [ext_resource type="AudioStream" uid="uid://bqebya5a2fm1e" path="res://Art/SFX&Music/buttonClick.wav" id="2_liwpg"]
 [ext_resource type="Texture2D" uid="uid://m5a1nwvsqgkc" path="res://Art/Character sprites/player sprite frame 0.png" id="2_xbe63"]
 [ext_resource type="Texture2D" uid="uid://bi6arotht74jc" path="res://Art/Character sprites/player sprite frame 1.png" id="3_3d0p3"]
@@ -40,6 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://blxof6n6yhd70" path="res://Art/Character sprites/sprite_slime_3.png" id="32_al8ul"]
 [ext_resource type="Texture2D" uid="uid://cm0lxsnak1foi" path="res://Art/Character sprites/sprite_slime_4.png" id="33_uxuo1"]
 [ext_resource type="Texture2D" uid="uid://ddkxwt4s50xj4" path="res://Art/Character sprites/sprite_slime_5.png" id="34_sgxfd"]
+[ext_resource type="Texture2D" uid="uid://bdabdsme5m41f" path="res://Art/Character sprites/John Boss.png" id="35_j6nwd"]
 [ext_resource type="Texture2D" uid="uid://pi0csmqovqxk" path="res://sprite_zombie_0.png" id="35_vdcx7"]
 [ext_resource type="Texture2D" uid="uid://c86bc1ote7wq4" path="res://sprite_zombie_1.png" id="36_2ce6s"]
 [ext_resource type="Script" uid="uid://vp51ded4iwdj" path="res://enemy_sprites.gd" id="37_2j128"]
@@ -169,6 +170,14 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("35_j6nwd")
+}],
+"loop": true,
+"name": &"Boss",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("29_6yshb")
 }, {
 "duration": 1.0,
@@ -236,7 +245,7 @@ parameters/looping = true
 position = Vector2(1061, -107)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_wywc4")
-animation = &"Zombie"
+animation = &"Boss"
 script = ExtResource("37_2j128")
 
 [node name="ShopBuy" type="AudioStreamPlayer" parent="."]

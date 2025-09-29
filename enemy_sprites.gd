@@ -1,6 +1,6 @@
 extends AnimatedSprite2D
 
-var Enemy_sprites = ["Slime","Zombie"]
+var Enemy_sprites = ["Slime","Zombie","Boss"]
 
 func _ready() -> void:
 	$".".play("Zombie")
