@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://snguvmqmilts" path="res://Art/Other/Shop Button Restaseprite.png" id="5_myf4l"]
 [ext_resource type="Texture2D" uid="uid://bd6ry7tjh55yd" path="res://Art/Other/Shop button Return to combat.png" id="6_p5a0g"]
 [ext_resource type="FontFile" uid="uid://o03ne25nrn3b" path="res://Pixel Font - 3x4.ttf" id="7_myf4l"]
-[ext_resource type="Script" uid="uid://cqkx0p1fg70eo" path="res://Level Counter.gd" id="8_p5a0g"]
+[ext_resource type="Script" path="res://Level Counter.gd" id="8_p5a0g"]
 [ext_resource type="Script" uid="uid://ck61vo1cwejvi" path="res://health_regain_price.gd" id="9_p5a0g"]
 [ext_resource type="Script" uid="uid://v57hgrhjeb3d" path="res://max_health_price.gd" id="10_sw5c6"]
 [ext_resource type="Script" uid="uid://c1e4465hk0q0g" path="res://reroll_price.gd" id="11_msgp6"]
