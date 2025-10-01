@@ -1,8 +1,15 @@
 extends Node2D
+var turn_ending = false
+
 func _on_button_pressed() -> void:
-	SpriteControl.ButtonclickSFX()
-	end_turn()
-	
+	if turn_ending == false:
+		SpriteControl.ButtonclickSFX()
+		turn_ending = true
+		end_turn()
+		await get_tree().create_timer(0.5).timeout
+		turn_ending = false
+	else:
+		SpriteControl.CantDoActionSFX()
 	
 func end_turn():
 	Gamecode.queue_action(func() -> void:
