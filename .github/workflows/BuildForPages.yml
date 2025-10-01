@@ -3,7 +3,7 @@ on: push
 
 env:
   GODOT_VERSION: 4.4.1
-  PROJECT_PATH: game
+  PROJECT_PATH: .
 
 jobs:
   export-web:
