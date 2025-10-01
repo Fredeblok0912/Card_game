@@ -1,0 +1,64 @@
+[gd_scene load_steps=2 format=3 uid="uid://7sv5fh4gk107"]
+
+[ext_resource type="Script" uid="uid://b05uooasn2ca6" path="res://settings.gd" id="1_x2hje"]
+
+[node name="options_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9224.0
+offset_top = 2124.0
+offset_right = 9224.0
+offset_bottom = 2124.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.514259, 0.71432)
+script = ExtResource("1_x2hje")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = -969.0
+offset_top = -468.237
+offset_right = -878.0
+offset_bottom = -362.237
+scale = Vector2(20.9909, 8.99828)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Questions"
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 12
+text = "Change Volume"
+
+[node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+min_value = -40.0
+max_value = 10.0
+
+[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Change Fullscreen"
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/outline_size = 2
+theme_override_constants/h_separation = -48
+theme_override_font_sizes/font_size = 8
+text = "Exit"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
