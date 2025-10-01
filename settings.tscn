@@ -22,42 +22,45 @@ offset_left = -969.0
 offset_top = -468.237
 offset_right = -878.0
 offset_bottom = -362.237
-scale = Vector2(20.9909, 8.99828)
+scale = Vector2(8.93473, 2.95034)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
-text = "Questions"
+theme_override_font_sizes/font_size = 60
+text = "Options"
 
 [node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 48
 text = "Change Volume"
 
 [node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.51
 min_value = -40.0
 max_value = 10.0
 
 [node name="Button2" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 8
+theme_override_font_sizes/font_size = 28
 text = "Change Fullscreen"
 
 [node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 4
+size_flags_horizontal = 4
 theme_override_constants/outline_size = 2
 theme_override_constants/h_separation = -48
-theme_override_font_sizes/font_size = 8
+theme_override_font_sizes/font_size = 24
 text = "Exit"
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(668.923, -68.5967)
+scale = Vector2(277.519, -119.843)
 
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
