@@ -1,5 +1,10 @@
 extends Node2D
 var turn_ending = false
+@onready var settings_game = $Settings
+
+func _ready():
+	settings_game.visible = false
+	
 
 func _on_button_pressed() -> void:
 	if turn_ending == false:

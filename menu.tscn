@@ -37,6 +37,7 @@ offset_bottom = -226.081
 scale = Vector2(1.67318, 1)
 theme_override_font_sizes/font_size = 45
 text = "Settings Menu"
+metadata/_edit_use_anchors_ = true
 
 [node name="Label2" type="Label" parent="Settings"]
 offset_left = -258.27
@@ -46,6 +47,7 @@ offset_bottom = -193.751
 scale = Vector2(3.17521, 2.31813)
 theme_override_font_sizes/font_size = 15
 text = "Change Volume"
+metadata/_edit_use_anchors_ = true
 
 [node name="HSlider" type="HSlider" parent="Settings/Label2"]
 layout_mode = 0
@@ -56,6 +58,7 @@ offset_bottom = 39.0
 scale = Vector2(3.90294, 1)
 min_value = -40.0
 max_value = 10.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Label3" type="Label" parent="Settings"]
 offset_left = -258.27
@@ -64,6 +67,7 @@ offset_right = 45.7305
 offset_bottom = -48.6244
 theme_override_font_sizes/font_size = 30
 text = "Change Screen Mode"
+metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="Settings/Label3"]
 layout_mode = 0
@@ -73,6 +77,7 @@ offset_right = 17.0621
 offset_bottom = 75.5127
 scale = Vector2(2.60201, 1.50218)
 text = "Mode"
+metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="Settings"]
 offset_left = -258.917
@@ -80,6 +85,7 @@ offset_top = 223.858
 offset_right = -155.917
 offset_bottom = 254.858
 text = "Exit Settings"
+metadata/_edit_use_anchors_ = true
 
 [node name="Button2" type="Button" parent="."]
 z_index = 20
