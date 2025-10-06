@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://dtcpvgfsi2cpv"]
+[gd_scene load_steps=38 format=3 uid="uid://dtcpvgfsi2cpv"]
 
 [ext_resource type="Script" uid="uid://lhlamou0ygmt" path="res://game.gd" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://bd08kuho0r3mb" path="res://Cardlist.gd" id="1_feb5d"]
@@ -26,7 +26,6 @@
 [ext_resource type="Texture2D" uid="uid://h27w70dkfmnf" path="res://Art/Symbols/attack symbol.png" id="30_082n1"]
 [ext_resource type="Script" uid="uid://qb65fouwv65p" path="res://Game text and symbol display/enemy_intent_shield.gd" id="30_aa0lp"]
 [ext_resource type="Script" uid="uid://cl80ithfccg4r" path="res://Game text and symbol display/enemy_shield_sprite.gd" id="30_l1i01"]
-[ext_resource type="Texture2D" uid="uid://dmtjh40g3hwdo" path="res://Art/squareGodot.webp" id="31_xfvwf"]
 [ext_resource type="Script" uid="uid://mnh2vectlbbm" path="res://Game text and symbol display/enemy_intent_damage.gd" id="32_082n1"]
 [ext_resource type="Texture2D" uid="uid://bs3vb37sxdhlg" path="res://Art/Symbols/Heal symbol.png" id="32_xex6t"]
 [ext_resource type="Script" uid="uid://6wyldqry43ag" path="res://Game text and symbol display/enemy_intent_heal.gd" id="36_iu0sx"]
@@ -84,70 +83,6 @@ animations = [{
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_e2o6t")
-
-[node name="Settings" type="Sprite2D" parent="."]
-z_index = 4096
-position = Vector2(591, 8.00003)
-scale = Vector2(1.5449, 1.40714)
-texture = ExtResource("31_xfvwf")
-
-[node name="Label" type="Label" parent="Settings"]
-offset_left = -262.801
-offset_top = -292.081
-offset_right = 44.1995
-offset_bottom = -226.081
-scale = Vector2(1.67318, 1)
-theme_override_font_sizes/font_size = 45
-text = "Settings Menu"
-metadata/_edit_use_anchors_ = true
-
-[node name="Label2" type="Label" parent="Settings"]
-offset_left = -258.27
-offset_top = -216.751
-offset_right = -218.27
-offset_bottom = -193.751
-scale = Vector2(3.17521, 2.31813)
-theme_override_font_sizes/font_size = 15
-text = "Change Volume"
-metadata/_edit_use_anchors_ = true
-
-[node name="HSlider" type="HSlider" parent="Settings/Label2"]
-layout_mode = 0
-offset_left = -3.0
-offset_top = 23.0
-offset_right = 42.0
-offset_bottom = 39.0
-scale = Vector2(3.90294, 1)
-min_value = -40.0
-max_value = 10.0
-metadata/_edit_use_anchors_ = true
-
-[node name="Label3" type="Label" parent="Settings"]
-offset_left = -258.27
-offset_top = -101.624
-offset_right = 45.7305
-offset_bottom = -48.6244
-theme_override_font_sizes/font_size = 30
-text = "Change Screen Mode"
-metadata/_edit_use_anchors_ = true
-
-[node name="Button" type="Button" parent="Settings/Label3"]
-layout_mode = 0
-offset_left = 9.0621
-offset_top = 67.5127
-offset_right = 17.0621
-offset_bottom = 75.5127
-scale = Vector2(2.60201, 1.50218)
-text = "Mode"
-metadata/_edit_use_anchors_ = true
-
-[node name="Button" type="Button" parent="Settings"]
-offset_left = -258.917
-offset_top = 223.858
-offset_right = -155.917
-offset_bottom = 254.858
-text = "Exit Settings"
-metadata/_edit_use_anchors_ = true
 
 [node name="Cardlist" type="Node2D" parent="."]
 script = ExtResource("1_feb5d")
