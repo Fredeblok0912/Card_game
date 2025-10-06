@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4v6tn5y3smpp"
-path="res://.godot/imported/soundGodot.png-946c6f07a1d350a2e257b7d94eee86ef.ctex"
+uid="uid://bfbrk4uvi8xw2"
+path="res://.godot/imported/gearGodot.png-19a4e3659698d586b734366b7e1d48e6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/soundGodot.png"
-dest_files=["res://.godot/imported/soundGodot.png-946c6f07a1d350a2e257b7d94eee86ef.ctex"]
+source_file="res://Game text and symbol display/gearGodot.png"
+dest_files=["res://.godot/imported/gearGodot.png-19a4e3659698d586b734366b7e1d48e6.ctex"]
 
 [params]
 
