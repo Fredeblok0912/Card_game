@@ -176,6 +176,13 @@ func player_damage(card_id,card_name,card_mult):
 					await SpriteControl.animated_sprite.animation_finished
 					Enemycode.enemy_take_damage(played_card_damage)
 					await get_tree().create_timer(0.2).timeout
+		if card_id == 026:
+			for i in cards_played_this_round:
+				if Enemycode.enemy_health > 0:
+					SpriteControl.SwingAnimation()
+					await SpriteControl.animated_sprite.animation_finished
+					Enemycode.enemy_take_damage(played_card_damage)
+					await get_tree().create_timer(0.2).timeout
 		else:
 			for i in card_mult:
 				if Enemycode.enemy_health > 0:
