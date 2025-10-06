@@ -13,18 +13,25 @@
 z_index = 10
 script = ExtResource("1_ouk20")
 
-[node name="Button4" type="Button" parent="."]
-top_level = true
+[node name="Button5" type="Button" parent="."]
 z_index = 4096
+offset_left = 1626.0
+offset_top = 11.0
+offset_right = 2034.0
+offset_bottom = 419.0
+scale = Vector2(0.64, 0.536978)
+icon = ExtResource("2_l48gv")
+
+[node name="Button4" type="Button" parent="."]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -192.0
-offset_top = -1075.0
-offset_right = 216.0
-offset_bottom = -667.0
+offset_left = 1722.0
+offset_top = 25.0001
+offset_right = 2130.0
+offset_bottom = 433.0
 grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(0.470016, 0.416734)
@@ -93,7 +100,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(981, 538)
 
-[connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="Button5" to="." method="_on_button_5_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
