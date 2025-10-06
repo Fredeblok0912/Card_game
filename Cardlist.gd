@@ -31,6 +31,17 @@ var card_database = {
 	019: {"name": "Soda","cost":2, "damage": 0, "shield": 3, "draw":2, "heal":3, "selfdamage":0,"executionmult":1,"rarity":2,"energy_regain":0},
 	020: {"name": "Waterfall","cost":2, "damage": 4, "shield": 0, "draw":0, "heal":0, "selfdamage":0,"executionmult":1,"rarity":3,"energy_regain":0},
 	021: {"name": "Dual Slash","cost":2, "damage": 4, "shield": 0, "draw":0, "heal":0, "selfdamage":0,"executionmult":2,"rarity":2,"energy_regain":0},
+	022: {"name": "Grass Cut","cost":2, "damage": 5, "shield": 0, "draw":0, "heal":0, "selfdamage":0,"executionmult":1,"rarity":1,"energy_regain":1},
+	023: {"name": "Barkskin","cost":3, "damage": 0, "shield": 9, "draw":0, "heal":0, "selfdamage":0,"executionmult":1,"rarity":1,"energy_regain":1},
+	024: {"name": "Algae","cost":2, "damage": 0, "shield": 0, "draw":0, "heal":5, "selfdamage":0,"executionmult":1,"rarity":2,"energy_regain":1},
+	025: {"name": "Rest","cost":3, "damage": 0, "shield": 0, "draw":0, "heal":0, "selfdamage":0,"executionmult":1,"rarity":2,"energy_regain":5},
+	026: {"name": "Solar Beam","cost":2, "damage": 5, "shield": 0, "draw":0, "heal":0, "selfdamage":0,"executionmult":1,"rarity":3,"energy_regain":0},
+	027: {"name": "Syphon","cost":2, "damage": 5, "shield": 0, "draw":0, "heal":2, "selfdamage":0,"executionmult":1,"rarity":1,"energy_regain":0},
+	028: {"name": "Holy Block","cost":1, "damage": 0, "shield": 2, "draw":0, "heal":2, "selfdamage":0,"executionmult":1,"rarity":1,"energy_regain":0},
+	029: {"name": "Holy Light","cost":3, "damage": 0, "shield": 0, "draw":0, "heal":11, "selfdamage":0,"executionmult":1,"rarity":2,"energy_regain":0},
+	030: {"name": "Blessing","cost":3, "damage": 0, "shield": 7, "draw":2, "heal":7, "selfdamage":0,"executionmult":1,"rarity":2,"energy_regain":0},
+	031: {"name": "Genesis","cost":3, "damage": 9, "shield": 0, "draw":0, "heal":19, "selfdamage":0,"executionmult":1,"rarity":3,"energy_regain":0},
+	
 }
 #Liste over alle kort sprites
 var card_sprites_database = {
@@ -56,6 +67,16 @@ var card_sprites_database = {
 	019:preload("res://Art/Cards/019 Soda.png") ,
 	020:preload("res://Art/Cards/020 Waterfall.png") ,
 	021:preload("res://Art/Cards/021 Dual Slash.png") ,
+	022:preload("res://Art/Cards/022 Grass Cut.png") ,
+	023:preload("res://Art/Cards/023 Barkskin.png") ,
+	024:preload("res://Art/Cards/024 Algae.png") ,
+	025:preload("res://Art/Cards/025 Rest.png") ,
+	026:preload("res://Art/Cards/026 Solar Beam.png") ,
+	027:preload("res://Art/Cards/027 Syphon.png") ,
+	028:preload("res://Art/Cards/028 Holy Block.png") ,
+	029:preload("res://Art/Cards/029 Holy Light.png") ,
+	030:preload("res://Art/Cards/030 Blessing.png") ,
+	031:preload("res://Art/Cards/031 Genesis.png") ,
 	}
 
 # Etablering af main Deck Arrays
