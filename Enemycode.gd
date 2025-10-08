@@ -50,7 +50,7 @@ var enemy_database = {
 }
 
 func load_enemy():
-	if Gamecode.Level == 10:
+	if Gamecode.Level == 10 || Gamecode.Level == 20 || Gamecode.Level > 29 :
 		loaded_enemy = 3
 	else:
 		loaded_enemy = randi_range(0,2)
