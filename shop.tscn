@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://css7b1vnyfmiq"]
+[gd_scene load_steps=13 format=3 uid="uid://css7b1vnyfmiq"]
 
 [ext_resource type="Script" uid="uid://bweng20k0j2o1" path="res://shop.gd" id="1_viryw"]
 [ext_resource type="Texture2D" uid="uid://dx02wwdnyarn2" path="res://Art/Backgrounds/shop baggrund.png" id="2_e7rdd"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://ck61vo1cwejvi" path="res://health_regain_price.gd" id="9_p5a0g"]
 [ext_resource type="Script" uid="uid://v57hgrhjeb3d" path="res://max_health_price.gd" id="10_sw5c6"]
 [ext_resource type="Script" uid="uid://c1e4465hk0q0g" path="res://reroll_price.gd" id="11_msgp6"]
+[ext_resource type="Texture2D" uid="uid://bfbrk4uvi8xw2" path="res://Game text and symbol display/gearGodot.png" id="12_msgp6"]
 
 [node name="Shop" type="Node2D"]
 position = Vector2(-1699, -712)
@@ -142,7 +143,19 @@ theme_override_fonts/normal_font = ExtResource("7_myf4l")
 bbcode_enabled = true
 script = ExtResource("11_msgp6")
 
+[node name="Button4" type="Button" parent="."]
+z_index = 4095
+offset_left = 815.0
+offset_top = -537.0
+offset_right = 839.0
+offset_bottom = -501.0
+scale = Vector2(6.0386, 3.34946)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+icon = ExtResource("12_msgp6")
+
 [connection signal="pressed" from="Label/Button" to="." method="_on_button2_pressed"]
 [connection signal="pressed" from="Label/Button/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Regain health button" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="Increase Max HP button" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_button_shop_pressed"]

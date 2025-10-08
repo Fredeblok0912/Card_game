@@ -3,7 +3,7 @@ extends Node2D
 @onready var Health_Regain = $Health_Regain
 @onready var Max_Health = $Max_Health
 @onready var Reroll = $Reroll
-
+const settings = preload("res://settings.tscn")
 
 
 
@@ -168,3 +168,9 @@ func _on_button_4_pressed():
 
 
 	
+
+
+func _on_button_shop_pressed():
+	var sprite_instance = settings.instantiate()
+	$Camera2D.add_child(sprite_instance)
+	sprite_instance.position = Vector2(300,600)

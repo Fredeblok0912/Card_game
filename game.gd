@@ -1,10 +1,7 @@
 extends Node2D
 var turn_ending = false
-@onready var settings_game = $Settings_game
+const Settings = preload("res://settings.tscn")
 
-#func _ready():
-	#settings_game.visible = false
-	
 
 func _on_button_pressed() -> void:
 	if turn_ending == false:
@@ -36,3 +33,10 @@ var Wincounter = 0
 
 func reset():
 	Wincounter = 0
+
+
+func _on_button_settings_pressed():
+	var sprite_instance = Settings.instantiate()
+	add_child(sprite_instance)
+	sprite_instance.position = Vector2(-300,-550)
+	

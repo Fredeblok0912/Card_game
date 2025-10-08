@@ -1,67 +1,68 @@
-[gd_scene load_steps=2 format=3 uid="uid://7sv5fh4gk107"]
+[gd_scene load_steps=6 format=3 uid="uid://7sv5fh4gk107"]
 
+[ext_resource type="Texture2D" uid="uid://kbgee6pfim8s" path="res://backgroundGodot.png" id="1_gc0em"]
 [ext_resource type="Script" uid="uid://b05uooasn2ca6" path="res://settings.gd" id="1_x2hje"]
+[ext_resource type="Texture2D" uid="uid://b4v6tn5y3smpp" path="res://soundGodot.png" id="2_cj1lu"]
+[ext_resource type="Texture2D" uid="uid://b2b5py3ospgw8" path="res://exitGodot.png" id="3_71mqq"]
+[ext_resource type="Texture2D" uid="uid://dajl1qilv61qg" path="res://screenmodeGodot.png" id="4_3j6r5"]
 
-[node name="options_menu" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 9224.0
-offset_top = 2124.0
-offset_right = 9224.0
-offset_bottom = 2124.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.514259, 0.71432)
+[node name="Node2D" type="Node2D"]
 script = ExtResource("1_x2hje")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 0
-offset_left = -969.0
-offset_top = -468.237
-offset_right = -878.0
-offset_bottom = -362.237
-scale = Vector2(8.93473, 2.95034)
+[node name="Settings" type="Sprite2D" parent="."]
+z_index = 4096
+position = Vector2(929, 548)
+scale = Vector2(24.8315, 14.532)
+texture = ExtResource("1_gc0em")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-layout_mode = 2
+[node name="Label" type="Label" parent="Settings"]
+offset_left = -14.5467
+offset_top = -30.3043
+offset_right = 295.453
+offset_bottom = 35.6957
+scale = Vector2(0.0896036, 0.111028)
+theme_override_font_sizes/font_size = 45
+text = "Settings Menu"
+metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 60
-text = "Options"
+[node name="Sprite2D" type="Sprite2D" parent="Settings"]
+position = Vector2(-12.293, -20.9244)
+scale = Vector2(0.305878, 0.146639)
+texture = ExtResource("2_cj1lu")
 
-[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 48
-text = "Change Volume"
-
-[node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 2.51
+[node name="HSlider" type="HSlider" parent="Settings/Sprite2D"]
+anchors_preset = -1
+anchor_left = -0.0102448
+anchor_top = 0.0217117
+anchor_right = -0.0102448
+anchor_bottom = 0.0217117
+offset_left = -12.2278
+offset_top = 11.491
+offset_right = 32.7722
+offset_bottom = 27.491
+scale = Vector2(2.36153, 1)
 min_value = -40.0
 max_value = 10.0
+metadata/_edit_use_anchors_ = true
 
-[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 28
-text = "Change Fullscreen"
+[node name="Button" type="Button" parent="Settings"]
+offset_left = -8.45142
+offset_top = -15.349
+offset_right = 43.5486
+offset_bottom = 12.651
+scale = Vector2(0.458168, 0.274421)
+icon = ExtResource("3_71mqq")
+metadata/_edit_use_anchors_ = true
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_constants/outline_size = 2
-theme_override_constants/h_separation = -48
-theme_override_font_sizes/font_size = 24
-text = "Exit"
+[node name="Button2" type="Button" parent="Settings"]
+offset_left = -16.3394
+offset_top = -15.9393
+offset_right = 13.6606
+offset_bottom = 14.0607
+scale = Vector2(0.254661, 0.297881)
+icon = ExtResource("4_3j6r5")
+metadata/_edit_use_anchors_ = true
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(668.923, -68.5967)
-scale = Vector2(277.519, -119.843)
-
-[connection signal="value_changed" from="MarginContainer/VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="value_changed" from="Settings/Sprite2D/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="pressed" from="Settings/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Settings/Button2" to="." method="_on_button_2_pressed"]

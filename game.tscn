@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://dtcpvgfsi2cpv"]
+[gd_scene load_steps=43 format=3 uid="uid://dtcpvgfsi2cpv"]
 
 [ext_resource type="Script" uid="uid://lhlamou0ygmt" path="res://game.gd" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://bd08kuho0r3mb" path="res://Cardlist.gd" id="1_feb5d"]
@@ -26,8 +26,13 @@
 [ext_resource type="Texture2D" uid="uid://h27w70dkfmnf" path="res://Art/Symbols/attack symbol.png" id="30_082n1"]
 [ext_resource type="Script" uid="uid://qb65fouwv65p" path="res://Game text and symbol display/enemy_intent_shield.gd" id="30_aa0lp"]
 [ext_resource type="Script" uid="uid://cl80ithfccg4r" path="res://Game text and symbol display/enemy_shield_sprite.gd" id="30_l1i01"]
+[ext_resource type="Texture2D" uid="uid://kbgee6pfim8s" path="res://backgroundGodot.png" id="31_xex6t"]
 [ext_resource type="Script" uid="uid://mnh2vectlbbm" path="res://Game text and symbol display/enemy_intent_damage.gd" id="32_082n1"]
+[ext_resource type="Texture2D" uid="uid://b4v6tn5y3smpp" path="res://soundGodot.png" id="32_aa0lp"]
 [ext_resource type="Texture2D" uid="uid://bs3vb37sxdhlg" path="res://Art/Symbols/Heal symbol.png" id="32_xex6t"]
+[ext_resource type="Texture2D" uid="uid://b2b5py3ospgw8" path="res://exitGodot.png" id="33_iu0sx"]
+[ext_resource type="Texture2D" uid="uid://dajl1qilv61qg" path="res://screenmodeGodot.png" id="34_4v2jo"]
+[ext_resource type="Texture2D" uid="uid://bfbrk4uvi8xw2" path="res://Game text and symbol display/gearGodot.png" id="35_l1i01"]
 [ext_resource type="Script" uid="uid://6wyldqry43ag" path="res://Game text and symbol display/enemy_intent_heal.gd" id="36_iu0sx"]
 [ext_resource type="PackedScene" uid="uid://5gvarj6y6lxl" path="res://Screen transition.tscn" id="37_iu0sx"]
 
@@ -275,4 +280,84 @@ scale = Vector2(8, 8)
 texture = ExtResource("28_36jdj")
 script = ExtResource("29_xfvwf")
 
+[node name="Settings" type="Sprite2D" parent="."]
+z_index = 4096
+position = Vector2(648, -1300)
+scale = Vector2(24.8315, 14.532)
+texture = ExtResource("31_xex6t")
+
+[node name="Label" type="Label" parent="Settings"]
+offset_left = -14.5467
+offset_top = -30.3043
+offset_right = 295.453
+offset_bottom = 35.6957
+scale = Vector2(0.0896036, 0.111028)
+theme_override_font_sizes/font_size = 45
+text = "Settings Menu"
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Settings"]
+position = Vector2(-12.293, -20.9244)
+scale = Vector2(0.305878, 0.146639)
+texture = ExtResource("32_aa0lp")
+
+[node name="HSlider" type="HSlider" parent="Settings/Sprite2D"]
+anchors_preset = -1
+anchor_left = -0.0102448
+anchor_top = 0.0217117
+anchor_right = -0.0102448
+anchor_bottom = 0.0217117
+offset_left = -12.2278
+offset_top = 11.491
+offset_right = 32.7722
+offset_bottom = 27.491
+scale = Vector2(2.36153, 1)
+min_value = -40.0
+max_value = 10.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Settings"]
+offset_left = -8.45142
+offset_top = -15.349
+offset_right = 43.5486
+offset_bottom = 12.651
+scale = Vector2(0.458168, 0.274421)
+icon = ExtResource("33_iu0sx")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button2" type="Button" parent="Settings"]
+offset_left = -16.3394
+offset_top = -15.9393
+offset_right = 13.6606
+offset_bottom = 14.0607
+scale = Vector2(0.254661, 0.297881)
+icon = ExtResource("34_4v2jo")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button4" type="Button" parent="Settings"]
+z_index = 4095
+anchors_preset = -1
+anchor_bottom = 0.227
+offset_left = 1772.0
+offset_top = 6.0
+offset_right = 1796.0
+offset_bottom = 25.202
+scale = Vector2(6.0386, 3.34946)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+icon = ExtResource("35_l1i01")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button4" type="Button" parent="."]
+z_index = 4095
+offset_left = 1389.0
+offset_top = -533.0
+offset_right = 1413.0
+offset_bottom = -497.0
+scale = Vector2(6.0386, 3.34946)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+icon = ExtResource("35_l1i01")
+
 [connection signal="pressed" from="Buttons1-export/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_button_settings_pressed"]
