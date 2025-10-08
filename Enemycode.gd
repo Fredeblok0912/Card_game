@@ -28,6 +28,15 @@ var enemy_database = {
 			{"damage": 0, "shield": 0, "healing": 5}   # Move 4
 		]},
 	002: {
+		"name":"Ant",
+		"health":13,
+		"moves": [
+			{"damage": 5, "shield": 2, "healing": 0},   # Move 1
+			{"damage": 7, "shield": 1, "healing": 0},   # Move 2
+			{"damage": 0, "shield": 7, "healing": 0},   # Move 3
+			{"damage": 0, "shield": 4, "healing": 5}   # Move 4
+		]},
+	003: {
 		"name":"Boss",
 		"health":30,
 		"moves": [
@@ -42,9 +51,9 @@ var enemy_database = {
 
 func load_enemy():
 	if Gamecode.Level == 10:
-		loaded_enemy = 2
+		loaded_enemy = 3
 	else:
-		loaded_enemy = randi_range(0,1)
+		loaded_enemy = randi_range(0,2)
 	var loaded_enemy_name = enemy_database[loaded_enemy]["name"]
 	SpriteControl.set_sprite(loaded_enemy_name)
 	enemy_max_health = ceil((enemy_database[loaded_enemy]["health"])*difficulty_mod)

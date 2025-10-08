@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dk7bxyfwb45n0"]
+[gd_scene load_steps=14 format=3 uid="uid://dk7bxyfwb45n0"]
 
 [ext_resource type="Script" uid="uid://62cnljsoecj2" path="res://menu.gd" id="1_ouk20"]
 [ext_resource type="Texture2D" uid="uid://dnmx0jymtp3ru" path="res://Art/Other/Buttons3.png" id="2_ytr4m"]
@@ -9,7 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://dajl1qilv61qg" path="res://screenmodeGodot.png" id="6_dwrpx"]
 [ext_resource type="Texture2D" uid="uid://b8akc76lo2hba" path="res://Art/Backgrounds/menu.png" id="6_l48gv"]
 [ext_resource type="PackedScene" uid="uid://5gvarj6y6lxl" path="res://Screen transition.tscn" id="7_ecwwl"]
+[ext_resource type="Script" uid="uid://bpddsyda7gnbj" path="res://UpdateScript.gd" id="9_dwrpx"]
 [ext_resource type="Texture2D" uid="uid://yq55coi0wuxo" path="res://Art/gearGodot.png" id="10_iqepy"]
+[ext_resource type="Texture2D" uid="uid://dh5mbs3gyedse" path="res://Art/Backgrounds/baggrundNyUpdate.png" id="12_g7jxm"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_ytr4m"]
 
@@ -18,6 +20,7 @@ z_index = 10
 script = ExtResource("1_ouk20")
 
 [node name="Settings" type="Sprite2D" parent="."]
+visible = false
 z_index = 4096
 position = Vector2(929, 548)
 scale = Vector2(24.8315, 14.532)
@@ -118,6 +121,7 @@ z_index = 10
 position = Vector2(981, 536)
 scale = Vector2(4, 4)
 texture = ExtResource("6_l48gv")
+script = ExtResource("9_dwrpx")
 
 [node name="CanvasLayer" parent="." instance=ExtResource("7_ecwwl")]
 layer = 128
@@ -144,6 +148,12 @@ scale = Vector2(6.0386, 3.34946)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 icon = ExtResource("10_iqepy")
+
+[node name="BaggrundNyUpdate" type="Sprite2D" parent="."]
+z_index = 100
+position = Vector2(974, 580)
+scale = Vector2(4, 4)
+texture = ExtResource("12_g7jxm")
 
 [connection signal="value_changed" from="Settings/Sprite2D/HSlider" to="." method="_on_h_slider_value_changed"]
 [connection signal="pressed" from="Settings/Button" to="." method="_on_button_exit_pressed"]

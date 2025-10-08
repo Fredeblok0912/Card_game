@@ -19,7 +19,7 @@
 [ext_resource type="Script" uid="uid://bfu00exqvq57v" path="res://Game text and symbol display/enemy_attack_text.gd" id="26_5b14r"]
 [ext_resource type="Texture2D" uid="uid://bswdgl73kvnms" path="res://Art/Symbols/Shield symbol.png" id="27_7knny"]
 [ext_resource type="Script" uid="uid://b1i7rtk3hr1rm" path="res://Game text and symbol display/enemy_heal_text.gd" id="27_bnpwn"]
-[ext_resource type="Script" path="res://Level Counter.gd" id="27_xa8c5"]
+[ext_resource type="Script" uid="uid://cqkx0p1fg70eo" path="res://Level Counter.gd" id="27_xa8c5"]
 [ext_resource type="Texture2D" uid="uid://cy6s4ink8ef15" path="res://Art/Other/Buttons1-export.png" id="28_5b14r"]
 [ext_resource type="Texture2D" uid="uid://bhf3qjp0g5d4f" path="res://Art/Other/cheater text.png" id="28_36jdj"]
 [ext_resource type="Script" uid="uid://7bidf1ik64lf" path="res://CheaterCheck.gd" id="29_xfvwf"]

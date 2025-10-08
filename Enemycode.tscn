@@ -1,9 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://d4b7ursh017s0"]
+[gd_scene load_steps=15 format=3 uid="uid://d4b7ursh017s0"]
 
+[ext_resource type="Texture2D" uid="uid://oa664pseoitv" path="res://Art/Character sprites/enemyAnt0.png" id="1_ex83m"]
 [ext_resource type="Texture2D" uid="uid://crl0y32to1lqf" path="res://Art/Character sprites/sprite_slime_0.png" id="1_qjx3j"]
+[ext_resource type="Texture2D" uid="uid://bh8tvqtorja2t" path="res://Art/Character sprites/enemyAnt1.png" id="2_n4npm"]
 [ext_resource type="Texture2D" uid="uid://cybwbfetkel4y" path="res://Art/Character sprites/sprite_slime_1.png" id="2_utxms"]
 [ext_resource type="Texture2D" uid="uid://bwcb4cqba8iyv" path="res://Art/Character sprites/sprite_slime_2.png" id="3_3hwge"]
+[ext_resource type="Texture2D" uid="uid://djuq2we1exbmr" path="res://Art/Character sprites/enemyAnt2.png" id="3_yyb4k"]
 [ext_resource type="Texture2D" uid="uid://blxof6n6yhd70" path="res://Art/Character sprites/sprite_slime_3.png" id="4_6cec4"]
+[ext_resource type="Texture2D" uid="uid://c4nb3mnhiwkfo" path="res://Art/Character sprites/enemyAnt3.png" id="4_upf8r"]
 [ext_resource type="Texture2D" uid="uid://cm0lxsnak1foi" path="res://Art/Character sprites/sprite_slime_4.png" id="5_t65wr"]
 [ext_resource type="Texture2D" uid="uid://ddkxwt4s50xj4" path="res://Art/Character sprites/sprite_slime_5.png" id="6_a3y31"]
 [ext_resource type="Texture2D" uid="uid://cu1wthf6lr8te" path="res://Art/Character sprites/sprite_zombie_0.png" id="8_6cec4"]
@@ -12,6 +16,23 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a3y31"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ex83m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_n4npm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yyb4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_upf8r")
+}],
+"loop": true,
+"name": &"Ant",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_qjx3j")
@@ -44,6 +65,11 @@ animations = [{
 }],
 "loop": true,
 "name": &"Zombie",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
 "speed": 5.0
 }]
 

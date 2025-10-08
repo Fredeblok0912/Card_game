@@ -1,6 +1,6 @@
-[gd_scene load_steps=56 format=4 uid="uid://dcb4y1ao7vkeg"]
+[gd_scene load_steps=60 format=4 uid="uid://dcb4y1ao7vkeg"]
 
-[ext_resource type="Script" path="res://spirte_bullshit.gd" id="1_btue8"]
+[ext_resource type="Script" uid="uid://drvt8c6fuxrle" path="res://spirte_bullshit.gd" id="1_btue8"]
 [ext_resource type="AudioStream" uid="uid://bqebya5a2fm1e" path="res://Art/SFX&Music/buttonClick.wav" id="2_liwpg"]
 [ext_resource type="Texture2D" uid="uid://m5a1nwvsqgkc" path="res://Art/Character sprites/player sprite frame 0.png" id="2_xbe63"]
 [ext_resource type="Texture2D" uid="uid://bi6arotht74jc" path="res://Art/Character sprites/player sprite frame 1.png" id="3_3d0p3"]
@@ -42,10 +42,14 @@
 [ext_resource type="Texture2D" uid="uid://ddkxwt4s50xj4" path="res://Art/Character sprites/sprite_slime_5.png" id="34_sgxfd"]
 [ext_resource type="Texture2D" uid="uid://bnytt5vtmqnek" path="res://Art/Character sprites/spriteBoss0.png" id="35_babfu"]
 [ext_resource type="Texture2D" uid="uid://pi0csmqovqxk" path="res://sprite_zombie_0.png" id="35_vdcx7"]
+[ext_resource type="Texture2D" uid="uid://oa664pseoitv" path="res://Art/Character sprites/enemyAnt0.png" id="35_xpe2h"]
 [ext_resource type="Texture2D" uid="uid://c86bc1ote7wq4" path="res://sprite_zombie_1.png" id="36_2ce6s"]
+[ext_resource type="Texture2D" uid="uid://bh8tvqtorja2t" path="res://Art/Character sprites/enemyAnt1.png" id="36_5clmi"]
 [ext_resource type="Texture2D" uid="uid://b2h4ha7np4c6v" path="res://Art/Character sprites/spriteBoss1.png" id="36_53gu0"]
 [ext_resource type="Script" uid="uid://vp51ded4iwdj" path="res://enemy_sprites.gd" id="37_2j128"]
+[ext_resource type="Texture2D" uid="uid://djuq2we1exbmr" path="res://Art/Character sprites/enemyAnt2.png" id="37_gqxa1"]
 [ext_resource type="Texture2D" uid="uid://btmdatoip3amd" path="res://Art/Character sprites/spriteBoss2.png" id="37_kv0b6"]
+[ext_resource type="Texture2D" uid="uid://c4nb3mnhiwkfo" path="res://Art/Character sprites/enemyAnt3.png" id="38_abypp"]
 [ext_resource type="Texture2D" uid="uid://dx7751sslud6t" path="res://Art/Character sprites/spriteBoss3.png" id="38_lv6lh"]
 [ext_resource type="AudioStream" uid="uid://mv2gkdtb20xf" path="res://Art/SFX&Music/shopBuy.wav" id="40_al8ul"]
 [ext_resource type="AudioStream" uid="uid://cnct1uwfgyd34" path="res://Art/SFX&Music/shopIncreaseHP.wav" id="41_sgxfd"]
@@ -173,6 +177,23 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("35_xpe2h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_5clmi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_gqxa1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_abypp")
+}],
+"loop": true,
+"name": &"Ant",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("35_babfu")
 }, {
 "duration": 1.0,
@@ -257,7 +278,7 @@ parameters/looping = true
 position = Vector2(1061, -107)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_wywc4")
-animation = &"Boss"
+animation = &"Ant"
 script = ExtResource("37_2j128")
 
 [node name="ShopBuy" type="AudioStreamPlayer" parent="."]
