@@ -173,4 +173,4 @@ func _on_button_4_pressed():
 func _on_button_shop_pressed():
 	var sprite_instance = settings.instantiate()
 	$Camera2D.add_child(sprite_instance)
-	sprite_instance.position = Vector2(300,600)
+	sprite_instance.position = Vector2(-400,-350)

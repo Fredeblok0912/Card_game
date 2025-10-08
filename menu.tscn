@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dajl1qilv61qg" path="res://screenmodeGodot.png" id="6_dwrpx"]
 [ext_resource type="Texture2D" uid="uid://b8akc76lo2hba" path="res://Art/Backgrounds/menu.png" id="6_l48gv"]
 [ext_resource type="PackedScene" uid="uid://5gvarj6y6lxl" path="res://Screen transition.tscn" id="7_ecwwl"]
-[ext_resource type="Texture2D" uid="uid://bfbrk4uvi8xw2" path="res://Game text and symbol display/gearGodot.png" id="10_iqepy"]
+[ext_resource type="Texture2D" uid="uid://yq55coi0wuxo" path="res://Art/gearGodot.png" id="10_iqepy"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_ytr4m"]
 

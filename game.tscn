@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://dtcpvgfsi2cpv"]
+[gd_scene load_steps=44 format=3 uid="uid://dtcpvgfsi2cpv"]
 
 [ext_resource type="Script" uid="uid://lhlamou0ygmt" path="res://game.gd" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://bd08kuho0r3mb" path="res://Cardlist.gd" id="1_feb5d"]
@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://b2b5py3ospgw8" path="res://exitGodot.png" id="33_iu0sx"]
 [ext_resource type="Texture2D" uid="uid://dajl1qilv61qg" path="res://screenmodeGodot.png" id="34_4v2jo"]
 [ext_resource type="Texture2D" uid="uid://bfbrk4uvi8xw2" path="res://Game text and symbol display/gearGodot.png" id="35_l1i01"]
+[ext_resource type="Texture2D" uid="uid://yq55coi0wuxo" path="res://Art/gearGodot.png" id="36_aa0lp"]
 [ext_resource type="Script" uid="uid://6wyldqry43ag" path="res://Game text and symbol display/enemy_intent_heal.gd" id="36_iu0sx"]
 [ext_resource type="PackedScene" uid="uid://5gvarj6y6lxl" path="res://Screen transition.tscn" id="37_iu0sx"]
 
@@ -350,14 +351,14 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Button4" type="Button" parent="."]
 z_index = 4095
-offset_left = 1389.0
+offset_left = 1353.0
 offset_top = -533.0
-offset_right = 1413.0
+offset_right = 1383.0
 offset_bottom = -497.0
 scale = Vector2(6.0386, 3.34946)
 size_flags_horizontal = 3
 size_flags_vertical = 3
-icon = ExtResource("35_l1i01")
+icon = ExtResource("36_aa0lp")
 
 [connection signal="pressed" from="Buttons1-export/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button4" to="." method="_on_button_settings_pressed"]
