@@ -1,3 +1,6 @@
 Hej det her er vores seje spil, håber i kan li det :)
 
 for at køre det så kør filen CardGame.exe
+
+Link til GitHub:
+https://github.com/Fredeblok0912/Card_game
